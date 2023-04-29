@@ -27,20 +27,38 @@ router.post("/auth/signup", async (req,res) =>{
         console.log(err);
     }
     
-})
-
-router.get("/login", (req, res) => { 
-    res.render("auth/login")
-   
-       
-      
-
-
-
-
-
 });
 
+
+router.get("/login", (req, res) => {
+  res.render("auth/login")
+});
+
+router.post("/auth/login", async (req, res, next) => {
+    try {
+      const user = await User.findOne({ username: req.body.username, email: req.body.email})
+      if (!user){
+        return res.render("auth/login", {error: "user non-exist"})
+      } 
+         const passwordMatch = await bcryptjs.compare(req.body.password, user.password);
+    if (!passwordMatch){
+      return res.render("auth/login", {error: "password is incorrect"
+    });
+    }
+    
+     req.session.user = {
+      username: user.username
+     }
+    
+    
+    
+     res.send("hello user");
+    } catch(err){
+        console.log(err)
+        next(err)
+      }
+     
+    });
 
 
 
