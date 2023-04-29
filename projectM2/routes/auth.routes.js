@@ -29,9 +29,32 @@ router.post("/auth/signup", async (req,res) =>{
     
 })
 
-router.get("/login", (req, res) => {
+router.get("/login", (req, res) => { NEW CHANGES IN Router.GET
     res.render("auth/login")
+    try {
+        const user = await User.findOne({ username: req.body.username})
+        if (!user){
+          return res.render("auth/login", {error: "user non-exist"})
+        } 
+           const passwordMatch = await bcryptjs.compare(req.body.password, user.password);
+      if (!passwordMatch){
+        return res.render("auth/login", {error: "password is incorrect"
+      });
+      }
+      
+       req.session.user = {
+        username: user.username
+       }
+      
+      
+      
+       res.redirect("/profile")
+
+
+
+
 });
+
 
 
 
