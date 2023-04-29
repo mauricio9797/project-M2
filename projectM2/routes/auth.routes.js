@@ -29,7 +29,7 @@ router.post("/auth/signup", async (req,res) =>{
     
 })
 
-router.get("/login", (req, res) => { NEW CHANGES IN Router.GET
+router.get("/login", (req, res) => { 
     res.render("auth/login")
     try {
         const user = await User.findOne({ username: req.body.username})
