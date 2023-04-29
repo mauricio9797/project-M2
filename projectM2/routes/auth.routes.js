@@ -27,9 +27,13 @@ router.post("/auth/signup", async (req,res) =>{
         console.log(err);
     }
     
-})
+});
 
-router.post("/login", async (req, res, next) => {
+router.get("/login", (req, res) => {
+  res.render("auth/login")
+});
+
+router.post("/auth/login", async (req, res, next) => {
     try {
       const user = await User.findOne({ username: req.body.username, email: req.body.email})
       if (!user){
@@ -47,7 +51,7 @@ router.post("/login", async (req, res, next) => {
     
     
     
-     res.redirect("auth/profile")
+     res.send("hello user");
     } catch(err){
         console.log(err)
         next(err)
