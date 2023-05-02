@@ -32,8 +32,12 @@ router.post('/signup',async(req,res)=>{
  const hash = await bcryptjs.hash(req.body.password, salt);
  const user = new User({ username: req.body.username, email:req.body.email, password: hash });
  await user.save();
+req.session.user = {
+username: user.username
+}
+res.redirect('/profile');
 
-  res.render("signupsuccess")
+  //res.render("signupsuccess")
 })
 
 router.get('/login',isLoggedOut, (req,res) =>{
