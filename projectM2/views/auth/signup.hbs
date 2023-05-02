@@ -1,6 +1,6 @@
 <h1>Sign up to our App!</h1>
 
-<form action="auth/signup" method="post">
+<form action="/signup" method="post">
 <label for="username">Username</label>
   <input type="username" name="username" value=""  />
   <label for="email">Email</label>
@@ -14,3 +14,5 @@
 {{#if error}}
   <h2 style="color: red;">There was an error logging in... {{error}}</h2>
 {{/if}}
+
+<a href="/auth/login">Login Instead</a>

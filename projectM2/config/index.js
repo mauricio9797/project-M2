@@ -17,6 +17,8 @@ const favicon = require("serve-favicon");
 // https://www.npmjs.com/package/path
 const path = require("path");
 const session = require("express-session")
+const MongoStore = require("connect-mongo")
+const {MONGO_URI}= require("../db")
 
 // Middleware configuration
 module.exports = (app) => {
@@ -29,8 +31,12 @@ module.exports = (app) => {
   app.use(cookieParser());
 
 
+
   app.use(session({
     secret: process.env.SESS_SECRET,
+    store: MongoStore.create({ mongoUrl: MONGO_URI }),
+   resave: true,
+    saveUninitialized: false,
     
     cookie: {
       sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",

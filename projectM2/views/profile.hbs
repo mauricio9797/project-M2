@@ -1,0 +1,14 @@
+<h1>Hi {{userName}}! Welcome to Habitsu! We are happy to have you here! Let's start building the future!</h1>
+
+<h1><a href="/habits">Don't know where to start? Search for our science based reccomendations to improve the quality of your life</a> </h1>  <br>
+<br>
+<h1><a href="/AboutUs">About Us<a/></h1> <br>
+
+<form method="POST" action="/auth/logout">
+  <button type="submit">Logout</button>
+</form>
+
+
+{{#if error}}
+  <h2 style="color: red;">There was an error logging in... {{error}}</h2>
+{{/if}}
