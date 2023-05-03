@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const User = require("../models/User.model")
+const Habit = require("../models/Habit.model")
 const bcryptjs = require("bcryptjs");
 //const session = require("express-session")
 const isLoggedOut = require("../middlewares/isLoggedOut");
+const isLoggedIn = require('../middlewares/isLoggedIn');
 
 //require("../db");
 router.post('/logout', (req,res)=>{
@@ -69,10 +71,32 @@ router.post('/login',async(req,res,next) =>{
   }
 });
 
-router.get("/celebrities/create", (req, res) => {
-  res.render("celebrities/new-celebrity");
+router.get("/habitCreate", isLoggedIn, (req, res) => {
+  res.render("habitCreate");
 });
 
+router.post("/habitCreate", async (req, res, next) => {
+  try{
+    const habit = await new Habit({ Habit: req.body.Habit, Tasks:req.body.Tasks, Time: req.body.Time, Duration: req.body.Duration, Goal: req.body.Goal });
+    await habit.save();
+    res.send("succesfully created habit")
+  }catch(err){
+    next(err);
+  };
+
+  
+} );
+
+
+
+router.get("/myHabits", isLoggedIn, async(req, res) => {
+  try{
+    res.render("myHabits");
+  }catch(err){
+    console.log(err)
+  }
+  
+});
 /*mauricio code
 router.post("/logout", (req, res, next) => {
   req.session.destroy((err) => {

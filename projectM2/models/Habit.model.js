@@ -23,6 +23,7 @@ const HabitSchema = new Schema(
       },
       Duration: {
         type: Number,
+        
       
 
       },
@@ -30,7 +31,8 @@ const HabitSchema = new Schema(
         type: String,
         required: true,
 
-      }
+      },
+      
     },
     {
       timestamps: true

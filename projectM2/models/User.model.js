@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, default: mongoose } = require("mongoose");
 
 
 const userSchema = new Schema(
@@ -7,25 +7,29 @@ const userSchema = new Schema(
       type: String,
       trim: true,
       required: true,
-      unique: true
+      unique: true,
     },
     email: {
       type: String,
       required: true,
       unique: true,
       lowercase: true,
-      trim: true
+      trim: true,
     },
     password: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
+ 
+   
   },
   {
-    
     timestamps: true
   }
 );
+
+  
+
 
 const User = model("User", userSchema);
 

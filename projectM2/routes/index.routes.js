@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const isLoggedIn = require("../middlewares/isLoggedIn");
-const authRoutes = require('./auth.routes')
+const authRoutes = require('./auth.routes');
+const isLoggedOut = require('../middlewares/isLoggedOut');
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -29,6 +30,8 @@ router.get("/habits", (req, res, next) => {
 router.get("/aboutUs", (req, res, next) => {
   res.render("aboutUs");
 });
+
+
 
 /*
 router.get("/messages", isLoggedIn, (req, res) => {
