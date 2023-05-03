@@ -37,7 +37,7 @@ username: user.username
 }
 res.redirect('/profile');
 
-  //res.render("signupsuccess")
+ 
 })
 
 router.get('/login',isLoggedOut, (req,res) =>{
@@ -69,6 +69,9 @@ router.post('/login',async(req,res,next) =>{
   }
 });
 
+router.get("/celebrities/create", (req, res) => {
+  res.render("celebrities/new-celebrity");
+});
 
 /*mauricio code
 router.post("/logout", (req, res, next) => {
