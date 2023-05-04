@@ -89,43 +89,6 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
   };
 } );
 
-router.get("/habitEdit/:habitId", isLoggedIn, async (req,res,next) => {
-  try{
-   const {habitId} = req.params;
-   const habit = await Habit.findById(habitId);
-   res.render("habitDetail", {habit});
-  }catch(err){
-    console.error("There was an error", err);
-  }
-})
-
-router.post("/habitEdit/:habitId",  isLoggedIn, async (req,res) => {
-  try{
-    const habitId = req.params.habitId;
-    const updateData = {
-      Habit: req.body.habit,
-      Tasks: req.body.tasks,
-      Time: req.body.time,
-      Duration: req.body.duration,
-      Goal: req.body.goal,
-    }
-   const habitUpdated = await Habit.findByIdAndUpdate(habitId, updateData, {new: true});
-   res.redirect("/myHabits")
-  }catch(err){
-    console.error("There was an error", err);
-  }
-})
-
-router.post("/habitDelete/:habitId", isLoggedIn, async (req,res) => {
-  try{
-    const {habitId} = req.params;
-    const habitDeleted = await Habit.findByIdAndDelete(habitId);
-    res.render("profile")
-    
-  }catch(err){
-    console.error("There was an error", err);
-  }
-})
 
 
 router.get("/myHabits", isLoggedIn, async(req, res) => {
