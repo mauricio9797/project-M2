@@ -105,7 +105,7 @@ router.get("/myHabits", isLoggedIn, async(req, res) => {
 router.get("/myHabits/:id", isLoggedIn, async(req, res) => {
   try{
   
-  const habit = await User.findById(req.params.id)
+  const habit = await User.findById(req.session.user.userIdid)
   res.render('habitDetail', habit);
   } catch(err){
     console.log(err);
