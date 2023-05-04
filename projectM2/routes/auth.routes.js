@@ -6,6 +6,8 @@ const bcryptjs = require("bcryptjs");
 //const session = require("express-session")
 const isLoggedOut = require("../middlewares/isLoggedOut");
 const isLoggedIn = require('../middlewares/isLoggedIn');
+const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Types;
 
 //require("../db");
 router.post('/logout', (req,res)=>{
@@ -85,10 +87,44 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
   }catch(err){
     next(err);
   };
-
-  
 } );
 
+router.get("/habitEdit/:habitId", isLoggedIn, async (req,res,next) => {
+  try{
+   const {habitId} = req.params;
+   const habit = await Habit.findById(habitId);
+   res.render("habitEdit", {habit});
+  }catch(err){
+    console.error("There was an error", err);
+  }
+})
+
+router.post("/habitEdit/:habitId",  isLoggedIn, async (req,res) => {
+  try{
+    const habitId = req.params.habitId;
+    const updateData = {
+      Habit: req.body.habit,
+      Tasks: req.body.tasks,
+      Time: req.body.time,
+      Duration: req.body.duration,
+      Goal: req.body.goal,
+    }
+   const habitUpdated = await Habit.findByIdAndUpdate(habitId, updateData, {new: true});
+   res.redirect("/myHabits")
+  }catch(err){
+    console.error("There was an error", err);
+  }
+})
+
+router.post("/habitDelete/:habitId", isLoggedIn, async (req,res) => {
+  try{
+    const {habitId} = req.params;
+    const habitDeleted = await Habit.findByIdAndDelete(habitId);
+    res.redirect("/myHabits")
+  }catch(err){
+    console.error("There was an error", err);
+  }
+})
 
 
 router.get("/myHabits", isLoggedIn, async(req, res) => {
@@ -105,8 +141,8 @@ router.get("/myHabits", isLoggedIn, async(req, res) => {
 router.get("/myHabits/:id", isLoggedIn, async(req, res) => {
   try{
   
-  const habit = await User.findById(req.params.id)
-  res.render('habitDetail', habit);
+  const habit = await Habit.findById(req.params.id)
+  res.render('habitDetail', {habit});
   } catch(err){
     console.log(err);
   }
