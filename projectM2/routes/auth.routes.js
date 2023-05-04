@@ -56,7 +56,7 @@ router.post('/login',async(req,res,next) =>{
   
     if (!user){
       return res.render("auth/login", {error: "user non-exist"})
-    }
+    }next()
     
     const passwordMatch = await bcryptjs.compare(req.body.password, user.password);
     if (!passwordMatch){
@@ -77,7 +77,6 @@ router.post('/login',async(req,res,next) =>{
 router.get("/habitCreate", isLoggedIn, (req, res) => {
   res.render("habitCreate");
 });
-
 router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
   try{
     const habit = new Habit({ Habit: req.body.Habit, Tasks:req.body.Tasks, Time: req.body.Time, Duration: req.body.Duration, Goal: req.body.Goal });
