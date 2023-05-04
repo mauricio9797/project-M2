@@ -36,6 +36,7 @@ router.post('/signup',async(req,res)=>{
  await user.save();
 req.session.user = {
 username: user.username,
+userId: user._id,
 }
 res.redirect('/profile');
 
@@ -59,7 +60,6 @@ router.post('/login',async(req,res,next) =>{
     if (!passwordMatch){
       return res.render( 'auth/login', {error:"Password is incorrect"});
     }
-
     req.session.user = {
       username: user.username,
       userId: user._id
@@ -80,9 +80,7 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
   try{
     const habit = new Habit({ Habit: req.body.Habit, Tasks:req.body.Tasks, Time: req.body.Time, Duration: req.body.Duration, Goal: req.body.Goal });
     await habit.save();
-    
-    const user = await User.updateOne({_id: req.session.userId}, {$push:{habit: habit._id} })
-    
+    const user = await User.updateOne({_id: req.session.user.userId}, {$push:{habit: habit._id} })
     res.redirect("/profile")
   }catch(err){
     next(err);
@@ -95,8 +93,8 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
 
 router.get("/myHabits", isLoggedIn, async(req, res) => {
   try{
-    
-    const userHabits = await User.findById(req.params.id).populate("habit");
+    const userHabits = await User.findById(req.session.user.userId).populate("habit");
+    console.log("UserHabits ======>", userHabits)
     res.render("myHabits", {userHabits});
   }catch(err){
     console.log(err)

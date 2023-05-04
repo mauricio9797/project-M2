@@ -8,7 +8,7 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
-    habit: [{ ref: "habit", type: Schema.Types.ObjectId }],
+    habit: [{ ref: "Habit", type: Schema.Types.ObjectId }],
     email: {
       type: String,
       required: true,
