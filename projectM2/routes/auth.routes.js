@@ -93,7 +93,7 @@ router.get("/habitEdit/:habitId", isLoggedIn, async (req,res,next) => {
   try{
    const {habitId} = req.params;
    const habit = await Habit.findById(habitId);
-   res.render("habitEdit", {habit});
+   res.render("habitDetail", {habit});
   }catch(err){
     console.error("There was an error", err);
   }
@@ -121,6 +121,7 @@ router.post("/habitDelete/:habitId", isLoggedIn, async (req,res) => {
     const {habitId} = req.params;
     const habitDeleted = await Habit.findByIdAndDelete(habitId);
     res.render("profile")
+    
   }catch(err){
     console.error("There was an error", err);
   }
@@ -147,7 +148,7 @@ router.get("/myHabits/:id", isLoggedIn, async(req, res) => {
   } catch(err){
     console.log(err);
   }
-});
+})
 
 
     

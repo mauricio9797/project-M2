@@ -1,8 +1,14 @@
-<h1>Habit Detail</h1>
-<h1><a href="/habitEdit/{{habit._id}}">Edit habit<a/></h1> <br>
+<h1>{{#each habit}}</h1>
+
+ <form action="/habitEdit/{{this._id}}" method="get">
+<button>Edit</button>
+  </form>
+  <form action="/habitDelete/{{this._id}}" method="post">
+  <button>Delete</button>
+  </form>
   <h2>Habit: {{habit.Habit}}</h2>
   <p>Tasks: {{habit.Tasks}}</p> 
   <p>Time: {{habit.Time}}</p>
   <p>Duration: {{habit.Duration}}</p>
   <p>Goal: {{habit.Goal}}</p>
-
+{{/each}}
