@@ -56,7 +56,7 @@ router.post('/login',async(req,res,next) =>{
   
     if (!user){
       return res.render("auth/login", {error: "user non-exist"})
-    }
+    }next()
     
     const passwordMatch = await bcryptjs.compare(req.body.password, user.password);
     if (!passwordMatch){
@@ -77,7 +77,6 @@ router.post('/login',async(req,res,next) =>{
 router.get("/habitCreate", isLoggedIn, (req, res) => {
   res.render("habitCreate");
 });
-
 router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
   try{
     const habit = new Habit({ Habit: req.body.Habit, Tasks:req.body.Tasks, Time: req.body.Time, Duration: req.body.Duration, Goal: req.body.Goal });
@@ -89,6 +88,42 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
   };
 } );
 
+router.get("/habitEdit/:habitId", isLoggedIn, async (req,res,next) => {
+  try{
+   const {habitId} = req.params;
+   const habit = await Habit.findById(habitId);
+   res.render("habitEdit", {habit});
+  }catch(err){
+    console.error("There was an error", err);
+  }
+})
+
+router.post("/habitEdit/:habitId",  isLoggedIn, async (req,res) => {
+  try{
+    const habitId = req.params.habitId;
+    const updateData = {
+      Habit: req.body.habit,
+      Tasks: req.body.tasks,
+      Time: req.body.time,
+      Duration: req.body.duration,
+      Goal: req.body.goal,
+    }
+   const habitUpdated = await Habit.findByIdAndUpdate(habitId, updateData, {new: true});
+   res.redirect(`/myHabits/${habitId}`)
+  }catch(err){
+    console.error("There was an error", err);
+  }
+})
+
+router.post("/habitDelete/:habitId", isLoggedIn, async (req,res) => {
+  try{
+    const {habitId} = req.params;
+    const habitDeleted = await Habit.findByIdAndDelete(habitId);
+    res.redirect("/myHabits")
+  }catch(err){
+    console.error("There was an error", err);
+  }
+})
 
 
 router.get("/myHabits", isLoggedIn, async(req, res) => {
