@@ -110,7 +110,7 @@ router.post("/habitEdit/:habitId",  isLoggedIn, async (req,res) => {
       Goal: req.body.goal,
     }
    const habitUpdated = await Habit.findByIdAndUpdate(habitId, updateData, {new: true});
-   res.redirect("/myHabits")
+   res.redirect(`/myHabits/${habitId}`)
   }catch(err){
     console.error("There was an error", err);
   }
