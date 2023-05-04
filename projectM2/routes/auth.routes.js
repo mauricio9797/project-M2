@@ -35,7 +35,7 @@ router.post('/signup',async(req,res)=>{
  const user = new User({ username: req.body.username, email:req.body.email, password: hash });
  await user.save();
 req.session.user = {
-username: user.username
+username: user.username,
 }
 res.redirect('/profile');
 
@@ -61,7 +61,8 @@ router.post('/login',async(req,res,next) =>{
     }
 
     req.session.user = {
-      username: user.username
+      username: user.username,
+      userId: user._id
   }
 
   console.log(req.body);
@@ -75,11 +76,14 @@ router.get("/habitCreate", isLoggedIn, (req, res) => {
   res.render("habitCreate");
 });
 
-router.post("/habitCreate", async (req, res, next) => {
+router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
   try{
-    const habit = await new Habit({ Habit: req.body.Habit, Tasks:req.body.Tasks, Time: req.body.Time, Duration: req.body.Duration, Goal: req.body.Goal });
+    const habit = new Habit({ Habit: req.body.Habit, Tasks:req.body.Tasks, Time: req.body.Time, Duration: req.body.Duration, Goal: req.body.Goal });
     await habit.save();
-    res.send("succesfully created habit")
+    
+    const user = await User.updateOne({_id: req.session.userId}, {$push:{habit: habit._id} })
+    
+    res.redirect("/profile")
   }catch(err){
     next(err);
   };
@@ -91,12 +95,25 @@ router.post("/habitCreate", async (req, res, next) => {
 
 router.get("/myHabits", isLoggedIn, async(req, res) => {
   try{
-    res.render("myHabits");
+    
+    const userHabits = await User.findById(req.params.id).populate("habit");
+    res.render("myHabits", {userHabits});
   }catch(err){
     console.log(err)
   }
   
 });
+
+router.get("/myHabits/:id", isLoggedIn, async(req, res) => {
+  try{
+  
+  const habit = await User.findById(req.params.id)
+  res.render('habitDetail', habit);
+  } catch(err){
+    console.log(err);
+  }
+});
+
 /*mauricio code
 router.post("/logout", (req, res, next) => {
   req.session.destroy((err) => {

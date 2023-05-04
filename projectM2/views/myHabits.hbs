@@ -1,1 +1,4 @@
-<h1>my habits</h1>
+{{#each userHabits}}
+  <a href="/myHabits/{{_id}}">{{Habit}}</a><br />
+{{/each}}
+<a href="/">BACK</a>
