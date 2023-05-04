@@ -6,6 +6,8 @@ const bcryptjs = require("bcryptjs");
 //const session = require("express-session")
 const isLoggedOut = require("../middlewares/isLoggedOut");
 const isLoggedIn = require('../middlewares/isLoggedIn');
+const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Types;
 
 //require("../db");
 router.post('/logout', (req,res)=>{
@@ -85,10 +87,44 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
   }catch(err){
     next(err);
   };
-
-  
 } );
 
+router.get("/habitEdit/:habitId", isLoggedIn, async (req,res,next) => {
+  try{
+   const {habitId} = req.params;
+   const habit = await Habit.findById(habitId);
+   res.render("habitEdit", {habit});
+  }catch(err){
+    console.error("There was an error", err);
+  }
+})
+
+router.post("/habitEdit/:habitId",  isLoggedIn, async (req,res) => {
+  try{
+    const habitId = req.params.habitId;
+    const updateData = {
+      Habit: req.body.habit,
+      Tasks: req.body.tasks,
+      Time: req.body.time,
+      Duration: req.body.duration,
+      Goal: req.body.goal,
+    }
+   const habitUpdated = await Habit.findByIdAndUpdate(habitId, updateData, {new: true});
+   res.redirect("/myHabits")
+  }catch(err){
+    console.error("There was an error", err);
+  }
+})
+
+router.post("/habitDelete/:habitId", isLoggedIn, async (req,res) => {
+  try{
+    const {habitId} = req.params;
+    const habitDeleted = await Habit.findByIdAndDelete(habitId);
+    res.render("profile")
+  }catch(err){
+    console.error("There was an error", err);
+  }
+})
 
 
 router.get("/myHabits", isLoggedIn, async(req, res) => {
@@ -105,79 +141,17 @@ router.get("/myHabits", isLoggedIn, async(req, res) => {
 router.get("/myHabits/:id", isLoggedIn, async(req, res) => {
   try{
   
-  const habit = await User.findById(req.session.user.userIdid)
-  res.render('habitDetail', habit);
+  const habit = await Habit.findById(req.params.id)
+  res.render('habitDetail', {habit});
+  
   } catch(err){
     console.log(err);
   }
 });
 
-/*mauricio code
-router.post("/logout", (req, res, next) => {
-  req.session.destroy((err) => {
-    if (err) {
-      next(err);
-      return;
-    }
-    res.redirect("/");
-  });
-});
 
-router.get("/signup", isLoggedOut, (req, res) => {
-  res.render("auth/signup");
-});
-
-router.post("/auth/signup", async (req,res) =>{
-    try {
-       console.log(req.body)
-       
     
-       const salt = await bcryptjs.genSalt(12);
-   const hash = await bcryptjs.hash(req.body.password, salt);
-   const user = new User({ username: req.body.username, email:req.body.email, password: hash });
-   await user.save()
-        
-
-       
-        res.send("succesfully signed up")
-    }catch(err){
-        console.log(err);
-    }
-    
-});
-
-
-router.get("/login", (req, res) => {
-  res.render("auth/login")
-});
-
-router.post("/auth/login", async (req, res, next) => {
-    try {
-      const user = await User.findOne({ username: req.body.username, email: req.body.email})
-      if (!user){
-        return res.render("auth/login", {error: "user non-exist"})
-      } 
-         const passwordMatch = await bcryptjs.compare(req.body.password, user.password);
-    if (!passwordMatch){
-      return res.render("auth/login", {error: "password is incorrect"
-    });
-    }
-    
-     req.session.user = {
-      username: user.username
-     }
-    
-    
-    
-     res.send("hello user");
-    } catch(err){
-        console.log(err)
-        next(err)
-      }
-     
-    });
-    */
-    
+  
     
 
 

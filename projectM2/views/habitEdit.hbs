@@ -1,0 +1,13 @@
+<form action="/habitEdit/{{habit._id}}" method="post">
+<label for="habit">Habit:</label>
+<input type="text" name="habit" id="habit" value="{{habit.Habit}}" required>
+<label for="tasks">Tasks:</label>
+<input type="text" name="tasks" id="tasks" value="{{habit.Tasks}}" required>
+<label for="time">Time:</label>
+<input type="text" name="time" id="time" value="{{habit.Time}}" required>
+<label for="duration">Duration:</label>
+<input type="text" name="duration" id="duration" value="{{habit.Duration}}" required>
+<label for="goal">Goal:</label>
+<input type="text" name="goal" id="goal" value="{{habit.Goal}}" required>
+<button type="submit">Submit</button>
+</form>

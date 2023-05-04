@@ -1,5 +1,10 @@
 {{#each userHabits.habit}}
-  <a href="/myHabits/{{_id}}">{{Habit}}</a><br />
-  <h1>{{this.Tasks}}</h1>
-{{/each}}
+  <h1>  <a href="/myHabits/{{_id}}">{{this.Tasks}}</a></h1>
+  <form action="/habitEdit/{{this._id}}" method="get">
+<button>Edit</button>
+  </form>
+  <form action="/habitDelete/{{this._id}}" method="post">
+  <button>Delete</button>
+  </form>
 <a href="/">BACK</a>
+{{/each}}
