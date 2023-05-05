@@ -13,7 +13,6 @@ const HabitSchema = new Schema(
       Tasks: {
         type: String,
         required: true,
-        unique: true,
         lowercase: true,
         trim: true
       },
