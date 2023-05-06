@@ -29,7 +29,6 @@ router.get('/signup',isLoggedOut,(req,res)=>{
   res.render("auth/signup")
 })
 
-
 router.post('/signup',async(req,res)=>{
   const existingEmail = await User.findOne({ email: req.body.email });
   const existingUser = await User.findOne({ username: req.body.username });
@@ -54,22 +53,8 @@ res.redirect('/profile');
 
  
 })
-// routes for habits //
-router.get('/login',isLoggedOut, (req,res) =>{
-  res.render('auth/login')
-})
-router.get('/habits/relationships',isLoggedIn, (req,res) =>{
-  res.render('habits/relationships')
-})
-router.get('/habits/productivity',isLoggedIn, (req,res) =>{
-  res.render('habits/productivity')
-})
-
-router.get('/habits/mindfulness',isLoggedIn, (req,res) =>{
-  res.render('habits/mindfulness')
-})
-router.get('/habits/healthDiet',isLoggedIn, (req,res) =>{
-  res.render('habits/healthDiet')
+router.get('/login',isLoggedOut,(req,res)=>{
+  res.render("auth/signup")
 })
 router.post('/login',async(req,res,next) =>{
   try {
@@ -96,7 +81,7 @@ router.post('/login',async(req,res,next) =>{
   }
 });
 
-router.get("/habitCreate", isLoggedIn, (req, res) => {
+router.get("/habitCreate", isLoggedIn, (req, res, next) => {
   res.render("habitCreate");
 });
 router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
@@ -104,8 +89,9 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
     const habit = new Habit({ Habit: req.body.Habit, Tasks:req.body.Tasks, Time: req.body.Time, Duration: req.body.Duration, Goal: req.body.Goal });
     await habit.save();
     const user = await User.updateOne({_id: req.session.user.userId}, {$push:{habit: habit._id} })
-    res.redirect("/myHabits")
-  }catch(err){
+     return res.redirect("/myHabits")}
+   
+  catch(err){
     next(err);
   };
 } );

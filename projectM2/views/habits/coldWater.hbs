@@ -1,0 +1,37 @@
+<h2>Cold water therapy</h2>
+<form action="/habitCreate" method="post">
+
+  <label for="Habit">Habit:</label>
+  <input type="text" id="Habit" name= "Habit" value="Cold water inmersions" readonly="Cold water inmersions"/><br /><br />
+
+  <label for="Tasks">Tasks:</label><br>
+<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
+  <option value="1 minute inmersion">1 minute inmersion</option>
+  <option value="3 minutes inmersions">3 minutes inmersions</option>
+ <option value="5 minutes inmersions">5 minutes inmersions</option>
+ <option value="7 minutes inmersions">7 minutes inmersions</option>
+  <option value="10 minutes inmersions">10 minutes inmersions</option>
+
+
+ </select><br>
+  
+
+<label for="Time">Time:</label>
+<select type="text" id="Time" name="Time">
+  <option value="morning">Morning</option>
+  <option value="evening">Evening</option>
+  <option value="night">Night</option>
+  
+</select><br>
+
+
+
+  <label for="Duration">Duration:</label>
+   <input type="text" id="Duration" name="Duration"  /><br /><br />
+
+  <label for="Goal">Goal:</label>
+  <textarea type="text" id="Goal" name="Goal" ></textarea><br /><br />
+
+ 
+ <input type="submit" value="Add Habit!" />
+</form>

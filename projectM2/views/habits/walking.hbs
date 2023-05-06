@@ -1,19 +1,26 @@
-<h2>Add Habit</h2>
+<h2>Walking</h2>
 <form action="/habitCreate" method="post">
 
   <label for="Habit">Habit:</label>
-  <input type="text" id="Habit" name= "Habit"/><br /><br />
+  <input type="text" id="Habit" name= "Habit" value="Relationships" readonly="Relationships"/><br /><br />
 
-  <label for="Tasks">Tasks:</label>
- <textarea type="text" id="Tasks" name="Tasks" ></textarea><br /><br />
+ 
+<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
+  <option value="8K steps a day">8K steps a day</option>
+  <option value="10K steps a day">10K steps a day</option>
+ <option value="15K steps a day">15K steps a day</option>
+ <option value="20K steps a day">20K steps a day</option>
 
-<label for="Time">Tasks:</label>
+ </select><br>
+  
+
+<label for="Time">Time:</label>
 <select type="text" id="Time" name="Time">
   <option value="morning">Morning</option>
   <option value="evening">Evening</option>
   <option value="night">Night</option>
   
-</select>
+</select><br>
 
 
 
@@ -26,5 +33,3 @@
  
  <input type="submit" value="Add Habit!" />
 </form>
-
-
