@@ -9,6 +9,8 @@ const isLoggedIn = require('../middlewares/isLoggedIn');
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Types;
 
+
+
 //require("../db");
 router.post('/logout', (req,res)=>{
   req.session.destroy((err)=>{
@@ -52,14 +54,23 @@ res.redirect('/profile');
 
  
 })
-
+// routes for habits //
 router.get('/login',isLoggedOut, (req,res) =>{
   res.render('auth/login')
 })
-router.get('/relationships',isLoggedIn, (req,res) =>{
-  res.render('relationships')
+router.get('/habits/relationships',isLoggedIn, (req,res) =>{
+  res.render('habits/relationships')
+})
+router.get('/habits/productivity',isLoggedIn, (req,res) =>{
+  res.render('habits/productivity')
 })
 
+router.get('/habits/mindfulness',isLoggedIn, (req,res) =>{
+  res.render('habits/mindfulness')
+})
+router.get('/habits/healthDiet',isLoggedIn, (req,res) =>{
+  res.render('habits/healthDiet')
+})
 router.post('/login',async(req,res,next) =>{
   try {
     const user = await User.findOne({ username: req.body.username, email: req.body.email})
