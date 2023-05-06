@@ -38,7 +38,9 @@ router.get("/aboutUs", (req, res, next) => {
   res.render("aboutUs");
 });
 
-
+router.get("/profileFromSignUp", (req, res, next) => {
+  res.render("profileFromSignUp");
+});
 
 /*
 router.get("/messages", isLoggedIn, (req, res) => {

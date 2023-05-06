@@ -19,11 +19,14 @@ router.post('/logout', (req,res)=>{
     res.redirect('/');
   })
 })
-
+router.get('/',isLoggedOut,(req,res)=>{
+  res.render("auth/signup")
+})
 
 router.get('/signup',isLoggedOut,(req,res)=>{
   res.render("auth/signup")
 })
+
 
 router.post('/signup',async(req,res)=>{
   const existingEmail = await User.findOne({ email: req.body.email });
@@ -32,6 +35,7 @@ router.post('/signup',async(req,res)=>{
   if (existingEmail || existingUser) {
     return res.render("accexist", {error: "Email/User already exists"});
   }
+ 
  const salt = await bcryptjs.genSalt(12);
  const hash = await bcryptjs.hash(req.body.password, salt);
  const user = new User({ username: req.body.username, email:req.body.email, password: hash });
@@ -40,6 +44,10 @@ req.session.user = {
 username: user.username,
 userId: user._id,
 }
+
+
+
+
 res.redirect('/profile');
 
  
@@ -47,6 +55,9 @@ res.redirect('/profile');
 
 router.get('/login',isLoggedOut, (req,res) =>{
   res.render('auth/login')
+})
+router.get('/relationships',isLoggedIn, (req,res) =>{
+  res.render('relationships')
 })
 
 router.post('/login',async(req,res,next) =>{
@@ -82,7 +93,7 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
     const habit = new Habit({ Habit: req.body.Habit, Tasks:req.body.Tasks, Time: req.body.Time, Duration: req.body.Duration, Goal: req.body.Goal });
     await habit.save();
     const user = await User.updateOne({_id: req.session.user.userId}, {$push:{habit: habit._id} })
-    res.redirect("/profile")
+    res.redirect("/myHabits")
   }catch(err){
     next(err);
   };
