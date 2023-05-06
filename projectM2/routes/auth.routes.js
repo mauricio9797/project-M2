@@ -119,7 +119,7 @@ router.post("/habitDelete/:habitId", isLoggedIn, async (req,res) => {
   try{
     const {habitId} = req.params;
     const habitDeleted = await Habit.findByIdAndDelete(habitId);
-    res.redirect("/myHabits")
+    res.redirect("/myHabits?habitDeleted=true")
   }catch(err){
     console.error("There was an error", err);
   }
@@ -147,6 +147,10 @@ router.get("/myHabits/:id", isLoggedIn, async(req, res) => {
     console.log(err);
   }
 })
+router.get('/habitPractice', (req, res) => {
+  // Render the "habitPractice" page
+  res.render('habitPractice');
+});
 
 
     
