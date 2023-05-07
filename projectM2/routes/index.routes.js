@@ -39,26 +39,4 @@ router.get("/aboutUs", (req, res, next) => {
 });
 
 
-
-/*
-router.get("/messages", isLoggedIn, (req, res) => {
-  res.send("Messages" + req.session.user.email);
-});
-
-router.get("/profile", isLoggedIn, (req, res) => {
-  console.log(req.session);
-  console.log(req.session.user);
-
-  res.render("profile", { userEmail: req.session.user.email });
-});
-
-router.get("/habits", isLoggedIn, (req, res, next) => {
-  res.render("habits");
-});
-
-router.get("/aboutUs", (req, res, next) => {
-  res.render("aboutUs");
-});
-*/
-
 module.exports = router;

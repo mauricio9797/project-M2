@@ -93,7 +93,7 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
      return res.redirect("/myHabits")}
    
   catch(err){
-    next(err);
+    res.status(404).render("emptyfield")
   };
 } );
 
