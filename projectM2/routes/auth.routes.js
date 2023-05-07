@@ -54,7 +54,7 @@ res.redirect('/profile');
  
 })
 router.get('/login',isLoggedOut,(req,res)=>{
-  res.render("auth/signup")
+  res.render("auth/login")
 })
 router.post('/login',async(req,res,next) =>{
   try {
@@ -92,7 +92,7 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
      return res.redirect("/myHabits")}
    
   catch(err){
-    next(err);
+    res.status(404).render("emptyfield")
   };
 } );
 
