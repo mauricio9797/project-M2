@@ -54,7 +54,7 @@ res.redirect('/profile');
  
 })
 router.get('/login',isLoggedOut,(req,res)=>{
-  res.render("auth/signup")
+  res.render("auth/login")
 })
 router.post('/login',async(req,res,next) =>{
   try {
@@ -89,6 +89,7 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
     const habit = new Habit({ Habit: req.body.Habit, Tasks:req.body.Tasks, Time: req.body.Time, Duration: req.body.Duration, Goal: req.body.Goal });
     await habit.save();
     const user = await User.updateOne({_id: req.session.user.userId}, {$push:{habit: habit._id} })
+    await user.validate()
      return res.redirect("/myHabits")}
    
   catch(err){
