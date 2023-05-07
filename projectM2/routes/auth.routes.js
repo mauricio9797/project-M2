@@ -11,7 +11,7 @@ const { ObjectId } = mongoose.Types;
 
 
 
-//require("../db");
+require("../db");
 router.post('/logout', (req,res)=>{
   req.session.destroy((err)=>{
     if(err){
@@ -86,14 +86,15 @@ router.get("/habitCreate", isLoggedIn, (req, res, next) => {
 });
 router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
   try{
-    const habit = new Habit({ Habit: req.body.Habit, Tasks:req.body.Tasks, Time: req.body.Time, Duration: req.body.Duration, Goal: req.body.Goal });
+    const habit = new Habit({ Habit: req.body.Habit, Tasks:req.body.Tasks, Tasks1:req.body.Tasks1, Tasks2:req.body.Tasks2, Time: req.body.Time, Duration: req.body.Duration, Goal: req.body.Goal });
     await habit.save();
     const user = await User.updateOne({_id: req.session.user.userId}, {$push:{habit: habit._id} })
-    await user.validate()
-     return res.redirect("/myHabits")}
+   
+      res.redirect("/myHabits")}
    
   catch(err){
-    res.status(404).render("emptyfield")
+    console.log(err)
+    next(err)
   };
 } );
 
@@ -113,6 +114,8 @@ router.post("/habitEdit/:habitId",  isLoggedIn, async (req,res) => {
     const updateData = {
       Habit: req.body.habit,
       Tasks: req.body.tasks,
+      Tasks1: req.body.tasks1,
+      Tasks2: req.body.tasks2,
       Time: req.body.time,
       Duration: req.body.duration,
       Goal: req.body.goal,
