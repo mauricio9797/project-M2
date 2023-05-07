@@ -1,19 +1,19 @@
 <h1>Sign up to our App!</h1>
 
 <form action="/signup" method="post">
-<label for="username">Username</label>
-  <input type="username" name="username" value=""  />
+  <label for="username">Username</label>
+  <input type="username" name="username" value="" />
   <label for="email">Email</label>
   <input type="email" name="email" value="" />
   <label for="password">Password</label>
-  <input type="password" name="password" value=""  />
+  <input type="password" name="password" value="" />
 
-  <input type="submit" value="Sign up now" >
+  <input type="submit" value="Sign up now" />
 </form>
 
 {{#if error}}
   <h2 style="color: red;">There was an error logging in... {{error}}</h2>
 {{/if}}
 
-<br><br>
+<br /><br />
 <a href="/login">Do you think that you have an account already? Login! </a>

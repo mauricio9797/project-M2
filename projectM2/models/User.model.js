@@ -1,4 +1,4 @@
-const { Schema, model} = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema(
   {
@@ -6,13 +6,12 @@ const userSchema = new Schema(
       type: String,
       trim: true,
       required: true,
-      
     },
     habit: [{ ref: "Habit", type: Schema.Types.ObjectId }],
     email: {
       type: String,
       required: true,
-     
+
       lowercase: true,
       trim: true,
     },

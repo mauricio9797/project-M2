@@ -2,48 +2,54 @@
 <form action="/habitCreate" method="post">
 
   <label for="Habit">Habit:</label>
-  <input type="text" id="Habit" name= "Habit" value="Exercise" readonly="Exercise"/><br /><br />
+  <input
+    type="text"
+    id="Habit"
+    name="Habit"
+    value="Exercise"
+    readonly="Exercise"
+  /><br /><br />
 
-  <label for="Tasks">Tasks:</label><br>
-<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
-  <option value="Runing  3 to 5 days a week">Runing  3 to 5 days a week</option>
-  <option value="Keeping myself more active throughout the day">Keeping myself more active throughout the day</option>
- 
+  <label for="Tasks">Tasks:</label><br />
+  <select type="text" id="Tasks" aria-multiselectable="true" name="Tasks">
+    <option value="Runing  3 to 5 days a week">Runing 3 to 5 days a week</option>
+    <option value="Keeping myself more active throughout the day">Keeping myself
+      more active throughout the day</option>
 
-</select><br>
-<label for="Tasks1">Tasks:</label><br>
-<select type="text" id="Tasks1"   name="Tasks1">
-  
-  <option value="Going to the gym 3 to 5 times a week">Going to the gym 3 to 5 times a week</option>
+  </select><br />
+  <label for="Tasks1">Tasks:</label><br />
+  <select type="text" id="Tasks1" name="Tasks1">
 
-  <option value="Walking 10K steps a day">Walking 10K steps a day</option>
- 
-</select><br>
-<label for="Tasks2">Tasks:</label><br>
-<select type="text" id="Tasks2"   name="Tasks2">
-   <option value="Go for bike rides more often">Go for bike rides more often</option>
+    <option value="Going to the gym 3 to 5 times a week">Going to the gym 3 to 5
+      times a week</option>
 
- <option value="Choose more active, physical demanding ways of spend your free-time">Choose more active, physical demanding ways of spend your free-time </option>
+    <option value="Walking 10K steps a day">Walking 10K steps a day</option>
 
- </select><br>
-  
+  </select><br />
+  <label for="Tasks2">Tasks:</label><br />
+  <select type="text" id="Tasks2" name="Tasks2">
+    <option value="Go for bike rides more often">Go for bike rides more often</option>
 
-<label for="Time">Time:</label>
-<select type="text" id="Time" name="Time">
-  <option value="morning">Morning</option>
-  <option value="evening">Evening</option>
-  <option value="night">Night</option>
-  
-</select><br>
+    <option
+      value="Choose more active, physical demanding ways of spend your free-time"
+    >Choose more active, physical demanding ways of spend your free-time
+    </option>
 
+  </select><br />
 
+  <label for="Time">Time:</label>
+  <select type="text" id="Time" name="Time">
+    <option value="morning">Morning</option>
+    <option value="evening">Evening</option>
+    <option value="night">Night</option>
+
+  </select><br />
 
   <label for="Duration">Duration:</label>
-   <input type="text" id="Duration" name="Duration"  /><br /><br />
+  <input type="text" id="Duration" name="Duration" /><br /><br />
 
   <label for="Goal">Goal:</label>
-  <textarea type="text" id="Goal" name="Goal" ></textarea><br /><br />
+  <textarea type="text" id="Goal" name="Goal"></textarea><br /><br />
 
- 
- <input type="submit" value="Add Habit!" />
+  <input type="submit" value="Add Habit!" />
 </form>

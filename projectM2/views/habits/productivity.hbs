@@ -2,51 +2,55 @@
 <form action="/habitCreate" method="post">
 
   <label for="Habit">Habit:</label>
-  <input type="text" id="Habit" name= "Habit" value="Productivity" readonly="Productivity"/><br /><br />
+  <input
+    type="text"
+    id="Habit"
+    name="Habit"
+    value="Productivity"
+    readonly="Productivity"
+  /><br /><br />
 
-  <label for="Tasks">Tasks:</label><br>
-<select type="text" id="Tasks" aria-multiselectable="true" name="Tasks">
-  <option value="Create a to-do list or schedule">Create a to-do list or schedule</option>
-  <option value="Set achievable goals">Set achievable goals</option>
-  <option value="Prioritize tasks">Prioritize tasks</option>
-  <option value="Take on challenging tasks to improve skills">Take on challenging tasks to improve skills</option>
- 
-  
-</select><br>
-<label for="Tasks1">Tasks:</label><br>
-<select type="text" id="Tasks1"   aria-multiselectable="true"  name="Tasks1">
-  <option value="Minimize distractions">Minimize distractions</option>
-  <option value="Take breaks regularly">Take breaks regularly</option>
+  <label for="Tasks">Tasks:</label><br />
+  <select type="text" id="Tasks" aria-multiselectable="true" name="Tasks">
+    <option value="Create a to-do list or schedule">Create a to-do list or
+      schedule</option>
+    <option value="Set achievable goals">Set achievable goals</option>
+    <option value="Prioritize tasks">Prioritize tasks</option>
+    <option value="Take on challenging tasks to improve skills">Take on
+      challenging tasks to improve skills</option>
 
-  <option value="Practice time management">Practice time management</option>
-  
-</select><br>
-<label for="Tasks2">Tasks:</label><br>
-<select type="text" id="Tasks2" aria-multiselectable="true"  name="Tasks2">
-  <option value="Delegate tasks when possible">Delegate tasks when possible</option>
-  <option value="practice active listening">practice active listening</option>
- <option value="Learn to say 'no' when necessary">Learn to say "no" when necessary</option>
- <option value="Focus on one task at a time">Focus on one task at a time</option>
+  </select><br />
+  <label for="Tasks1">Tasks:</label><br />
+  <select type="text" id="Tasks1" aria-multiselectable="true" name="Tasks1">
+    <option value="Minimize distractions">Minimize distractions</option>
+    <option value="Take breaks regularly">Take breaks regularly</option>
 
- </select><br>
-  
+    <option value="Practice time management">Practice time management</option>
 
-<label for="Time">Time:</label>
-<select type="text" id="Time" name="Time">
-  <option value="morning">Morning</option>
-  <option value="evening">Evening</option>
-  <option value="night">Night</option>
-  
-</select><br>
+  </select><br />
+  <label for="Tasks2">Tasks:</label><br />
+  <select type="text" id="Tasks2" aria-multiselectable="true" name="Tasks2">
+    <option value="Delegate tasks when possible">Delegate tasks when possible</option>
+    <option value="practice active listening">practice active listening</option>
+    <option value="Learn to say 'no' when necessary">Learn to say "no" when
+      necessary</option>
+    <option value="Focus on one task at a time">Focus on one task at a time</option>
 
+  </select><br />
 
+  <label for="Time">Time:</label>
+  <select type="text" id="Time" name="Time">
+    <option value="morning">Morning</option>
+    <option value="evening">Evening</option>
+    <option value="night">Night</option>
+
+  </select><br />
 
   <label for="Duration">Duration:</label>
-   <input type="text" id="Duration" name="Duration"  /><br /><br />
+  <input type="text" id="Duration" name="Duration" /><br /><br />
 
   <label for="Goal">Goal:</label>
-  <textarea type="text" id="Goal" name="Goal" ></textarea><br /><br />
+  <textarea type="text" id="Goal" name="Goal"></textarea><br /><br />
 
- 
- <input type="submit" value="Add Habit!" />
+  <input type="submit" value="Add Habit!" />
 </form>
