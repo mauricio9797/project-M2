@@ -34,49 +34,43 @@ router.post("/signup", async (req, res) => {
   if (existingEmail || existingUser) {
     return res.render("accexist", { error: "Email/User already exists" });
   }
+ 
+ const salt = await bcryptjs.genSalt(12);
+ const hash = await bcryptjs.hash(req.body.password, salt);
+ const user = new User({ username: req.body.username, email:req.body.email, password: hash });
+ await user.save();
+req.session.user = {
+username: user.username,
+userId: user._id,
+}
 
-  const salt = await bcryptjs.genSalt(12);
-  const hash = await bcryptjs.hash(req.body.password, salt);
-  const user = new User({
-    username: req.body.username,
-    email: req.body.email,
-    password: hash,
-  });
-  await user.save();
-  req.session.user = {
-    username: user.username,
-    userId: user._id,
-  };
 
-  res.redirect("/profile");
-});
-router.get("/login", isLoggedOut, (req, res) => {
-  res.render("auth/login");
-});
-router.post("/login", async (req, res, next) => {
+
+
+res.redirect('/profile');
+
+ 
+})
+router.get('/login',isLoggedOut,(req,res)=>{
+  res.render("auth/login")
+})
+router.post('/login',async(req,res,next) =>{
   try {
-    const user = await User.findOne({
-      username: req.body.username,
-      email: req.body.email,
-    });
-    console.log(req.body);
-
-    if (!user) {
-      return res.render("auth/login", { error: "user non-exist" });
-    }
-    next();
-
-    const passwordMatch = await bcryptjs.compare(
-      req.body.password,
-      user.password
-    );
-    if (!passwordMatch) {
-      return res.render("auth/login", { error: "Password is incorrect" });
+    const user = await User.findOne({email: req.body.email})
+    console.log(req.body)
+  
+    if (!user){
+      return res.render("auth/login", {error: "user non-exist"})
+    }next()
+    
+    const passwordMatch = await bcryptjs.compare(req.body.password, user.password);
+    if (!passwordMatch){
+      return res.render( 'auth/login', {error:"Password is incorrect"});
     }
     req.session.user = {
-      username: user.username,
-      userId: user._id,
-    };
+      username: user.email,
+      userId: user._id
+  }
 
     console.log(req.body);
     res.redirect("/profile");

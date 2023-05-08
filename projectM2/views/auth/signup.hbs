@@ -1,19 +1,89 @@
-<h1>Sign up to our App!</h1>
-
-<form action="/signup" method="post">
-  <label for="username">Username</label>
-  <input type="username" name="username" value="" />
-  <label for="email">Email</label>
-  <input type="email" name="email" value="" />
-  <label for="password">Password</label>
-  <input type="password" name="password" value="" />
-
-  <input type="submit" value="Sign up now" />
-</form>
-
-{{#if error}}
-  <h2 style="color: red;">There was an error logging in... {{error}}</h2>
-{{/if}}
-
-<br /><br />
-<a href="/login">Do you think that you have an account already? Login! </a>
+<div class="container-fluid bg-blue p-0 m-0">
+   <div class="container ">
+  <nav class="navbar navbar-expand-md p-3">
+      <a class="navbar-brand fw-bold text-blue fs-3 d-flex align-items-center gap-3" href="/"><img class="favicon-sm bg-white" src="/images/habitsu.png" alt=""> Habitsu</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-flex justify-content-md-end">
+             <ul class="navbar-nav gap-4">
+            <li class="nav-item d-md-flex align-items-center">
+               <a class="nav-link text-white fs-5" href="/login">Sign In</a>
+            </li>
+              <li class="nav-item d-none d-md-block">
+               <a class="btn btn-light text-blue p-2 px-4 rounded-5 fs-5" href="/signup">Try for Free</a>
+            </li>
+             <li class="nav-item d-flex justify-content-center gap-3 pb-4 d-md-none p-2 border-bottom border-muted">
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/login">Login</a>
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/signup">Sign Up</a>
+            </li>
+            <li class="nav-item d-md-none border-bottom border-muted pb-4">
+              <a class="text-decoration-none text-dark fs-5" href="">Pricing</a>
+            </li>
+            <li class="nav-item d-md-none d-flex flex-column">
+              <a class="text-decoration-none text-dark fs-5" href="">Email Us</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Privacy Policy</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Terms of Service</a>
+            </li>
+            <li class="nav-item d-flex gap-3 d-md-none">
+              <a href=""><img src="/images/twitter.svg" alt=""></a>
+              <a href=""><img src="/images/linkedin.svg" alt=""></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+   </div>
+   <div class="d-flex justify-content-center my-5 w-100">
+         <div class="col-12  col-xl-4 bg-white rounded-3 text-center py-5 m-5 form-container form-container">
+             <h1 class="mb-3">Welcome!</h1>
+             <form action="/signup" method="post">
+             <div class="w-100 d-flex flex-column gap-3 px-4">
+              <input class="form-control p-3 p bg-gray" type="text" name="username" id="" placeholder="Name">
+             <input class="form-control p-3 p bg-gray" type="email" name="email" id="" placeholder="Email">
+             <input class="form-control p-3 p bg-gray" type="password" name="password" id="" placeholder="Password">
+             </div>
+             <div class="w-100 px-4 mt-3 mb-2">
+             <button class="btn btn-primary w-100 py-3" type="submit">Sign Up</button>
+             </div>
+             </form>
+             <div class="text-divider my-3 text-muted opacity-75 mx-4">Or</div>
+             <h4 class="fs-5 my-3">Already have an account? <a href="/login" class="text-orange text-decoration-none border-4 border-orange py-1">Sign In</a></h4>
+         </div>
+   </div>
+  <footer class="container-fluid bg-gray">
+     <div class="container">
+    <div class="row">
+       <div class="col-12 col-md">
+           <h1 class="text-blue d-flex align-items-center gap-3"><img class="favicon-md bg-blue" src="/images/habitsu.png" alt="">Habitsu</h1>
+           <p>Copyright © 2023</p>
+           <p class="fs-5">Made with <img src="images/logo11.svg" alt=""> by <a class="text-decoration-none" href="">Mauricio</a> & <a class="text-decoration-none" href="">Rampiyra</a> & <a class="text-decoration-none" href="">Krisztian</a></p>
+       </div>
+       <div class="col d-flex justify-content-start d-md-block">
+          <div class="row">
+            <div class="col d-flex gap-3 justify-content-end">
+               <ul class="list-style-none d-flex flex-column">
+                <li><a class="text-decoration-none text-muted fs-4" href="/">Home</a></li>
+                <li><a class="text-decoration-none text-muted fs-4" href="/about">About</a></li>
+                <li><a class="text-decoration-none text-muted fs-4" href="/contact">Contact</a></li>
+               </ul>
+               <ul class="list-style-none d-flex flex-column">
+                   <li><a class="text-decoration-none text-muted fs-4" href="/privacy-policy">Privacy Policy</a></li>
+                <li><a class="text-decoration-none text-muted fs-4" href="/terms-of-use">Terms of Service</a></li>
+                <li><a class="text-decoration-none text-muted fs-4" href="/contact">Email Us</a></li>
+                        <li class="d-flex gap-3 mt-3">
+                  <img src="/images/twitter.svg" alt="">
+                  <img src="/images/linkedin.svg" alt="">
+                </li>
+               </ul>
+            </div>
+          </div>
+       </div>
+    </div>
+     </div>
+   </footer>
+</div>
