@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="51" viewBox="0 0 52 51">
+    <defs>
+        <style>
+            .cls-4{fill:none}.cls-3{stroke:none}
+        </style>
+    </defs>
+    <g id="Group_3559" fill="none" stroke-linecap="round" stroke-width="8px" transform="translate(-773 -3196)">
+        <g id="Ellipse_918" stroke="#d3ddeb" transform="rotate(180 412.5 1623.5)">
+            <ellipse cx="26" cy="25.5" class="cls-3" rx="26" ry="25.5"/>
+            <ellipse cx="26" cy="25.5" class="cls-4" rx="22" ry="21.5"/>
+        </g>
+        <g id="Ellipse_919" stroke="#017bff" stroke-dasharray="100 370" transform="translate(773 3196)">
+            <ellipse cx="26" cy="25.5" class="cls-3" rx="26" ry="25.5"/>
+            <ellipse cx="26" cy="25.5" class="cls-4" rx="22" ry="21.5"/>
+        </g>
+    </g>
+</svg>

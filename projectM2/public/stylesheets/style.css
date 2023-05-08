@@ -1,6 +1,136 @@
+@font-face {
+  font-family: "Boston";
+  src: url(/fonts/boston.woff2) format("woff2"),url(/fonts/boston.woff) format("opentype"),url(/fonts/boston.otf) format("truetype")
+}
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  /* border:1px solid red; */
+  font-family: 'Boston';
+}
+
+html{
+  overflow-x: hidden !important;
+}
+
+:root{
+  --fs-9:4.5rem;
+  --fs-8:3.5rem;
+  --fs-7:3.2rem;
+  --blue: #017bff;
+  --gray: #eef3fb;
+  --orange:#ffa031;
+  --gray-light:#808d9f;
+}
+
+.text-default{
+  font-family: 'Helvetica Neue',"Serif";
+  font-weight: 400 !important;
+}
+
+.favicon-sm{
+  width:45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.favicon-md{
+  width:55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.fs-9{
+  font-size: var(--fs-9);
+}
+
+.fs-8{
+  font-size: var(--fs-8);
+}
+
+.fs-7{
+  font-size: var(--fs-7);
+}
+
+.list-card{
+  box-shadow: 0 5px 25px rgba(0,96,199,.3);
+}
+
+.list-box{
+  box-shadow: 0 5px 25px rgba(0,96,199,.3);
+  max-width:500px;
+}
+
+.bg-showchase{
+  max-width:1100px !important;
+}
+
+.form-container{
+  max-width: 500px !important;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#bg-top{
+  background-image: url('/images/background3.svg');
+  background-size: 100% 100%;
+}
+
+#bg-cards{
+  min-height:80vh;
+  background-image: url('../images/background2.svg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+background-position: 0 100%;
+padding:50px 0 100px;
+}
+
+#bg-bottom{
+  background-image: url('/images/background4.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.list-style-none{
+  list-style: none;
+}
+
+.navbar-toggler-icon{
+  background-image: url('/images/toggler-icon.svg') !important;
+  background-size: cover;
+}
+
+.navbar-toggler{
+  border:none !important;
+}
+
+.bg-gray{
+  background-color: var(--gray) !important;
+}
+
+.bg-blue{
+  background-color: var(--blue);
+}
+
+.text-blue{
+  color:var(--blue) !important;
+}
+
+.text-orange{
+  color:var(--orange);
+}
+
+.text-graylight{
+  color:var(--gray-light);
+}
+
+.border-orange{
+  border-bottom: 2px solid var(--orange);
 }
 
 a {
@@ -9,4 +139,48 @@ a {
 
 h1 {
   color: 15px;
+}
+
+.text-divider {
+  gap:0.7rem;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.text-divider::before, .text-divider::after {
+  content: '';
+  height: 2px;
+  background-color: gray;
+  flex-grow: 1;
+}
+
+footer{
+  padding:10rem 0;
+}
+
+@media (min-width:768px){
+  .position-md-absolute{
+    position: absolute !important;
+  }
+  .top-md-50{
+    top:50%;
+  }
+  .start-md-100{
+    left:100%;
+  }
+  .translate-md-middle{
+    transform:translate(-50%,-50%)
+  }
+}
+
+@media (max-width:768px){
+  .showcase-video{
+    width:325px !important;
+    height:625px !important;
+ }
+ .fs-7{
+  font-size: 2.2rem !important;
+ }
 }

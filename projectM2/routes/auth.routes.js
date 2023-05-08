@@ -54,11 +54,11 @@ res.redirect('/profile');
  
 })
 router.get('/login',isLoggedOut,(req,res)=>{
-  res.render("auth/signup")
+  res.render("auth/login")
 })
 router.post('/login',async(req,res,next) =>{
   try {
-    const user = await User.findOne({ username: req.body.username, email: req.body.email})
+    const user = await User.findOne({email: req.body.email})
     console.log(req.body)
   
     if (!user){
@@ -70,7 +70,7 @@ router.post('/login',async(req,res,next) =>{
       return res.render( 'auth/login', {error:"Password is incorrect"});
     }
     req.session.user = {
-      username: user.username,
+      username: user.email,
       userId: user._id
   }
 

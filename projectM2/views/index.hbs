@@ -1,4 +1,229 @@
-<h1>Welcome to Habitsu!</h1>
+<div class="container-fluid m-0 p-0 bg-light">
+   <div class="container">
+    <nav class="navbar navbar-expand-md p-3">
+      <a class="navbar-brand fw-bold text-blue fs-3 d-flex align-items-center gap-3" href=""><img class="favicon-sm bg-blue" src="/images/habitsu.png" alt=""> Habitsu</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-flex justify-content-md-end">
+             <ul class="navbar-nav gap-4">
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 " href="/login">Sign In</a>
+            </li>
+              <li class="nav-item d-none d-md-block">
+               <a class="btn btn-primary p-2 px-4 rounded-5 fs-5" href="/signup">Try for Free</a>
+            </li>
+             <li class="nav-item d-flex justify-content-center gap-3 pb-4 d-md-none p-2 border-bottom border-muted">
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/login">Login</a>
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/signup">Sign Up</a>
+            </li>
+            <li class="nav-item d-md-none border-bottom border-muted pb-4">
+              <a class="text-decoration-none text-dark fs-5" href="">Pricing</a>
+            </li>
+            <li class="nav-item d-md-none d-flex flex-column">
+              <a class="text-decoration-none text-dark fs-5" href="">Email Us</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Privacy Policy</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Terms of Service</a>
+            </li>
+            <li class="nav-item d-flex gap-3 d-md-none">
+              <a href=""><img src="/images/twitter.svg" alt=""></a>
+              <a href=""><img src="/images/linkedin.svg" alt=""></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+   </div>
+   <div class="container-fluid m-0 p-0">
+    <div class="container">
+    <div id="bg-top" class="row">
+      <div class="col d-flex align-items-center flex-column mt-5">
+    <div>
+      <img class="w-100 h-100" src="images/background1.svg" alt="">
+    </div>
+    <div class="w-75 my-4">
+    <h1 class="fw-bold fs-9 text-center px-lg-3" >A habit tracker for celebrating daily goals</h1>
+    <h2 class=" fs-1 fw-light opacity-75 text-center text-graylight text-default">Develop good habits and eliminate bad ones by visalizing daily progress</h2>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row mt-5 d-flex justify-content-center">
+       <div class="col-12 col-xl-10 d-flex align-items-center flex-column">
+         <h1 class="fw-bold fs-7 mb-3">Avaliable wherever you are</h1>
+         <div class="row w-100 h-100 position-relative d-flex justify-content-center bg-showchase">
+          <div class="order-2 order-md-1">
+          <img class="w-100 h-100  rounded-2 list-card"  src="images/background5.png" alt="">
+          </div>
+          <div class="showcase-video mb-5 mb-md-0 order-1 order-md-2 w-25 h-75 position-md-absolute position-relative top-md-50 start-md-100 translate-md-middle">
+           <img class="h-100 w-100 position-absolute z-1" src="/images/logo12.png" alt="">
+           <video class="w-100 h-100 position-absolute p-3 pt-4" autoplay muted loop style="overflow:clip;object-fit:contain;"><source src="images/video1.mp4" type="video/mp4"></video>
+          </div>
+         </div>
+         <div>
+         </div>
+         <div class="d-flex gap-4 my-5">
+          <a href="/signup" class="btn btn-primary px-5 py-3 fs-5 rounded-5">Try for Free</a>
+          <button class="btn btn-light px-5 py-3 fs-5 rounded-5">Add to Chrome</button>
+         </div>
+       </div>
+    </div>
+   </div>
+</div>
+<div id="bg-cards"  class="container-fluid">
+   <div class="container">
+       <div class="row d-flex gap-5">
+         <div class="col d-flex align-items-center flex-column py-5">
+           <h2 class="fw-bold fs-7">Set goals, simply</h2>
+         </div>
+         <div class="row d-flex gap-5 justify-content-center">
+                     <div class="col-12 order-2 order-md-1 col-lg-5 list-box rounded-3 p-3 pt-2 bg-white p-5">
+              <div class="my-4">
+                <img src="images/logo2.svg" alt="">
+              </div>
+              <h2 class="fw-bold fs-1">To-Do</h2>
+              <p class="text-graylight opacity-75 fs-4 text-default">Trying to learn Spanish? Want to read for 30 minutes a day? Manage daily habits and achieve your goals.</p>
+              <img class="w-100" src="images/logo3.svg" alt="">
+            </div>
+             <div class="col-12 order-1 order-md-2 col-lg-5 list-box rounded-3 p-3 bg-white position-relative p-5">
+              <img class="position-absolute top-0 start-100 translate-middle " src="images/logo5.svg" alt="">
+              <div class="mb-3">
+                <img src="images/logo1.svg" alt="">
+              </div>
+              <h2 class="fw-bold fs-1">Not-To-Do</h2>
+              <p class="text-graylight opacity-75 fs-4 text-default">Spending hours on Instagram? Track what’s stopping you from achieving goals and build better daily habits.</p>
+              <img class="w-100" src="images/logo4.svg" alt="">
+            </div>
+         </div>
+           <div class="row d-flex gap-5 justify-content-center">
+                     <div class="col-12 col-lg-5 list-box rounded-3 p-3 pt-2 bg-white p-5">
+              <div class="my-4">
+                <img src="images/logo7.svg" alt="">
+              </div>
+              <h2 class="fw-bold fs-1">Streaks</h2>
+              <p class="text-graylight opacity-75 fs-4 text-default">Don’t break the chain! Each small win provides motivation and fuel to continue building your habit.</p>
+              <img class="w-100" src="images/logo8.svg" alt="">
+            </div>
+             <div class="col-12 col-lg-5 list-box rounded-3 p-3 pt-2 bg-white p-5">
+              <div class="my-4">
+                <img src="images/logo6.svg" alt="">
+              </div>
+              <h2 class="fw-bold fs-1">Progress</h2>
+              <p class="text-graylight opacity-75 fs-4 text-default">Measure your success with daily, weekly, monthly, yearly and all time progress for habits.</p>
+              <img class="w-100" src="images/logo9.svg" alt="">
+            </div>
+         </div>
+           <div class="d-flex justify-content-center mb-5">
+            <a class="btn btn-light fs-5 rounded-5 px-4 py-3 text-blue fw-bold" href="/signup">Get Started Free</a>
+           </div>         
+       </div>
+   </div>
+</div>
+<div class="container-fluid">
+   <div class="container">
+     <div class="row d-flex gap-3 py-5 my-5 justify-content-center">
+         <div class="col-12 col-md-5 d-flex flex-column d-md-block text-center text-md-start align-items-center">
+        <h1 class="fw-bold">Pricing</h1>
+        <p class="text-graylight opacity-75 fs-3 text-default">Free for your first three habits or join premium for unlimited.</p>
+        <a class="btn btn-primary fs-4 px-4 py-3 rounded-5" href="/signup">Get Started Free</a>
+         </div>
+                  <div class="col-5 col-md-3">
+                    <div class="bg-gray w-25 rounded-4 p-4 w-100">
+                     <span class="fs-1">🌱</span>
+                     <h4 class="fw-bold">Free</h4>
+                     <p class="fs-2 fw-bold p-0 m-0">$0</p>
+                     <p class="p-0 m-0 text-graylight opacity-75 text-default">/forever</p>
+                    <p class="d-flex align-items-center gap-2"><i class="fa-sharp fa-solid fa-check text-blue fw-bold fs-5"></i>3 Free Habits</p>
+                    <p class="d-flex align-items-center gap-2"><i class="fa-sharp fa-solid fa-check text-blue fw-bold fs-5"></i> All the features</p>
+                    </div>
+         </div>
+         <div class="col-6 col-md-3">
+                    <div class="bg-gray w-25 rounded-4 p-4 w-100">
+                     <span class="fs-1">🚀</span>
+                     <h4 class="fw-bold">Premium</h4>
+                    <div class="d-flex gap-4">
+                       <div>
+                          <h2 class="fw-bold">$2.50</h2>
+                          <p class="text-graylight opacity-75 text-default">/ month</p>
+                       </div>
+                         <div>
+                           <h2 class="fw-bold">$25.00</h2>
+                          <p class="text-graylight opacity-75 text-default">/ year</p>
+                       </div>
+                    </div>
+                     <p class="d-flex align-items-center gap-2"><i class="fa-sharp fa-solid fa-check text-blue fw-bold fs-5"></i> Unlimited Habits</p>
+                     <p class="d-flex align-items-center gap-2"><i class="fa-sharp fa-solid fa-check text-blue fw-bold fs-5"></i> All the features</p>
+                    </div>
+         </div>
+     </div>
+   </div>
+   <div class="container">
+     <div class="row text-center">
+       <h1 class="fw-bold fs-7">We are what we do every day</h1>
+       <h3 class="text-graylight opacity-75 fs-4 text-default">No matter how you want to improve, Habitsu is flexible enough to track any habit</h3>
+     </div>
+   </div>
+   <div class="container-fluid py-5">
+      <h1 class="text-danger text-center">Animation Here!!!!!!</h1>
+   </div>
+   <div id="bg-bottom" class="container-fluid d-flex flex-column align-items-center my-5 py-5">
+       <img src="images/logo10.svg" alt="">
+       <h1 class="fw-bold mt-5 my-4 fs-7 text-center text-md-start">Track 3 habits for free, forever.</h1>
+       <p class="text-graylight opacity-75 fs-4 mb-5 text-center text-md-start text-default">Your first 3 habits are on us, forever. Join Premium to track unlimited habits.</p>
+        <a class="btn btn-primary fs-4 px-4 py-3 rounded-5" href="/signup">Get Started Free</a>
+   </div>
+   <div class="container-fluid py-5 my-5">
+      <div class="container text-center">
+        <h1 class="fw-bold">Analytics for your goals</h1>
+        <p class="fs-4 text-graylight opacity-75 text-default">Visualize the data behind your goals and watch as your “I wish I coulds” become a reality</p>
+        <h1 class="text-danger fw-bold">Animation here!!!!!</h1>
+      </div>
+   </div>
+    <footer class="container-fluid bg-gray">
+     <div class="container">
+    <div class="row">
+       <div class="col-12 col-md">
+           <h1 class="text-blue d-flex align-items-center gap-3"><img class="favicon-md bg-blue" src="/images/habitsu.png" alt="">Habitsu</h1>
+           <p class="text-graylight opacity-75">Copyright © 2023</p>
+           <p class="fs-5">Made with <img src="images/logo11.svg" alt=""> by <a class="text-decoration-none" href="">Mauricio</a> & <a class="text-decoration-none" href="">Rampiyra</a> & <a class="text-decoration-none" href="">Krisztian</a></p>
+       </div>
+       <div class="col d-flex justify-content-start d-md-block">
+          <div class="row">
+            <div class="col d-flex gap-3 justify-content-end">
+               <ul class="list-style-none d-flex flex-column">
+                <li><a class="text-decoration-none text-dark fs-4" href="/">Home</a></li>
+                <li><a class="text-decoration-none text-dark fs-4" href="/about">About</a></li>
+                <li><a class="text-decoration-none text-dark fs-4" href="/contact">Contact</a></li>
+               </ul>
+               <ul class="list-style-none d-flex flex-column">
+                   <li><a class="text-decoration-none text-dark fs-4" href="/privacy-policy">Privacy Policy</a></li>
+                <li><a class="text-decoration-none text-dark fs-4" href="/terms-of-use">Terms of Service</a></li>
+                <li><a class="text-decoration-none text-dark fs-4" href="/contact">Email Us</a></li>
+                        <li class="d-flex gap-3 mt-3">
+                  <img src="/images/twitter.svg" alt="">
+                  <img src="/images/linkedin.svg" alt="">
+                </li>
+               </ul>
+            </div>
+          </div>
+       </div>
+    </div>
+     </div>
+   </footer>
+</div>
+
+
+
+
+
+
+
+{{!-- <h1>Welcome to Habitsu!</h1>
 <br>
 <p>Habits are important in life because they help us establish a routine and stay consistent in our actions. When we form positive habits, we are more likely to achieve our goals and lead a healthier, happier life. Here are some limitations that can arise when we fail to establish positive habits:
 <p>
@@ -29,4 +254,4 @@ One story that illustrates the importance of habits is that of Benjamin Franklin
 </script>
 
 
-
+ --}}
