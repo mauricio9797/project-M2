@@ -2,49 +2,54 @@
 <form action="/habitCreate" method="post">
 
   <label for="Habit">Habit:</label>
-  <input type="text" id="Habit" name= "Habit" value="Dopamine fasting" readonly="Dopamine fasting"/><br /><br />
+  <input
+    type="text"
+    id="Habit"
+    name="Habit"
+    value="Dopamine fasting"
+    readonly="Dopamine fasting"
+  /><br /><br />
 
-  <label for="Tasks">Tasks:</label><br>
-<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
-  <option value="Reduce social media activity">Reduce social media activity</option>
-  <option value="Eliminate social media accounts">Eliminate social media accounts</option>
- 
-  
- 
-  
-</select><br>
+  <label for="Tasks">Tasks:</label><br />
+  <select type="text" id="Tasks" name="Tasks">
+    <option value="Reduce social media activity">Reduce social media activity</option>
+    <option value="Eliminate social media accounts">Eliminate social media
+      accounts</option>
 
-<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
-  <option value="spend less time using devices">spend less time using devices</option>
-  <option value="Just use your phone when strictly necessary, make/receive calls...">Just use your phone when strictly necessary, make/receive calls...</option>
-<option value="Do not use headphones">Do not use headphones</option>
- 
-</select><br>
-<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
-  <option value="Plan daily time without any sort of distractions">Plan daily time without any sort of distractions</option>
-  <option value="Remove unnecessary pleasures, like listening to music">Remove unnecessary pleasures, like listening to music</option>
- <option value="Eat plain, simple food">Eat plain, simple food</option>
+  </select><br />
+  <label for="Tasks1">Tasks:</label><br />
+  <select type="text" id="Tasks1" name="Tasks1">
+    <option value="spend less time using devices">spend less time using devices</option>
+    <option
+      value="Just use your phone when strictly necessary, make/receive calls..."
+    >Just use your phone when strictly necessary, make/receive calls...</option>
+    <option value="Do not use headphones">Do not use headphones</option>
 
+  </select><br />
 
- </select><br>
-  
+  <label for="Tasks">Tasks:</label><br />
+  <select type="text" id="Tasks2" name="Tasks2">
+    <option value="Plan daily time without any sort of distractions">Plan daily
+      time without any sort of distractions</option>
+    <option value="Remove unnecessary pleasures, like listening to music">Remove
+      unnecessary pleasures, like listening to music</option>
+    <option value="Eat plain, simple food">Eat plain, simple food</option>
 
-<label for="Time">Time:</label>
-<select type="text" id="Time" name="Time">
-  <option value="morning">Morning</option>
-  <option value="evening">Evening</option>
-  <option value="night">Night</option>
-  
-</select><br>
+  </select><br />
 
+  <label for="Time">Time:</label>
+  <select type="text" id="Time" name="Time">
+    <option value="morning">Morning</option>
+    <option value="evening">Evening</option>
+    <option value="night">Night</option>
 
+  </select><br />
 
   <label for="Duration">Duration:</label>
-   <input type="text" id="Duration" name="Duration"  /><br /><br />
+  <input type="text" id="Duration" name="Duration" /><br /><br />
 
   <label for="Goal">Goal:</label>
-  <textarea type="text" id="Goal" name="Goal" ></textarea><br /><br />
+  <textarea type="text" id="Goal" name="Goal"></textarea><br /><br />
 
- 
- <input type="submit" value="Add Habit!" />
+  <input type="submit" value="Add Habit!" />
 </form>

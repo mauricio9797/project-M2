@@ -2,44 +2,46 @@
 <form action="/habitCreate" method="post">
 
   <label for="Habit">Habit:</label>
-  <input type="text" id="Habit" name= "Habit" value="Meditation" readonly="Meditation"/><br /><br />
+  <input
+    type="text"
+    id="Habit"
+    name="Habit"
+    value="Meditation"
+    readonly="Meditation"
+  /><br /><br />
 
-  <label for="Tasks">Tasks:</label><br>
-<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
-  <option value="Meditate for 5 minutes straight, not distractions">Meditate for 5 minutes straight, not distractions</option>
-  <option value="Meditate for 10 minutes straight, not distractions">Meditate for 10 minutes straight, not distractions</option>
-  <option value="Meditate for 15 minutes straight, not distractions">Meditate for 15 minutes straight, not distractions</option>
-  <option value="Meditate for 20 minutes straight, not distractions">Meditate for 20 minutes straight, not distractions</option>
-  <option value="Meditate for 25 minutes straight, not distractions">Meditate for 25 minutes straight, not distractions</option>
-   <option value="Meditate for 30 minutes straight, not distractions">Meditate for 30 minutes straight, not distractions</option>
- 
-  {{if err}}
-  onreturn="prompt("cf")
-</select><br>
+  <label for="Tasks">Tasks:</label><br />
+  <select type="text" id="Tasks" name="Tasks">
+    <option value="Meditate for 5 minutes straight, not distractions">Meditate
+      for 5 minutes straight, not distractions</option>
+    <option value="Meditate for 10 minutes straight, not distractions">Meditate
+      for 10 minutes straight, not distractions</option>
+    <option value="Meditate for 15 minutes straight, not distractions">Meditate
+      for 15 minutes straight, not distractions</option>
+    <option value="Meditate for 20 minutes straight, not distractions">Meditate
+      for 20 minutes straight, not distractions</option>
+    <option value="Meditate for 25 minutes straight, not distractions">Meditate
+      for 25 minutes straight, not distractions</option>
+    <option value="Meditate for 30 minutes straight, not distractions">Meditate
+      for 30 minutes straight, not distractions</option>
 
+  </select><br />
 
-  
+  <label for="Time">Time:</label>
+  <select type="text" id="Time" name="Time">
+    <option value="morning">Morning</option>
+    <option value="evening">Evening</option>
+    <option value="night">Night</option>
 
-  
-
-<label for="Time">Time:</label>
-<select type="text" id="Time" name="Time">
-  <option value="morning">Morning</option>
-  <option value="evening">Evening</option>
-  <option value="night">Night</option>
-  
-</select><br>
-
-
+  </select><br />
 
   <label for="Duration">Duration:</label>
-   <input type="text" id="Duration" name="Duration"  /><br /><br />
+  <input type="text" id="Duration" name="Duration" /><br /><br />
 
   <label for="Goal">Goal:</label>
-  <textarea type="text" id="Goal" name="Goal" ></textarea><br /><br />
+  <textarea type="text" id="Goal" name="Goal"></textarea><br /><br />
 
- 
- <input type="submit" value="Add Habit!" />
+  <input type="submit" value="Add Habit!" />
 </form>
 {{#if err}}
   <h2 style="color: red;">There was an error, dont repeat the task! {{err}}</h2>

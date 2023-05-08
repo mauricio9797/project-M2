@@ -2,47 +2,60 @@
 <form action="/habitCreate" method="post">
 
   <label for="Habit">Habit:</label>
-  <input type="text" id="Habit" name= "Habit" value="Mindfulness" readonly="Mindfulness"/><br /><br />
+  <input
+    type="text"
+    id="Habit"
+    name="Habit"
+    value="Mindfulness"
+    readonly="Mindfulness"
+  /><br /><br />
 
-  <label for="Tasks">Tasks:</label><br>
-<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
-  <option value="Practice yoga or tai chi">Practice yoga or tai chi</option>
-  <option value="Practice self-reflection">Practice self-reflection</option>
-  <option value="Listen to relaxing music">Listen to relaxing music</option>
+  <label for="Tasks">Tasks:</label><br />
+  <select type="text" id="Tasks" name="Tasks">
+    <option value="Practice yoga or tai chi">Practice yoga or tai chi</option>
+    <option value="Practice self-reflection">Practice self-reflection</option>
+    <option value="Listen to relaxing music">Listen to relaxing music</option>
 
-</select><br>
+  </select><br />
+  <label for="Tasks1">Tasks:</label>
+  <select type="text" id="Tasks1" name="Tasks1">
 
-<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
-  
-  <option value="Start living in the present">Start living in the present</option>
+    <option value="Start living in the present">
+      Start living in the present</option>
 
-  <option value="Start to incorporate detachment in areas of your life that causes you stress"> Start to incorporate detachment in areas of your life that causes you stress</option>
-  <option value="Keep a gratitude journal">Keep a gratitude journal</option>
-</select><br>
-<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
-   <option value="Take breaks from work and just be conscious on your present self">Take breaks from work and just be conscious on your present self</option>
+    <option
+      value="Start to incorporate detachment in areas of your life that causes you stress"
+    >
+      Start to incorporate detachment in areas of your life that causes you
+      stress</option>
+    <option value="Keep a gratitude journal">Keep a gratitude journal</option>
+  </select><br />
 
- <option value="Focus on your breath, what is happening in your body">Focus on your breath, what is happening in your body</option>
-<option value="Limit exposure to negative news or social media">Limit exposure to negative news or social media</option>
- </select><br>
-  
+  <label for="Tasks2">Tasks:</label>
+  <select type="text" id="Tasks2" name="Tasks2">
+    <option
+      value="Take breaks from work and just be conscious on your present self"
+    >Take breaks from work and just be conscious on your present self</option>
 
-<label for="Time">Time:</label>
-<select type="text" id="Time" name="Time">
-  <option value="morning">Morning</option>
-  <option value="evening">Evening</option>
-  <option value="night">Night</option>
-  
-</select><br>
+    <option value="Focus on your breath, what is happening in your body">Focus
+      on your breath, what is happening in your body</option>
+    <option value="Limit exposure to negative news or social media">Limit
+      exposure to negative news or social media</option>
+  </select><br />
 
+  <label for="Time">Time:</label>
+  <select type="text" id="Time" name="Time">
+    <option value="morning">Morning</option>
+    <option value="evening">Evening</option>
+    <option value="night">Night</option>
 
+  </select><br />
 
   <label for="Duration">Duration:</label>
-   <input type="text" id="Duration" name="Duration"  /><br /><br />
+  <input type="text" id="Duration" name="Duration" /><br /><br />
 
   <label for="Goal">Goal:</label>
-  <textarea type="text" id="Goal" name="Goal" ></textarea><br /><br />
+  <textarea type="text" id="Goal" name="Goal"></textarea><br /><br />
 
- 
- <input type="submit" value="Add Habit!" />
+  <input type="submit" value="Add Habit!" />
 </form>

@@ -2,49 +2,59 @@
 <form action="/habitCreate" method="post">
 
   <label for="Habit">Habit:</label>
-  <input type="text" id="Habit" name= "Habit" value="Real-food based diet" readonly="Real-food based diet"/><br /><br />
+  <input
+    type="text"
+    id="Habit"
+    name="Habit"
+    value="Real-food based diet"
+    readonly="Real-food based diet"
+  /><br /><br />
 
-  <label for="Tasks">Tasks:</label><br>
-<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
-  <option value="Avoid processed foods">Avoid processed foods</option>
-  <option value="Prioritize meals based around vegetables, lean sources of protein and healthy fats">Prioritize meals based around vegetables, lean sources of protein and healthy fats</option>
-  <option value="Take care of how you digest foods, eliminate the ones that stress your digestive system, like gluten, milk...">Take care of how you digest foods, eliminate the ones that stress your digestive system, like gluten, milk...</option>
- 
-  
-</select><br>
+  <label for="Tasks">Tasks:</label><br />
+  <select type="text" id="Tasks" name="Tasks">
+    <option value="Avoid processed foods">Avoid processed foods</option>
+    <option
+      value="Prioritize meals based around vegetables, lean sources of protein and healthy fats"
+    >Prioritize meals based around vegetables, lean sources of protein and
+      healthy fats</option>
+    <option
+      value="Take care of how you digest foods, eliminate the ones that stress your digestive system, like gluten, milk..."
+    >Take care of how you digest foods, eliminate the ones that stress your
+      digestive system, like gluten, milk...</option>
 
-<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
-  <option value="Eat unprocessed foods at least 80% of the time">Eat unprocessed foods at least 80% of the time</option>
-  <option value="Drink at least 2 litres of water per day">Drink at least 2 litres of water per day</option>
- 
+  </select><br />
+  <label for="Tasks1">Tasks:</label><br />
+  <select type="text" id="Tasks1" name="Tasks1">
+    <option value="Eat unprocessed foods at least 80% of the time">Eat
+      unprocessed foods at least 80% of the time</option>
+    <option value="Drink at least 2 litres of water per day">Drink at least 2
+      litres of water per day</option>
 
- 
-  
-</select><br>
-<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
-  <option value="Make of polyunsaturated and monounsaturated fats your main source of dietary fats">Make of polyunsaturated and monounsaturated fats your main source of dietary fats</option>
-  <option value="practice conscious eating">practice conscious eating"</option>
- <option value="Eat plenty of fruit">Eat plenty of fruit</option>
+  </select><br />
+  <label for="Tasks2">Tasks:</label><br />
+  <select type="text" id="Tasks2" name="Tasks2">
+    <option
+      value="Make of polyunsaturated and monounsaturated fats your main source of dietary fats"
+    >Make of polyunsaturated and monounsaturated fats your main source of
+      dietary fats</option>
+    <option value="practice conscious eating">practice conscious eating"</option>
+    <option value="Eat plenty of fruit">Eat plenty of fruit</option>
 
- </select><br>
-  
+  </select><br />
 
-<label for="Time">Time:</label>
-<select type="text" id="Time" name="Time">
-  <option value="morning">Morning</option>
-  <option value="evening">Evening</option>
-  <option value="night">Night</option>
-  
-</select><br>
+  <label for="Time">Time:</label>
+  <select type="text" id="Time" name="Time">
+    <option value="morning">Morning</option>
+    <option value="evening">Evening</option>
+    <option value="night">Night</option>
 
-
+  </select><br />
 
   <label for="Duration">Duration:</label>
-   <input type="text" id="Duration" name="Duration"  /><br /><br />
+  <input type="text" id="Duration" name="Duration" /><br /><br />
 
   <label for="Goal">Goal:</label>
-  <textarea type="text" id="Goal" name="Goal" ></textarea><br /><br />
+  <textarea type="text" id="Goal" name="Goal"></textarea><br /><br />
 
- 
- <input type="submit" value="Add Habit!" />
+  <input type="submit" value="Add Habit!" />
 </form>

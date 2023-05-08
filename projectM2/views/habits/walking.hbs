@@ -2,34 +2,35 @@
 <form action="/habitCreate" method="post">
 
   <label for="Habit">Habit:</label>
-  <input type="text" id="Habit" name= "Habit" value="Relationships" readonly="Relationships"/><br /><br />
+  <input
+    type="text"
+    id="Habit"
+    name="Habit"
+    value="Walking"
+    readonly="Walking"
+  /><br /><br />
 
- 
-<select type="text" id="Tasks" aria-multiselectable="true"  name="Tasks">
-  <option value="8K steps a day">8K steps a day</option>
-  <option value="10K steps a day">10K steps a day</option>
- <option value="15K steps a day">15K steps a day</option>
- <option value="20K steps a day">20K steps a day</option>
+  <select type="text" id="Tasks" aria-multiselectable="true" name="Tasks">
+    <option value="8K steps a day">8K steps a day</option>
+    <option value="10K steps a day">10K steps a day</option>
+    <option value="15K steps a day">15K steps a day</option>
+    <option value="20K steps a day">20K steps a day</option>
 
- </select><br>
-  
+  </select><br />
 
-<label for="Time">Time:</label>
-<select type="text" id="Time" name="Time">
-  <option value="morning">Morning</option>
-  <option value="evening">Evening</option>
-  <option value="night">Night</option>
-  
-</select><br>
+  <label for="Time">Time:</label>
+  <select type="text" id="Time" name="Time">
+    <option value="morning">Morning</option>
+    <option value="evening">Evening</option>
+    <option value="night">Night</option>
 
-
+  </select><br />
 
   <label for="Duration">Duration:</label>
-   <input type="text" id="Duration" name="Duration"  /><br /><br />
+  <input type="text" id="Duration" name="Duration" /><br /><br />
 
   <label for="Goal">Goal:</label>
-  <textarea type="text" id="Goal" name="Goal" ></textarea><br /><br />
+  <textarea type="text" id="Goal" name="Goal"></textarea><br /><br />
 
- 
- <input type="submit" value="Add Habit!" />
+  <input type="submit" value="Add Habit!" />
 </form>
