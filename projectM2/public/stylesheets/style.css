@@ -21,12 +21,46 @@
   50% {
     width:50%;
   }
+  65% {
+    width:75%;
+  }
   75%{
+    width:75%;
+  }
+  85%{
     width:75%;
   }
   100%{
     width: 75%;
   }
+}
+
+@keyframes weekpercentage-animation{
+  0%{
+    content: '0%';
+  }
+  10%{
+    content: '10%';
+  }
+  19%{
+    content: '19%';
+  }
+  28%{
+    content: '28%';
+  }
+  40%{
+    content: '40%';
+  }
+  56%{
+    content: '56%';
+  }
+  78%{
+    content: '78%';
+  }
+  100%{
+    content: '95%';
+  }
+
 }
 
 html{
@@ -41,12 +75,41 @@ html{
   --gray: #eef3fb;
   --orange:#ffa031;
   --gray-light:#808d9f;
+  --green: #89DEA6;
 }
 
 .progress{
   height:0.7rem !important;
   width: 100% !important;
   max-width: 650px;
+}
+
+/* 
+.week-percentage{
+  animation-name: weekpercentage-animation;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+} */
+
+.week-percentage::after{
+  content: "";
+  animation-name: weekpercentage-animation;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.progress-text{
+  width:100% !important;
+  max-width: 650px;
+}
+
+.progress-bar{
+  animation-name: progressbar-animation;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 .text-default{
@@ -151,6 +214,10 @@ padding:50px 0 100px;
 
 .text-graylight{
   color:var(--gray-light);
+}
+
+.text-green{
+  color:var(--green);
 }
 
 .bg-lightgray{

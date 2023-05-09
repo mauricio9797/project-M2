@@ -1,22 +1,24 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
 document.addEventListener("DOMContentLoaded", () => {
   // console.log("projectM2 JS imported successfully!");
-  const progressBar = document.querySelector(".progress-bar"); 
-   function startAnimation(){
-    // progressBar.style.width = "0%";
-    progressBar.style.animation = 'none'
-    progressBar.style.animation = 'progressbar-animation 5s linear';
-    // progressBar.style.width = '75%';
+  const progressBar = document.querySelector(".progress-bar");
+  const weekText = document.querySelector(".week-percentage");
+   function stopAnimation(){
+    setTimeout(() => {
+      progressBar.style.animationPlayState = 'paused';
+      weekText.style.animationPlayState = 'paused';
+      setTimeout(() => {
+        startAnimation();
+      },3500)
+    },2500);
   }
   
-  function resetAnimation(){
-    progressBar.style.width = '75%';
-    setTimeout(startAnimation, 5000);
+  function startAnimation(){
+    progressBar.style.animationPlayState = 'running';
+    weekText.style.animationPlayState = 'running';
+    stopAnimation()
   }
-  
-  setInterval(() => {
-    startAnimation();
-  }, 5000)
+   stopAnimation();
 });
 
 
