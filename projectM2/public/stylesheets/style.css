@@ -11,6 +11,24 @@
   font-family: 'Boston';
 }
 
+@keyframes progressbar-animation{
+  0% {
+    width:0;
+  }
+  25% {
+    width: 25%;
+  }
+  50% {
+    width:50%;
+  }
+  75%{
+    width:75%;
+  }
+  100%{
+    width: 75%;
+  }
+}
+
 html{
   overflow-x: hidden !important;
 }
@@ -23,6 +41,12 @@ html{
   --gray: #eef3fb;
   --orange:#ffa031;
   --gray-light:#808d9f;
+}
+
+.progress{
+  height:0.7rem !important;
+  width: 100% !important;
+  max-width: 650px;
 }
 
 .text-default{
@@ -127,6 +151,10 @@ padding:50px 0 100px;
 
 .text-graylight{
   color:var(--gray-light);
+}
+
+.bg-lightgray{
+  background-color: var(--gray-light) !important;
 }
 
 .border-orange{
