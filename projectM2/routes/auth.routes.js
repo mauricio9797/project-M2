@@ -103,6 +103,7 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
       { $push: { habit: habit._id } }
     );
 
+
     res.redirect("/myHabits");
   } catch (err) {
     res.status(404).render("emptyfield");
@@ -191,7 +192,9 @@ router.get('/terms-of-use', (req, res) => {
   res.render('auth/termsUse');
 });
 
-
+router.get("/progressPage", isLoggedIn, (req, res, next) => {
+  res.render("progressPage");
+});
 
 
 

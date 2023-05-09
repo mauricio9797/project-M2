@@ -10,7 +10,6 @@ const HabitSchema = new Schema(
 
     Tasks: {
       type: String,
-
       lowercase: true,
       trim: true,
       required: true,
@@ -18,7 +17,6 @@ const HabitSchema = new Schema(
 
     Tasks1: {
       type: String,
-
       lowercase: true,
       trim: true,
       required: true,
@@ -26,7 +24,6 @@ const HabitSchema = new Schema(
 
     Tasks2: {
       type: String,
-
       lowercase: true,
       trim: true,
       required: true,
@@ -36,6 +33,7 @@ const HabitSchema = new Schema(
       type: String,
       required: true,
     },
+
     Duration: {
       type: Number,
       required: true,
