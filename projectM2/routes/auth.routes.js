@@ -185,7 +185,7 @@ router.get('/contact', (req, res) => {
 });
 
 router.get('/privacy-policy', (req, res) => {
-  res.render('auth/prpolicy');
+  res.render('auth/policy');
 });
 
 router.get('/terms-of-use', (req, res) => {
