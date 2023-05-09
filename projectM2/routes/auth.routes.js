@@ -192,10 +192,15 @@ router.get('/terms-of-use', (req, res) => {
   res.render('auth/termsUse');
 });
 
-router.get("/progressPage", isLoggedIn, (req, res, next) => {
-  res.render("progressPage");
+router.get("/habitCount/:habitId", isLoggedIn, async (req, res, next) => {
+  try {
+    const { habitId } = req.params;
+    const habit = await Habit.findById(habitId);
+    res.render("habitCount", { habit });
+  } catch (err) {
+    console.error("There was an error", err);
+  }
 });
-
 
 
 module.exports = router;
