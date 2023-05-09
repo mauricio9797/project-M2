@@ -129,6 +129,10 @@ padding:50px 0 100px;
   color:var(--gray-light);
 }
 
+.bg-lightgray{
+  background-color: var(--gray-light) !important;
+}
+
 .border-orange{
   border-bottom: 2px solid var(--orange);
 }
