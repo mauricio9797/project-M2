@@ -27,8 +27,5 @@ router.get("/habits", (req, res, next) => {
   res.render("habits");
 });
 
-router.get("/aboutUs", (req, res, next) => {
-  res.render("aboutUs");
-});
 
 module.exports = router;

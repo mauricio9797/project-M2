@@ -10,6 +10,11 @@ const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Types;
 
 require("../db");
+
+router.get("/aboutUs", (req, res, next) => {
+  res.render("auth/aboutUs");
+});
+
 router.post("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) {
@@ -19,6 +24,7 @@ router.post("/logout", (req, res) => {
     res.redirect("/");
   });
 });
+
 router.get("/", isLoggedOut, (req, res) => {
   res.render("auth/signup");
 });
@@ -43,8 +49,6 @@ req.session.user = {
 username: user.username,
 userId: user._id,
 }
-
-
 
 
 res.redirect('/profile');
@@ -170,5 +174,25 @@ router.get("/habitPractice", (req, res) => {
   // Render the "habitPractice" page
   res.render("habitPractice");
 });
+
+router.get('/about', (req, res, next) => {
+  res.render("auth/aboutUs");
+});
+
+router.get('/contact', (req, res) => {
+  res.render('auth/contact');
+});
+
+router.get('/privacy-policy', (req, res) => {
+  res.render('auth/prpolicy');
+});
+
+router.get('/terms-of-use', (req, res) => {
+  res.render('auth/termsUse');
+});
+
+
+
+
 
 module.exports = router;
