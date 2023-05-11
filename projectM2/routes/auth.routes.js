@@ -185,12 +185,26 @@ router.get('/contact', (req, res) => {
 });
 
 router.get('/privacy-policy', (req, res) => {
-  res.render('auth/policy');
+  res.render('auth/prpolicy');
 });
 
 router.get('/terms-of-use', (req, res) => {
   res.render('auth/termsUse');
 });
+
+router.get('/habits/auth/login', (req, res) => {
+  res.render('auth/login');
+});
+
+router.get('/importance', (req, res) => {
+  res.render('auth/importance');
+});
+
+router.get('/importance', (req, res) => {
+  const videoUrl = 'https://www.youtube.com/embed/vN1aRN5bQQ0?start=33';
+  res.render('auth/importance', { videoUrl });
+});
+
 
 router.get("/habitCount/:habitId", isLoggedIn, async (req, res, next) => {
   try {

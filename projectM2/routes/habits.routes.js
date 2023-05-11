@@ -53,4 +53,10 @@ router.get("/habits/walking", isLoggedIn, (req, res) => {
 router.get("/habits/exercise", isLoggedIn, (req, res) => {
   res.render("habits/exercise");
 });
+
+router.get("/habits/lifestyle", isLoggedIn, (req, res) => {
+  res.render("habits/lifestyle");
+});
+
+
 module.exports = router;
