@@ -8,6 +8,7 @@ const isLoggedOut = require("../middlewares/isLoggedOut");
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Types;
+const uploader = require('../middlewares/cloudinary.config.js');
 
 require("../db");
 
@@ -33,17 +34,17 @@ router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", async (req, res) => {
+router.post("/signup", uploader.single("imageUrl"),  async (req, res) => {
   const existingEmail = await User.findOne({ email: req.body.email });
   const existingUser = await User.findOne({ username: req.body.username });
-
+ 
   if (existingEmail || existingUser) {
     return res.render("accexist", { error: "Email/User already exists" });
   }
- 
+  console.log('file is: ', req.file)
  const salt = await bcryptjs.genSalt(12);
  const hash = await bcryptjs.hash(req.body.password, salt);
- const user = new User({ username: req.body.username, email:req.body.email, password: hash });
+ const user = new User({ username: req.body.username, email:req.body.email, userImage:req.file.path, password: hash });
  await user.save();
 req.session.user = {
 username: user.username,
