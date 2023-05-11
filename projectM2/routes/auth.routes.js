@@ -130,6 +130,7 @@ router.post("/habitEdit/:habitId", isLoggedIn, async (req, res) => {
       Tasks1: req.body.tasks1,
       Tasks2: req.body.tasks2,
       Time: req.body.time,
+      Count: req.body.count,
       Duration: req.body.duration,
       Goal: req.body.goal,
     };
@@ -216,6 +217,22 @@ router.get("/habitCount/:habitId", isLoggedIn, async (req, res, next) => {
     console.error("There was an error", err);
   }
 });
+router.post("/habitCount/:habitId", isLoggedIn, async (req, res) => {
+  try {
+    const habitId = req.params.habitId;
+    const updateData = {
+      Count: req.body.count,
+    };
+    const habitUpdated = await Habit.findByIdAndUpdate(habitId, updateData, {
+      new: true,
+    });
+    
+    res.redirect(`/myHabits/${habitId}`);
+  } catch (err) {
+    console.error("There was an error", err);
+  }
+});
+
 
 
 module.exports = router;
