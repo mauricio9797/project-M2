@@ -40,7 +40,7 @@ const HabitSchema = new Schema(
     },
 
     Duration: {
-      type: Number,
+      type: String,
       required: true,
     },
     Goal: {

@@ -16,7 +16,7 @@ const userSchema = new Schema(
       trim: true,
     },
     userImage : {
-      type: String,
+     type: String,
     },
    
     password: {
