@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     stopAnimation()
   }
    stopAnimation();
+
 });
 
 

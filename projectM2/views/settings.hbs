@@ -13,7 +13,6 @@
 
   <ul class="dropdown-menu rounded-2 py-3 px-2" aria-labelledby="dropdownMenuLink">
     <li class="d-flex gap-1">  <img class="favicon-sm" src="/images/avatar.svg" alt=""><p>{{userName}}</p></li>
-    <li class="py-1"><a class="dropdown-item" href="#">Action</a></li>
     <li class="py-1"><a class="dropdown-item" href="/profile/settings">Account Settings</a></li>
     <li class="py-1"><form class="px-3" method="POST" action="/auth/logout">
   <button class="p-0 border-0 bg-transparent" type="submit">Sign Out</button>
@@ -34,12 +33,22 @@
          <div class="d-flex justify-content-between align-items-center border border-muted p-3">
             <h4 class="text-default text-graylight opacity-75">Photo</h4>
             <input class="btn btn-link d-none" type="file" name="" id="fileUpload">
-            <label  for="fileUpload"><a class="text-blue text-decoration-none fs-5 text-default" href="">Upload</a></label>
+            <label class="text-blue text-decoration-none fs-5 text-default cursor-pointer"  for="fileUpload">Upload</label>
          </div>
          <div class="d-flex justify-content-between border border-muted p-3">
             <h4 class="text-default text-graylight opacity-75">Name</h4>
+            <div>
             <p></p>
-            <a class="text-blue text-decoration-none fs-5 text-default" href="">Edit</a>
+            <a class="text-blue text-decoration-none fs-5 text-default cursor-pointer" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Edit</a>
+            </div>
+            <div class="collapse" id="collapseExample">
+              <div class="d-flex justify-content-between align-items-center">
+               <h4 class="text-default">Name</h4>
+               <form action="">
+                <input class="form-control" type="text" name="" id="">
+               </form>
+              </div>
+            </div>
          </div>
            <div class="d-flex justify-content-between border border-muted p-3">
             <h4 class="text-default text-graylight opacity-75">Email</h4>
@@ -68,8 +77,32 @@
                 <a class="btn btn-primary fs-5 text-default px-4 py-2 rounded-5" href="">Contact Us</a>
             </div>
         </div>
-        <div class="bg-white settings-form mt-4 rounded-2 border border-muted d-flex flex-column align-items-center justify-content-center btn-delete m-0 p-0">
+        <div class="bg-white settings-form mt-4 rounded-2 border border-muted d-flex flex-column align-items-center justify-content-center btn-delete m-0 p-0 cursor-pointer" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <h3 class="text-danger text-default p-3">Delete Account</h3>
+            
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 p-5 position-relative">
+      <div class="modal-header d-flex flex-column border-0">
+         <button type="button" class="btn-close position-absolute top-0 end-0 p-3 bg-lightgray opacity-75 rounded-50" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h3 class="text-default">Delete Account</h3>
+        <p class="fs-6 text-default">Once you delete your account, there's no getting it back.
+Are you sure you want to do this?</p>
+      </div>
+      <div class="modal-body">
+        <form class="d-flex flex-column gap-3" action="">
+            <input class="form-control bg-gray p-3 text-default" type="text" placeholder="Confirm your password">
+            <input class="form-control bg-gray p-3 text-default" type="text" placeholder="Tell us why you are deleting">
+        </form>
+      </div>
+      <div class="modal-footer d-flex gap-3 border-0">
+        <button type="button" class="btn btn-light px-5 py-3 rounded-5 text-blue bg-white border-muted border" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger bg-red px-4 py-3 rounded-5">Yes, Delete Account</button>
+      </div>
+    </div>
+  </div>
+</div>
+
         </div>
     </div>
     </div>
