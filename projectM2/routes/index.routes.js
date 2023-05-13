@@ -25,6 +25,15 @@ router.get("/profile", isLoggedIn, async(req, res) => {
   res.render("profile", { userName: req.session.user.username, userImage: user.userImage});
 });
 
+router.get("/profile/settings", isLoggedIn, async(req,res) => {
+  try{
+  res.render("settings");
+  }catch(err){
+    console.error("There was an error", err);
+  }
+}
+  )
+
 router.get("/habits", (req, res, next) => {
   res.render("habits");
 });

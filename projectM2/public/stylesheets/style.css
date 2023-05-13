@@ -150,12 +150,27 @@ html{
   max-width:500px;
 }
 
+.text-box{
+  max-width:500px;
+}
+
 .bg-showchase{
   max-width:1100px !important;
 }
 
 .form-container{
   max-width: 500px !important;
+}
+
+.settings-form{
+  max-width:750px;
+}
+
+.btn-delete:hover{
+  border:1px solid red !important;
+  transition-property: border;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }
 
 body {
@@ -206,6 +221,10 @@ padding:50px 0 100px;
 
 .text-blue{
   color:var(--blue) !important;
+}
+
+.border-blue{
+  border:1px solid var(--blue);
 }
 
 .text-orange{

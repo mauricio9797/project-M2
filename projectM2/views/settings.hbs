@@ -1,0 +1,78 @@
+<div>
+<div class="container-fluid bg-blue">
+   <div class="container">
+     <nav class="navbar navbar-expand-md p-3">
+      <a class="navbar-brand fw-bold text-white fs-3 d-flex align-items-center gap-3" href="/"><img class="favicon-sm bg-white" src="/images/habitsu.png" alt=""> Habitsu</a>
+       <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+         <li class="nav-item">
+              <div class="dropdown">
+  <a class=" dropdown-toggle fs-2 d-flex align-items-center" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+    <img class="favicon-sm" src="/images/avatar.svg" alt="">
+  </a>
+
+  <ul class="dropdown-menu rounded-2 py-3 px-2" aria-labelledby="dropdownMenuLink">
+    <li class="d-flex gap-1">  <img class="favicon-sm" src="/images/avatar.svg" alt=""><p>{{userName}}</p></li>
+    <li class="py-1"><a class="dropdown-item" href="#">Action</a></li>
+    <li class="py-1"><a class="dropdown-item" href="/profile/settings">Account Settings</a></li>
+    <li class="py-1"><form class="px-3" method="POST" action="/auth/logout">
+  <button class="p-0 border-0 bg-transparent" type="submit">Sign Out</button>
+</form></li>
+  </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid bg-gray py-5">
+   <div class="container pb-5">
+    <div class="d-flex flex-column align-items-center">
+        <div>
+    <h2 class="text-default py-4 text-center">Account Settings</h2>
+    <div class="bg-white settings-form rounded-3 border border-muted ">
+        <form class="" action="">
+         <h2 class="text-default border border-muted p-3 m-0">Profile</h2>
+         <div class="d-flex justify-content-between align-items-center border border-muted p-3">
+            <h4 class="text-default text-graylight opacity-75">Photo</h4>
+            <input class="btn btn-link d-none" type="file" name="" id="fileUpload">
+            <label  for="fileUpload"><a class="text-blue text-decoration-none fs-5 text-default" href="">Upload</a></label>
+         </div>
+         <div class="d-flex justify-content-between border border-muted p-3">
+            <h4 class="text-default text-graylight opacity-75">Name</h4>
+            <p></p>
+            <a class="text-blue text-decoration-none fs-5 text-default" href="">Edit</a>
+         </div>
+           <div class="d-flex justify-content-between border border-muted p-3">
+            <h4 class="text-default text-graylight opacity-75">Email</h4>
+            <p></p>
+            <a class="text-blue text-decoration-none fs-5 text-default" href="">Edit</a>
+         </div>
+            <div class="d-flex justify-content-between border border-muted p-3">
+            <h4 class="text-default text-graylight opacity-75">Password</h4>
+            <p></p>
+            <a class="text-blue text-decoration-none fs-5 text-default" href="">Edit</a>
+         </div>
+        </form>
+    </div>
+    <div>
+        <div class="bg-white settings-form mt-4 rounded-3 border border-muted d-flex justify-content-between align-items-center">
+            <h2 class="text-default p-3">Subscription</h2>
+            <p class="p-3 fs-5 text-default">Free Plan</p>
+        </div>
+
+    </div>
+    <div>
+        <div class="bg-white settings-form mt-4 rounded-3 border border-muted">
+            <h2 class="text-default p-3 border border-muted">Help & Support</h2>
+            <div class="p-3">
+                <p class="text-graylight fs-5">Have questions, feedback, or a request? We’d love to hear from you.</p>
+                <a class="btn btn-primary fs-5 text-default px-4 py-2 rounded-5" href="">Contact Us</a>
+            </div>
+        </div>
+        <div class="bg-white settings-form mt-4 rounded-2 border border-muted d-flex flex-column align-items-center justify-content-center btn-delete m-0 p-0">
+            <h3 class="text-danger text-default p-3">Delete Account</h3>
+        </div>
+    </div>
+    </div>
+    </div>
+   </div>
+</div>
