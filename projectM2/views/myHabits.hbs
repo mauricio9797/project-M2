@@ -1,8 +1,11 @@
 {{#each userHabits.habit}}
   <h1> <a href="/myHabits/{{_id}}">{{this.Habit}}</a></h1>
+  <h1>My goal: {{this.Goal}}</h1>
+ 
   <form action="/habitEdit/{{this._id}}" method="get">
     <button>Edit</button>
   </form>
+
   <form
     action="/habitDelete/{{this._id}}"
     method="post"
@@ -21,3 +24,13 @@
   <a href="/profile">BACK</a>
 <a href="/habitCreate"> Add new habit</a>
 <a href="/habitPractice"> Add habit from our Recommendations </a>
+
+
+
+ 
+
+<select onChange="window.location.href=this.value">
+   {{#each userHabits.habit}}
+    <option  value="/myHabits/{{_id}}">{{this.Habit}}</option>
+    {{/each}}
+</select>
