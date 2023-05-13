@@ -17,10 +17,12 @@ router.get("/messages", isLoggedIn, (req, res) => {
   res.send("Your recent messages" + req.session.user.username);
 });
 
-router.get("/profile", isLoggedIn, (req, res) => {
+router.get("/profile", isLoggedIn, async(req, res) => {
   console.log(req.session);
   console.log(req.session.user);
-  res.render("profile", { userName: req.session.user.username });
+  const user = await User.findOne({username: req.session.user.username })
+    console.log("hello this is the user data", user)
+  res.render("profile", { userName: req.session.user.username, userImage: user.userImage});
 });
 
 router.get("/habits", (req, res, next) => {

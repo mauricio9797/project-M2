@@ -4,7 +4,7 @@ const isLoggedIn = (req, res, next) => {
     return;
   }
 
-  res.redirect("auth/login");
+  res.redirect("/auth/login");
 };
 
 module.exports = isLoggedIn;

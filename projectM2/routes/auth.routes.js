@@ -47,13 +47,14 @@ router.post("/signup", uploader.single("userImage"),  async (req, res, next) => 
 
  const salt = await bcryptjs.genSalt(12);
  const hash = await bcryptjs.hash(req.body.password, salt);
- const user = new User({ username: req.body.username, email:req.body.email, userImage:req.file?.path, password: hash });
+ const user = new User({ username: req.body.username, email:req.body.email, userImage:req.file.path, password: hash });
 
  await user.save();
  console.log('file is: ------->', req.file.path)
 req.session.user = {
 username: user.username,
 userId: user._id,
+email:  user.email,
 }
 
 
@@ -63,9 +64,10 @@ res.redirect('/profile');
 })
 
 
-router.get('/login',isLoggedOut,(req,res)=>{
+router.get('/login',isLoggedOut, (req,res)=>{
   res.render("auth/login")
 })
+
 router.post('/login',async(req,res,next) =>{
   try {
     const user = await User.findOne({email: req.body.email})
