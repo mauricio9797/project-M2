@@ -8,6 +8,10 @@ const isLoggedOut = require("../middlewares/isLoggedOut");
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Types;
+const uploader = require('../middlewares/cloudinary.config.js');
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const multer = require('multer');
 
 require("../db");
 
@@ -33,18 +37,20 @@ router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", async (req, res) => {
+router.post("/signup", uploader.single("userImage"),  async (req, res, next) => {
   const existingEmail = await User.findOne({ email: req.body.email });
   const existingUser = await User.findOne({ username: req.body.username });
-
+ 
   if (existingEmail || existingUser) {
     return res.render("accexist", { error: "Email/User already exists" });
   }
- 
+
  const salt = await bcryptjs.genSalt(12);
  const hash = await bcryptjs.hash(req.body.password, salt);
- const user = new User({ username: req.body.username, email:req.body.email, password: hash });
+ const user = new User({ username: req.body.username, email:req.body.email, userImage:req.file?.path, password: hash });
+
  await user.save();
+ console.log('file is: ------->', req.file.path)
 req.session.user = {
 username: user.username,
 userId: user._id,
@@ -55,6 +61,8 @@ res.redirect('/profile');
 
  
 })
+
+
 router.get('/login',isLoggedOut,(req,res)=>{
   res.render("auth/login")
 })
@@ -94,6 +102,7 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
       Tasks1: req.body.Tasks1,
       Tasks2: req.body.Tasks2,
       Time: req.body.Time,
+      Count: req.body.Count,
       Duration: req.body.Duration,
       Goal: req.body.Goal,
     });
@@ -129,6 +138,7 @@ router.post("/habitEdit/:habitId", isLoggedIn, async (req, res) => {
       Tasks1: req.body.tasks1,
       Tasks2: req.body.tasks2,
       Time: req.body.time,
+      Count: req.body.count,
       Duration: req.body.duration,
       Goal: req.body.goal,
     };
@@ -215,6 +225,22 @@ router.get("/habitCount/:habitId", isLoggedIn, async (req, res, next) => {
     console.error("There was an error", err);
   }
 });
+router.post("/habitCount/:habitId", isLoggedIn, async (req, res) => {
+  try {
+    const habitId = req.params.habitId;
+    const updateData = {
+      Count: req.body.count,
+    };
+    const habitUpdated = await Habit.findByIdAndUpdate(habitId, updateData, {
+      new: true,
+    });
+    
+    res.redirect(`/myHabits/${habitId}`);
+  } catch (err) {
+    console.error("There was an error", err);
+  }
+});
 
 
 module.exports = router;
+

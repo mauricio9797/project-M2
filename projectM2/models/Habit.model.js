@@ -33,9 +33,14 @@ const HabitSchema = new Schema(
       type: String,
       required: true,
     },
+    Count:{
+      type: String,
+      required: true,
+
+    },
 
     Duration: {
-      type: Number,
+      type: String,
       required: true,
     },
     Goal: {

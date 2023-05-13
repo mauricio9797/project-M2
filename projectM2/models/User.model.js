@@ -15,6 +15,9 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true,
     },
+    userImage : {
+     type: String,
+    },
    
     password: {
       type: String,

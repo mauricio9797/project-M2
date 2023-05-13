@@ -1,3 +1,14 @@
+ <br>
+ <br>
+ {{#ifCond habit.Count habit.Duration}}
+  <h1>Congrats on achieving your goal! You've completed {{habit.Duration}} days of {{habit.Tasks}},  {{habit.Tasks1}} and {{habit.Tasks2}}. Your newly adopted habit {{habit.Habit}} is more than integrated in your every day live! 🎉🎉🎉</h1>
+{{else}}
+   <h1>Keep working on developing your newly-adopted Habit! You Got this!</h1>
+{{/ifCond}}
+<br>
+<br>
+<br>
+
 <h1>Habit Details</h1>
   </form>
   <h2>Habit: {{habit.Habit}}</h2>
@@ -5,6 +16,7 @@
    <p>Tasks: {{habit.Tasks1}}</p>
    <p>Tasks: {{habit.Tasks2}}</p>
   <p>Time: {{habit.Time}}</p>
+  <p>Count: {{habit.Count}}</p>
   <p>Duration: {{habit.Duration}}</p>
   <p>Goal: {{habit.Goal}}</p>
 

@@ -3,7 +3,16 @@
 <tr>
  <h4>Duration:</h4>   <h3><td>{{habit.Duration}}</td></h3>
 <br>
- <h4>Habit streak plan:</h4>   <h3><td></td></h3>
-
-</tr>
+ <h4>Tasks:</h4>   
+ <ol>
+    <li>{{habit.Tasks}}</li>
+    <li>{{habit.Tasks1}}</li>
+    <li>{{habit.Tasks2}}</li>
+   
+ </ol>
+<form action="/habitCount/{{habit._id}}" method="post">
+  <label for="count"><h1>Habit Completion Streak:</h1></label>
+  <input type="number" name="count" id="count" value="{{habit.Count}}" required />
+  <button type="submit">Update</button>
+  </form>
 
