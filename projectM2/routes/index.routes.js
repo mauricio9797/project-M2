@@ -8,7 +8,11 @@ const Habit = require("../models/Habit.model");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  if(req.session.user){
+    res.render("index",{user: req.session.user});
+  }else{
+    res.render("index");
+  }
 });
 
 router.use("/auth", authRoutes);

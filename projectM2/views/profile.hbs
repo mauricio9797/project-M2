@@ -27,8 +27,81 @@
 </div>
 <div class="container-fluid">
    <div class="container">
- 
-<h1>Hello {{this.userName}}<br> We are happy to have you here!<br> <br> Start building your future!</h1>
+ <h1 class="text-default">Welcome {{this.userName}}</h1>
+<div class="row">
+   <div class="col-8">
+fds
+   </div>
+   <div class="col-4">
+  <button class="btn text-dark fs-4 text-default d-flex align-items-center justify-content-center gap-3 py-3 bg-gray rounded-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="images/habit-icon.svg" alt="">Add Your First Habit</button>
+
+<div class="offcanvas offcanvas-end px-3" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header d-flex flex-column align-items-start border-bottom border-muted">
+
+    
+    <div>
+    <h2 class="offcanvas-title text-default" id="offcanvasRightLabel">Add Habit</h2>
+    <h4 class="text-default text-muted fs-5 opacity-75">Tackle your goals in daily doses</h4>
+    </div>
+    {{!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> --}}
+  </div>
+  <div class="offcanvas-body">
+    <h2>Add Habit</h2>
+<form class="d-flex flex-column" action="/habitCreate" method="post">
+
+  <label class="fs-4 text-default mb-2" for="Habit">1. Name this habit</label>
+  <input class="form-control text-default" type="text" id="Habit" name="Habit" placeholder="Habit name" /><br /><br />
+
+  <label class="fs-4 text-default mb-2" for="Tasks">2. Add tasks</label>
+  <textarea placeholder="Tasks"  class="form-control text-default" type="text" id="Tasks" name="Tasks"></textarea><br /><br />
+{{!-- 
+  <label for="Tasks1">Tasks:</label>
+  <textarea class="form-control" type="text" id="Tasks1" name="Tasks1"></textarea><br /><br />
+
+    <label for="Tasks2">Tasks:</label>
+  <textarea class="form-control" type="text" id="Tasks2" name="Tasks2"></textarea><br /><br /> --}}
+
+
+  <label  class="fs-4 text-default mb-2" for="Time">3. Add time</label>
+  <div class="d-flex gap-2 mb-3">
+    <input name="timeOptions" type="radio" class="btn-check" id="check-morning" autocomplete="off">
+<label class="btn btn-outline-primary p-2" for="check-morning">Morning</label>
+ <input name="timeOptions" type="radio" class="btn-check" id="check-evening" autocomplete="off">
+<label class="btn btn-outline-primary p-2" for="check-evening">Evening</label>
+<input name="timeOptions" type="radio" class="btn-check" id="check-night" autocomplete="off">
+<label class="btn btn-outline-primary p-2" for="check-night">Night</label>
+  </div>
+  {{!-- <select type="text" id="Time" name="Time">
+    <option value="morning">Morning</option>
+    <option value="evening">Evening</option>
+    <option value="night">Night</option>
+
+  </select> --}}
+
+   <label class="fs-4 text-default mb-2" for="Count">4. Habit completion streak</label>
+  <select class="" type="text" id="Count" name="Count" value="0" readonly="Starting of your new journey!" /><br /><br />
+  
+
+  </select>
+
+  <label class="fs-4 text-default mb-2" for="Duration">5. Duration</label>
+  <input class="form-control text-default" type="text" id="Duration" name="Duration" placeholder="Duration" /><br /><br />
+
+  <label class="fs-4 text-default mb-2" for="Goal">6. Goal</label>
+  <textarea placeholder="Goals" class="form-control text-default" type="text" id="Goal" name="Goal"></textarea><br /><br />
+
+  <div class="d-flex gap-3">
+  <button class="btn btn-primary px-4 py-3 rounded-5" type="submit">Add Habit</button>
+  <button class="btn bg-transparent border border-blue text-blue px-4 py-3 rounded-5" type="submit">+Add Another</button>
+  </div>
+</form>
+  </div>
+</div>
+   </div>
+</div>
+
+
+{{!-- <h1>Hello {{this.userName}}<br> We are happy to have you here!<br> <br> Start building your future!</h1>
 
 
  <div>
@@ -45,6 +118,6 @@
 
 {{#if error}}
   <h2 style="color: red;">There was an error logging in... {{error}}</h2>
-{{/if}}
+{{/if}} --}}
    </div>
 </div>
