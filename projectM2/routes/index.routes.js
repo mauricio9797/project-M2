@@ -5,9 +5,13 @@ const authRoutes = require("./auth.routes");
 const isLoggedOut = require("../middlewares/isLoggedOut");
 const User = require("../models/User.model");
 const Habit = require("../models/Habit.model");
+// const helpers = require('../utils/helpers.js');
+
 
 /* GET home page */
 router.get("/", (req, res, next) => {
+  // const currentTime = getCurrentTime();
+  // console.log(currentTime)
   if(req.session.user){
     res.render("index",{user: req.session.user});
   }else{
