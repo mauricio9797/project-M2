@@ -154,6 +154,18 @@ html{
   box-shadow: 0 5px 25px rgba(0,96,199,.3);
 }
 
+.list-card-habits:hover{
+  transform: scale(1.1);
+  transition-property: transform;
+  transition-duration: 350ms;
+  transition-timing-function:ease-in-out;
+  cursor: pointer;
+}
+
+.list-card-habits{
+  box-shadow: 0 5px 25px rgba(0,96,199,.3);
+}
+
 .list-box{
   box-shadow: 0 5px 25px rgba(0,96,199,.3);
   max-width:500px;

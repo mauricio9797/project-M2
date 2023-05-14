@@ -1,4 +1,182 @@
-<h3>Don't know where to start?<br> Search for our science based reccomendations to improve the quality of your life</h3>
+<div class="container-fluid">
+     <div class="container">
+    <nav class="navbar navbar-expand-md p-3 d-flex justify-content-around gap-5">
+      <a class="navbar-brand fw-bold text-blue fs-3 d-flex align-items-center gap-3" href="/"><img class="favicon-sm bg-blue" src="/images/habitsu.png" alt=""> Habitsu<h6></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-flex justify-content-md-end">
+             <ul class="navbar-nav gap-3">
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/">Home</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/habits">Recommendations</a>
+            </li>
+                        <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/about">About</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/contact">Contact</a>
+            </li>
+            
+          {{#if user}}
+          
+
+<div class="position-relative d-none d-md-block">
+ <a class="dropdown-toggle fs-2 d-flex align-items-center" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false">
+    <img class="favicon-sm" src="/images/avatar.svg" alt="">
+  </a>
+
+  <ul class="p dropdown-menu rounded-2 py-3 px-2" aria-labelledby="dropdownMenuLink2">
+    <li class="d-flex gap-1"> <a href="/profile"><img class="favicon-sm" src="/images/avatar.svg" alt=""></a> </li>
+    <li class="py-1"><a class="dropdown-item" href="/profile">Profile</a></li>
+    <li class="py-1"><a class="dropdown-item" href="/profile/settings">Account Settings</a></li>
+    <li class="py-1"><form class="px-3" method="POST" action="/auth/logout">
+  <button class="p-0 border-0 bg-transparent" type="submit">Sign Out</button>
+</form></li>
+</ul>
+</div>
+
+
+
+
+          
+            {{else}}
+       <li class="nav-item d-none d-md-flex align-items-center">
+               <a class=" btn btn-primary fs-5 p-2 px-4 rounded-5" href="/login">Sign In</a>
+            </li>
+              <li class="nav-item d-none d-md-block">
+               <a class="btn btn-primary p-2 px-4 rounded-5 fs-5" href="/signup">Try for Free</a>
+            </li>
+            {{/if}}
+             <li class="nav-item d-flex justify-content-center gap-3 pb-4 d-md-none p-2 border-bottom border-muted">
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/login">Login</a>
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/signup">Sign Up</a>
+            </li>
+            <li class="nav-item d-md-none border-bottom border-muted pb-4">
+              <a class="text-decoration-none text-dark fs-5" href="">Pricing</a>
+            </li>
+            <li class="nav-item d-md-none d-flex flex-column">
+              <a class="text-decoration-none text-dark fs-5" href="">Email Us</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Privacy Policy</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Terms of Service</a>
+            </li>
+            <li class="nav-item d-flex gap-3 d-md-none">
+              <a href=""><img src="/images/twitter.svg" alt=""></a>
+              <a href=""><img src="/images/linkedin.svg" alt=""></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+   </div>
+</div>
+<div class="container-fluid py-5">
+ <div class="container d-flex gap-5 flex-wrap">
+
+<div class="card col-4 p-3 text-center list-card-habits" style="width: 18rem;">
+  <p class="m-0" style="font-size:5.5rem;">🧘</p>
+  <div class="card-body">
+    <h5 class="card-title">MEDITATION</h5>
+    <p class="card-text text-muted">Meditation is a transformative practice that nurtures a state of deep relaxation, heightened self-awareness, and an overall sense of well-being.</p>
+    <a href="/habits/meditation" class="btn btn-primary">See More</a>
+  </div>
+</div>
+
+<div class="card col-4 p-3 text-center list-card-habits" style="width: 18rem;">
+  <p class="m-0" style="font-size:5.5rem;">🏃</p>
+  <div class="card-body">
+    <h5 class="card-title">Walking</h5>
+    <p class="card-text text-muted">Walking is an invigorating exercise that improves physical health and uplifts the spirit.
+</p>
+    <a href="/habits/walking" class="btn btn-primary">See More</a>
+  </div>
+</div>
+
+
+<div class="card col-4 p-3 text-center list-card-habits" style="width: 18rem;">
+  <p class="m-0" style="font-size:5.5rem;">🥶</p>
+  <div class="card-body">
+    <h5 class="card-title">Cold Water</h5>
+    <p class="card-text text-muted">Cold water revitalizes the body, sharpens the mind, and promotes overall well-being.
+</p>
+    <a href="/habits/coldwater" class="btn btn-primary">See More</a>
+  </div>
+</div>
+ 
+<div class="card col-4 p-3 text-center list-card-habits" style="width: 18rem;">
+  <p class="m-0" style="font-size:5.5rem;">🍕🚫</p>
+  <div class="card-body">
+    <h5 class="card-title">Dopamine Fasting</h5>
+    <p class="card-text text-muted">Dopamine fasting resets the mind and restores appreciation for simplicity.
+</p>
+    <a href="/habits/dopaminefasting" class="btn btn-primary">See More</a>
+  </div>
+</div>
+
+<div class="card col-4 p-3 text-center list-card-habits" style="width: 18rem;">
+  <p class="m-0" style="font-size:5.5rem;">🍃</p>
+  <div class="card-body">
+    <h5 class="card-title">Earthing</h5>
+    <p class="card-text text-muted">Earthing, or grounding, by walking barefoot on natural surfaces, harnesses the Earth's energy to promote health and well-being.
+</p>
+    <a href="/habits/earthing" class="btn btn-primary">See More</a>
+  </div>
+</div>
+
+<div class="card col-4 p-3 text-center list-card-habits" style="width: 18rem;">
+  <p class="m-0" style="font-size:5.5rem;">🏋️</p>
+  <div class="card-body">
+    <h5 class="card-title">Exercise</h5>
+    <p class="card-text text-muted">Exercise enhances fitness, mental clarity, and well-being.
+</p>
+    <a href="/habits/exercise" class="btn btn-primary">See More</a>
+  </div>
+</div>
+
+ </div>
+</div>
+  <footer class="container-fluid bg-gray">
+     <div class="container">
+    <div class="row">
+       <div class="col-12 col-md">
+           <h1 class="text-blue d-flex align-items-center gap-3"><img class="favicon-md bg-blue" src="/images/habitsu.png" alt="">Habitsu</h1>
+           <p class="text-graylight opacity-75">Copyright © 2023</p>
+           <p class="fs-5">Made with <img src="images/logo11.svg" alt=""> by <a class="text-decoration-none" href="">Mauricio</a> & <a class="text-decoration-none" href="">Rampriya</a> & <a class="text-decoration-none" href="">Krisztian</a></p>
+       </div>
+       <div class="col d-flex justify-content-start d-md-block">
+          <div class="row">
+            <div class="col d-flex gap-3 justify-content-end">
+               <ul class="list-style-none d-flex flex-column gap-2">
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/">Home</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/about">About</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/contact">Contact</a></li>
+               </ul>
+               <ul class="list-style-none d-flex flex-column gap-2">
+                   <li><a class="text-decoration-none text-dark text-default fs-4" href="/privacy-policy">Privacy Policy</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/terms-of-use">Terms of Service</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/contact">Email Us</a></li>
+                        <li class="d-flex gap-3 mt-3">
+                  <img src="/images/twitter.svg" alt="">
+                  <img src="/images/linkedin.svg" alt="">
+                </li>
+               </ul>
+            </div>
+          </div>
+       </div>
+    </div>
+     </div>
+   </footer>
+
+
+
+{{!-- <h3>Don't know where to start?<br> Search for our science based reccomendations to improve the quality of your life</h3>
 
 <h1><a href="/habits/meditation" ><li>MEDITATION</li></a></h1>
 <p> <em>"How you breath is how you live"</em></p>
@@ -100,4 +278,4 @@
 
 
 
-
+ --}}

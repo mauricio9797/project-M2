@@ -19,23 +19,23 @@ router.get("/habits/mindfulness", isLoggedIn, (req, res) => {
   res.render("habits/mindfulness");
 });
 
-router.get("/habits/healthDiet", isLoggedIn, (req, res) => {
+router.get("/habits/healthdiet", isLoggedIn, (req, res) => {
   res.render("habits/healthDiet");
 });
 
-router.get("/habits/intermittentFasting", isLoggedIn, (req, res) => {
+router.get("/habits/intermittentfasting", isLoggedIn, (req, res) => {
   res.render("habits/intermittentFasting");
 });
 
-router.get("/habits/coldWater", isLoggedIn, (req, res) => {
+router.get("/habits/coldwater", isLoggedIn, (req, res) => {
   res.render("habits/coldWater");
 });
 
-router.get("/habits/dopamineFasting", isLoggedIn, (req, res) => {
+router.get("/habits/dopaminefasting", isLoggedIn, (req, res) => {
   res.render("habits/dopamineFasting");
 });
 
-router.get("/habits/sensoryDeprivation", isLoggedIn, (req, res) => {
+router.get("/habits/sensorydeprivation", isLoggedIn, (req, res) => {
   res.render("habits/sensoryDeprivation");
 });
 router.get("/habits/earthing", isLoggedIn, (req, res) => {
