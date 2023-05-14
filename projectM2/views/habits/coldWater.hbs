@@ -1,3 +1,165 @@
+     <div class="container-fluid">
+     <div class="container">
+    <nav class="navbar navbar-expand-md p-3 d-flex justify-content-around gap-5">
+      <a class="navbar-brand fw-bold text-blue fs-3 d-flex align-items-center gap-3" href="/"><img class="favicon-sm bg-blue" src="/images/habitsu.png" alt=""> Habitsu<h6></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-flex justify-content-md-end">
+             <ul class="navbar-nav gap-3">
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/">Home</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/habits">Recommendations</a>
+            </li>
+                        <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/about">About</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/contact">Contact</a>
+            </li>
+            
+          {{#if user}}
+          
+
+<div class="position-relative d-none d-md-block">
+ <a class="dropdown-toggle fs-2 d-flex align-items-center" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false">
+    <img class="favicon-sm" src="/images/avatar.svg" alt="">
+  </a>
+
+  <ul class="p dropdown-menu rounded-2 py-3 px-2" aria-labelledby="dropdownMenuLink2">
+    <li class="d-flex gap-1"> <a href="/profile"><img class="favicon-sm" src="/images/avatar.svg" alt=""></a> </li>
+    <li class="py-1"><a class="dropdown-item" href="/profile">Profile</a></li>
+    <li class="py-1"><a class="dropdown-item" href="/profile/settings">Account Settings</a></li>
+    <li class="py-1"><form class="px-3" method="POST" action="/auth/logout">
+  <button class="p-0 border-0 bg-transparent" type="submit">Sign Out</button>
+</form></li>
+</ul>
+</div>
+     <div class="container">
+    <nav class="navbar navbar-expand-md p-3 d-flex justify-content-around gap-5">
+      <a class="navbar-brand fw-bold text-blue fs-3 d-flex align-items-center gap-3" href="/"><img class="favicon-sm bg-blue" src="/images/habitsu.png" alt=""> Habitsu<h6></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-flex justify-content-md-end">
+             <ul class="navbar-nav gap-3">
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/">Home</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/habits">Recommendations</a>
+            </li>
+                        <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/about">About</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/contact">Contact</a>
+            </li>
+            
+          {{#if user}}
+          
+
+<div class="position-relative d-none d-md-block">
+ <a class="dropdown-toggle fs-2 d-flex align-items-center" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false">
+    <img class="favicon-sm" src="/images/avatar.svg" alt="">
+  </a>
+
+  <ul class="p dropdown-menu rounded-2 py-3 px-2" aria-labelledby="dropdownMenuLink2">
+    <li class="d-flex gap-1"> <a href="/profile"><img class="favicon-sm" src="/images/avatar.svg" alt=""></a> </li>
+    <li class="py-1"><a class="dropdown-item" href="/profile">Profile</a></li>
+    <li class="py-1"><a class="dropdown-item" href="/profile/settings">Account Settings</a></li>
+    <li class="py-1"><form class="px-3" method="POST" action="/auth/logout">
+  <button class="p-0 border-0 bg-transparent" type="submit">Sign Out</button>
+</form></li>
+</ul>
+</div>
+
+
+
+
+          
+            {{else}}
+       <li class="nav-item d-none d-md-flex align-items-center">
+               <a class=" btn btn-primary fs-5 p-2 px-4 rounded-5" href="/login">Sign In</a>
+            </li>
+              <li class="nav-item d-none d-md-block">
+               <a class="btn btn-primary p-2 px-4 rounded-5 fs-5" href="/signup">Try for Free</a>
+            </li>
+            {{/if}}
+             <li class="nav-item d-flex justify-content-center gap-3 pb-4 d-md-none p-2 border-bottom border-muted">
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/login">Login</a>
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/signup">Sign Up</a>
+            </li>
+            <li class="nav-item d-md-none border-bottom border-muted pb-4">
+              <a class="text-decoration-none text-dark fs-5" href="">Pricing</a>
+            </li>
+            <li class="nav-item d-md-none d-flex flex-column">
+              <a class="text-decoration-none text-dark fs-5" href="">Email Us</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Privacy Policy</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Terms of Service</a>
+            </li>
+            <li class="nav-item d-flex gap-3 d-md-none">
+              <a href=""><img src="/images/twitter.svg" alt=""></a>
+              <a href=""><img src="/images/linkedin.svg" alt=""></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+   </div>
+
+
+
+
+          
+            {{else}}
+       <li class="nav-item d-none d-md-flex align-items-center">
+               <a class=" btn btn-primary fs-5 p-2 px-4 rounded-5" href="/login">Sign In</a>
+            </li>
+              <li class="nav-item d-none d-md-block">
+               <a class="btn btn-primary p-2 px-4 rounded-5 fs-5" href="/signup">Try for Free</a>
+            </li>
+            {{/if}}
+             <li class="nav-item d-flex justify-content-center gap-3 pb-4 d-md-none p-2 border-bottom border-muted">
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/login">Login</a>
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/signup">Sign Up</a>
+            </li>
+            <li class="nav-item d-md-none border-bottom border-muted pb-4">
+              <a class="text-decoration-none text-dark fs-5" href="">Pricing</a>
+            </li>
+            <li class="nav-item d-md-none d-flex flex-column">
+              <a class="text-decoration-none text-dark fs-5" href="">Email Us</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Privacy Policy</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Terms of Service</a>
+            </li>
+            <li class="nav-item d-flex gap-3 d-md-none">
+              <a href=""><img src="/images/twitter.svg" alt=""></a>
+              <a href=""><img src="/images/linkedin.svg" alt=""></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+   </div>
+
+
+
+
+
+
+
 <h2>Cold water therapy</h2>
 <form action="/habitCreate" method="post">
 

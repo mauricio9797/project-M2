@@ -166,6 +166,10 @@ html{
   box-shadow: 0 5px 25px rgba(0,96,199,.3);
 }
 
+.habits-icon{
+  font-size: 5.5rem;
+}
+
 .list-box{
   box-shadow: 0 5px 25px rgba(0,96,199,.3);
   max-width:500px;
