@@ -30,7 +30,7 @@
 <div class="row pt-5">
   <h1 class="text-default">Welcome {{this.userName}}</h1>
    <div class="col-8">
-fds
+  <button class="btn text-blue border-blue bg-transparent border rounded-5 fs-4 text-default d-flex align-items-center justify-content-center gap-3 py-2 rounded-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">+Add Habit</button>    
    </div>
    <div class="col-4">
   <button class="btn text-dark fs-4 text-default d-flex align-items-center justify-content-center gap-3 py-3 bg-gray rounded-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="images/habit-icon.svg" alt="">Add Your First Habit</button>
@@ -62,7 +62,7 @@ fds
   <textarea class="form-control" type="text" id="Tasks2" name="Tasks2"></textarea><br /><br /> --}}
 
 
-  <label  class="fs-4 text-default mb-2" for="Time">3. Add time</label>
+  <label  class="fs-4 text-default mb-2" for="Time">3. Select time</label>
   <div class="d-flex gap-2 mb-3">
     <input name="timeOptions" type="radio" class="btn-check" id="check-morning" autocomplete="off">
 <label class="btn btn-outline-primary p-2" for="check-morning">Morning</label>
@@ -79,7 +79,7 @@ fds
   </select> --}}
 
    <label class="fs-4 text-default mb-2" for="Count">4. Habit completion streak</label>
-  <select class="" type="text" id="Count" name="Count" value="0" readonly="Starting of your new journey!" /><br /><br />
+  <select class="form-control" class="" type="text" id="Count" name="Count" value="0" readonly="Starting of your new journey!" /><br /><br />
   
 
   </select>
