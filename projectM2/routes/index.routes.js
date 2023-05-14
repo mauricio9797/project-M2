@@ -26,11 +26,10 @@ router.get("/messages", isLoggedIn, (req, res) => {
 });
 
 router.get("/profile", isLoggedIn, async(req, res) => {
-  console.log(req.session);
-  console.log(req.session.user);
   const user = await User.findOne({username: req.session.user.username })
     console.log("hello this is the user data", user)
-  res.render("profile", { userName: req.session.user.username, userImage: user.userImage});
+  res.render("profile", { userName: req.session.user.username,   userImage: user.userImage });
+  
 });
 
 router.get("/profile/settings", isLoggedIn, async(req,res) => {

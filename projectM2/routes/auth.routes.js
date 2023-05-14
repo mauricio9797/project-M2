@@ -161,14 +161,75 @@ router.post("/habitDelete/:habitId", isLoggedIn, async (req, res) => {
     console.error("There was an error", err);
   }
 });
+router.get("/userSettings", isLoggedIn, async (req, res, next) => {
+  console.log("this is --------->", req.session.user.userId)
+  const userToDelete = await User.findOne({username: req.session.user.username, userId:req.session.user.userId})
+  res.render("userSettings", {username: req.session.user.username, userId:req.session.user.userId});
+});
+router.post("/accountDelete/:userId", isLoggedIn,  async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const userDeleted = await User.findByIdAndDelete(userId);
+    req.session.destroy((err) => {
+      if (err) {
+        next(err);
+        return;
+      }
+    res.redirect("/")
+    });  
+  } catch (err) {
+    console.error("There was an error", err);
+  }
+});
+router.get("/accountEdit/:userId", isLoggedIn, async (req, res, next) => {
+  try {
+    const { userId } = req.params;
+    const user = await User.findById(userId);
+    res.render("accountEdit", { user });
+  } catch (err) {
+    console.error("There was an error", err);
+  }
+});
+/*router.post("/accountEdit/:userId", isLoggedIn, async (req, res) => {
+  const userId = req.params.userId;
+  const user = await User.findByIdandUpdate(userId, {username: req.session.user.username }, {new: true})
+    console.log("hello this is the updatedUser data", user)
+  res.render("updateProfile", { userName: req.session.user.username});
+  
+});*/
+/*router.post("/accountEdit/:userId", isLoggedIn, async (req, res) => {
+  try {
+    const userId = req.params.userId;
+   
+    const updateData = {
+      username: req.session.username,
+      email: req.session.email,
+      
+    };
+
+    const userUpdated = await User.findByIdAndUpdate(userId, updateData, {
+      new: true,
+    });
+console.log("updated data ------>", req.user)
+    res.redirect("/updateProfile");
+  } catch (err) {
+    console.error("There was an error", err);
+  }
+});*/
+router.get("/updateProfile", isLoggedIn, async(req, res) => {
+res.render("updateProfile")
+});
+
+
 
 router.get("/myHabits", isLoggedIn, async (req, res) => {
   try {
     const userHabits = await User.findById(req.session.user.userId).populate(
       "habit"
     );
+    const user = await User.findById((req.session.user.userId))
     console.log("UserHabits ======>", userHabits);
-    res.render("myHabits", { userHabits });
+    res.render("myHabits", { userHabits, user });
   } catch (err) {
     console.log(err);
   }
@@ -243,5 +304,16 @@ router.post("/habitCount/:habitId", isLoggedIn, async (req, res) => {
 });
 
 
+
+/*router.post("/userSettings/:userId", isLoggedIn, async (req, res, next) => {
+  try{
+  const {userId} = req.params
+  const userDeleted = await User.findByIdAndDelete({userId})
+  res.redirect("/");
+  }catch(err){
+    console.log(err)
+  }
+  
+});*/
 module.exports = router;
 

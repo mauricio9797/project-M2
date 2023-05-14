@@ -1,0 +1,21 @@
+<h1>Hello {{this.username}}<br> This is your account settings page!<br> 
+  
+  <form
+    action="/accountDelete/{{this.userId}}"
+    method="post"
+   
+  >
+    <button>Delete</button>
+
+</form>
+
+     
+  <form
+    action="/accountEdit/{{this.userId}}"
+    method="get"
+   
+  >
+    <button>Edit</button>
+
+</form>
+
