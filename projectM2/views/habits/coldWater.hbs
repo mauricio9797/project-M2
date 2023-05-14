@@ -120,6 +120,8 @@
     </nav>
    </div>
 
+   
+
 
 
 
@@ -153,21 +155,45 @@
     </div>
     </nav>
    </div>
+<div class="container-fluid py-5">
+  <div class="container d-flex flex-column align-items-center">
+     <h1 class="habits-icon">🥶</h1>
+     <h1>Cold Water</h1>
+     <p class="text-muted opacity-75">"The ice-cold water can be a merciless teacher. But it’s a teacher that works on you, not against you." - Wim Hof</p>
+     <p class="w-50 text-muted text-center">
+Cold water, whether experienced through showers, baths, or immersions, has been recognized for its invigorating properties and numerous health benefits, including improved circulation, enhanced immune function, increased alertness, faster muscle recovery, heightened mood, and a revitalizing effect on the body and mind. Embracing the refreshing power of cold water can awaken the senses, promote resilience, and foster a renewed sense of vitality and well-being.</p>
+     <div class="d-flex flex-wrap gap-2 justify-content-center text-box">
+     <p class="btn btn-light">Increases Metabolism 🍽️</p>
+     <p class="btn btn-light">Reduces risk of Heart Disease ❤️‍🩹</p>
+     <p class="btn btn-light">Boosts Immune System 🦠</p>
+      <p class="btn btn-light">Improves recovery 🤕</p>
+     <p class="btn btn-light">Reduces anxiety 😬</p>
+     <p class="btn btn-light">Lowers Heartrate 🫀</p>
+     <p class="btn btn-light">Increases Energy ⚡️</p>
+     <p class="btn btn-light">Reduces inflammation 🧩</p>
 
+     </div>
+     <div>
+      <button class="btn btn-primary fs-5 px-4 py-2 rounded-5 text-default d-flex align-items-center justify-content-centerr" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="images/habit-icon.svg" alt="">Add Habit</button>
 
+<div class="offcanvas offcanvas-end px-3" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header d-flex flex-column align-items-start border-bottom border-muted">
 
+    
+    <div>
+    <h2 class="offcanvas-title text-default" id="offcanvasRightLabel">Add Habit</h2>
+    <h4 class="text-default text-muted fs-5 opacity-75">Tackle your goals in daily doses</h4>
+    </div>
+  </div>
+  <div class="offcanvas-body">
+    <h2>Add Habit</h2>
+<form class="d-flex flex-column" action="/habitCreate" method="post">
 
+  <label class="fs-4 text-default mb-2" for="Habit">1. Name this habit</label>
+  <input class="form-control text-default" type="text" id="Habit" name="Habit" placeholder="Habit name" value="Cold Water"/><br /><br />
 
-
-
-<h2>Cold water therapy</h2>
-<form action="/habitCreate" method="post">
-
-  <label for="Habit">Habit:</label>
-  <input type="text" id="Habit" name= "Habit" value="Cold water inmersions" readonly="Cold water inmersions"/><br /><br />
-
-  <label for="Tasks">Tasks:</label><br>
-<select type="text" id="Tasks"   name="Tasks">
+    <label class="fs-4 text-default mb-2" for="Tasks">2. Select Tasks</label><br />
+<select class="form-control" type="text" id="Tasks"   name="Tasks">
   <option value="1 minute immersion">1 minute immersion</option>
   <option value="3 minutes immersion">3 minutes immersion</option>
  <option value="5 minutes immersion">5 minutes immersion</option>
@@ -175,28 +201,67 @@
   <option value="10 minutes immersion">10 minutes immersion</option>
 
 
- </select><br>
+ </select>
+  <label  class="fs-4 text-default mb-2 mt-3" for="Time">3. Select time</label>
+  <div class="d-flex gap-2 mb-3">
+    <input name="timeOptions" type="radio" class="btn-check" id="check-morning" autocomplete="off">
+<label class="btn btn-outline-primary p-2" for="check-morning">Morning</label>
+ <input name="timeOptions" type="radio" class="btn-check" id="check-evening" autocomplete="off">
+<label class="btn btn-outline-primary p-2" for="check-evening">Evening</label>
+<input name="timeOptions" type="radio" class="btn-check" id="check-night" autocomplete="off">
+<label class="btn btn-outline-primary p-2" for="check-night">Night</label>
+  </div>
+
+   <label class="fs-4 text-default mb-2" for="Count">4. Habit completion streak</label>
+  <select class="form-control" class="" type="text" id="Count" name="Count" value="0" readonly="Starting of your new journey!" /><br /><br />
   
 
-<label for="Time">Time:</label>
-<select type="text" id="Time" name="Time">
-  <option value="morning">Morning</option>
-  <option value="evening">Evening</option>
-  <option value="night">Night</option>
-  
-</select><br>
+  </select>
 
+  <label class="fs-4 text-default mb-2 mt-3" for="Duration">5. Duration</label>
+  <input class="form-control text-default" type="text" id="Duration" name="Duration" placeholder="Duration" /><br /><br />
 
+  <label class="fs-4 text-default mb-2" for="Goal">6. Goal</label>
+  <textarea placeholder="Goals" class="form-control text-default" type="text" id="Goal" name="Goal"></textarea><br /><br />
 
-  <label for="Duration">Duration:</label>
-   <input type="text" id="Duration" name="Duration"  /><br /><br />
-
-   <label for="Count">Habit completion streak:</label>
-  <input type="text" id="Count" name="Count" value="0" readonly="0" /><br /><br />
-
-  <label for="Goal">Goal:</label>
-  <textarea type="text" id="Goal" name="Goal" ></textarea><br /><br />
-
- 
- <input type="submit" value="Add Habit!" />
+  <div class="d-flex gap-3">
+  <button class="btn btn-primary px-4 py-3 rounded-5" type="submit">Add Habit</button>
+  </div>
 </form>
+     </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+ <footer class="container-fluid bg-gray">
+     <div class="container">
+    <div class="row">
+       <div class="col-12 col-md">
+           <h1 class="text-blue d-flex align-items-center gap-3"><img class="favicon-md bg-blue" src="/images/habitsu.png" alt="">Habitsu</h1>
+           <p class="text-graylight opacity-75">Copyright © 2023</p>
+           <p class="fs-5">Made with <img src="images/logo11.svg" alt=""> by <a class="text-decoration-none" href="">Mauricio</a> & <a class="text-decoration-none" href="">Rampriya</a> & <a class="text-decoration-none" href="">Krisztian</a></p>
+       </div>
+       <div class="col d-flex justify-content-start d-md-block">
+          <div class="row">
+            <div class="col d-flex gap-3 justify-content-end">
+               <ul class="list-style-none d-flex flex-column gap-2">
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/">Home</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/about">About</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/contact">Contact</a></li>
+               </ul>
+               <ul class="list-style-none d-flex flex-column gap-2">
+                   <li><a class="text-decoration-none text-dark text-default fs-4" href="/privacy-policy">Privacy Policy</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/terms-of-use">Terms of Service</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/contact">Email Us</a></li>
+                        <li class="d-flex gap-3 mt-3">
+                  <img src="/images/twitter.svg" alt="">
+                  <img src="/images/linkedin.svg" alt="">
+                </li>
+               </ul>
+            </div>
+          </div>
+       </div>
+    </div>
+     </div>
+   </footer>
