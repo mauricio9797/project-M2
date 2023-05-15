@@ -1,58 +1,282 @@
-<h2>Dopamine fasting</h2>
-<form action="/habitCreate" method="post">
+     <div class="container-fluid">
+     <div class="container">
+    <nav class="navbar navbar-expand-md p-3 d-flex justify-content-around gap-5">
+      <a class="navbar-brand fw-bold text-blue fs-3 d-flex align-items-center gap-3" href="/"><img class="favicon-sm bg-blue" src="/images/habitsu.png" alt=""> Habitsu<h6></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <label for="Habit">Habit:</label>
-  <input
-    type="text"
-    id="Habit"
-    name="Habit"
-    value="Dopamine fasting"
-    readonly="Dopamine fasting"
-  /><br /><br />
+           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-flex justify-content-md-end">
+             <ul class="navbar-nav gap-3">
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/">Home</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/habits">Recommendations</a>
+            </li>
+                        <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/about">About</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/contact">Contact</a>
+            </li>
+            
+          {{#if user}}
+          
 
-  <label for="Tasks">Tasks:</label><br />
-  <select type="text" id="Tasks" name="Tasks">
+<div class="position-relative d-none d-md-block">
+ <a class="dropdown-toggle fs-2 d-flex align-items-center" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false">
+    <img class="favicon-sm" src="/images/avatar.svg" alt="">
+  </a>
+
+  <ul class="p dropdown-menu rounded-2 py-3 px-2" aria-labelledby="dropdownMenuLink2">
+    <li class="d-flex gap-1"> <a href="/profile"><img class="favicon-sm" src="/images/avatar.svg" alt=""></a> </li>
+    <li class="py-1"><a class="dropdown-item" href="/profile">Profile</a></li>
+    <li class="py-1"><a class="dropdown-item" href="/profile/settings">Account Settings</a></li>
+    <li class="py-1"><form class="px-3" method="POST" action="/auth/logout">
+  <button class="p-0 border-0 bg-transparent" type="submit">Sign Out</button>
+</form></li>
+</ul>
+</div>
+     <div class="container">
+    <nav class="navbar navbar-expand-md p-3 d-flex justify-content-around gap-5">
+      <a class="navbar-brand fw-bold text-blue fs-3 d-flex align-items-center gap-3" href="/"><img class="favicon-sm bg-blue" src="/images/habitsu.png" alt=""> Habitsu<h6></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-flex justify-content-md-end">
+             <ul class="navbar-nav gap-3">
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/">Home</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/habits">Recommendations</a>
+            </li>
+                        <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/about">About</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/contact">Contact</a>
+            </li>
+            
+          {{#if user}}
+          
+
+<div class="position-relative d-none d-md-block">
+ <a class="dropdown-toggle fs-2 d-flex align-items-center" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false">
+    <img class="favicon-sm" src="/images/avatar.svg" alt="">
+  </a>
+
+  <ul class="p dropdown-menu rounded-2 py-3 px-2" aria-labelledby="dropdownMenuLink2">
+    <li class="d-flex gap-1"> <a href="/profile"><img class="favicon-sm" src="/images/avatar.svg" alt=""></a> </li>
+    <li class="py-1"><a class="dropdown-item" href="/profile">Profile</a></li>
+    <li class="py-1"><a class="dropdown-item" href="/profile/settings">Account Settings</a></li>
+    <li class="py-1"><form class="px-3" method="POST" action="/auth/logout">
+  <button class="p-0 border-0 bg-transparent" type="submit">Sign Out</button>
+</form></li>
+</ul>
+</div>
+
+
+
+
+          
+            {{else}}
+       <li class="nav-item d-none d-md-flex align-items-center">
+               <a class=" btn btn-primary fs-5 p-2 px-4 rounded-5" href="/login">Sign In</a>
+            </li>
+              <li class="nav-item d-none d-md-block">
+               <a class="btn btn-primary p-2 px-4 rounded-5 fs-5" href="/signup">Try for Free</a>
+            </li>
+            {{/if}}
+             <li class="nav-item d-flex justify-content-center gap-3 pb-4 d-md-none p-2 border-bottom border-muted">
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/login">Login</a>
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/signup">Sign Up</a>
+            </li>
+            <li class="nav-item d-md-none border-bottom border-muted pb-4">
+              <a class="text-decoration-none text-dark fs-5" href="">Pricing</a>
+            </li>
+            <li class="nav-item d-md-none d-flex flex-column">
+              <a class="text-decoration-none text-dark fs-5" href="">Email Us</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Privacy Policy</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Terms of Service</a>
+            </li>
+            <li class="nav-item d-flex gap-3 d-md-none">
+              <a href=""><img src="/images/twitter.svg" alt=""></a>
+              <a href=""><img src="/images/linkedin.svg" alt=""></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+   </div>
+
+   
+
+
+
+
+          
+            {{else}}
+       <li class="nav-item d-none d-md-flex align-items-center">
+               <a class=" btn btn-primary fs-5 p-2 px-4 rounded-5" href="/login">Sign In</a>
+            </li>
+              <li class="nav-item d-none d-md-block">
+               <a class="btn btn-primary p-2 px-4 rounded-5 fs-5" href="/signup">Try for Free</a>
+            </li>
+            {{/if}}
+             <li class="nav-item d-flex justify-content-center gap-3 pb-4 d-md-none p-2 border-bottom border-muted">
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/login">Login</a>
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/signup">Sign Up</a>
+            </li>
+            <li class="nav-item d-md-none border-bottom border-muted pb-4">
+              <a class="text-decoration-none text-dark fs-5" href="">Pricing</a>
+            </li>
+            <li class="nav-item d-md-none d-flex flex-column">
+              <a class="text-decoration-none text-dark fs-5" href="">Email Us</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Privacy Policy</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Terms of Service</a>
+            </li>
+            <li class="nav-item d-flex gap-3 d-md-none">
+              <a href=""><img src="/images/twitter.svg" alt=""></a>
+              <a href=""><img src="/images/linkedin.svg" alt=""></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+   </div>
+<div class="container-fluid py-5">
+  <div class="container d-flex flex-column align-items-center">
+     <h1 class="habits-icon">🍕🚫</h1>
+     <h1>Dopamine Fasting</h1>
+     <p class="text-muted opacity-75">"Training your mind to focus on the right things is an essential element of success."</p>
+     <p class="w-50 text-muted text-center">
+Dopamine fasting, a practice involving intentional reduction or abstention from activities that stimulate dopamine release, offers a unique opportunity to recalibrate the brain's reward system, regain focus, and cultivate a greater appreciation for the simple joys of life. By temporarily disconnecting from constant sources of stimulation, individuals can experience improved self-control, reduced cravings, increased mindfulness, and a renewed sense of balance and contentment.</p>
+     <div class="d-flex flex-wrap gap-2 justify-content-center text-box">
+     <p class="btn btn-light">Breaks Addictive Patterns 🤳</p>
+     <p class="btn btn-light">Increases Self-Discipline 😌</p>
+     <p class="btn btn-light">Boosts Problems Solving 🧩</p>
+      <p class="btn btn-light">Improves recovery 🤕</p>
+     <p class="btn btn-light">Reduces anxiety 😬</p>
+     <p class="btn btn-light">Improves Sleep 🛌</p>
+     <p class="btn btn-light">Increases Energy ⚡️</p>
+     <p class="btn btn-light">Promotes self-awareness 😄</p>
+
+     </div>
+     <div>
+      <button class="btn btn-primary fs-5 px-4 py-2 rounded-5 text-default d-flex align-items-center justify-content-centerr" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="images/habit-icon.svg" alt="">Add Habit</button>
+
+<div class="offcanvas offcanvas-end px-3" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header d-flex flex-column align-items-start border-bottom border-muted">
+
+    
+    <div>
+    <h2 class="offcanvas-title text-default" id="offcanvasRightLabel">Add Habit</h2>
+    <h4 class="text-default text-muted fs-5 opacity-75">Tackle your goals in daily doses</h4>
+    </div>
+  </div>
+  <div class="offcanvas-body">
+    <h2>Add Habit</h2>
+<form class="d-flex flex-column" action="/habitCreate" method="post">
+
+  <label class="fs-4 text-default mb-2" for="Habit">1. Name this habit</label>
+  <input class="form-control text-default" type="text" id="Habit" name="Habit" placeholder="Habit name" value="Dopamine Fasting"/><br /><br />
+
+    <label class="fs-4 text-default mb-2" for="Tasks">2. Select Tasks</label><br />
+ <select class="form-control" type="text" id="Tasks" name="Tasks">
     <option value="Reduce social media activity">Reduce social media activity</option>
     <option value="Eliminate social media accounts">Eliminate social media
       accounts</option>
+  </select>
 
-  </select><br />
-  <label for="Tasks1">Tasks:</label><br />
-  <select type="text" id="Tasks1" name="Tasks1">
+  <select class="form-control mt-2" type="text" id="Tasks1" name="Tasks1">
     <option value="spend less time using devices">spend less time using devices</option>
     <option
       value="Just use your phone when strictly necessary, make/receive calls"
     >Just use your phone when strictly necessary, make/receive calls...</option>
     <option value="Do not use headphones">Do not use headphones</option>
 
-  </select><br />
+  </select>
 
-  <label for="Tasks">Tasks:</label><br />
-  <select type="text" id="Tasks2" name="Tasks2">
+   <select class="form-control mt-2" type="text" id="Tasks2" name="Tasks2">
     <option value="Plan daily time without any sort of distractions">Plan daily
       time without any sort of distractions</option>
     <option value="Remove unnecessary pleasures, like listening to music">Remove
       unnecessary pleasures, like listening to music</option>
     <option value="Eat plain, simple food">Eat plain, simple food</option>
 
-  </select><br />
+  </select>
 
-  <label for="Time">Time:</label>
-  <select type="text" id="Time" name="Time">
-    <option value="morning">Morning</option>
-    <option value="evening">Evening</option>
-    <option value="night">Night</option>
+  <label  class="fs-4 text-default mb-2 mt-3" for="Time">3. Select time</label>
+  <div class="d-flex gap-2 mb-3">
+    <input name="timeOptions" type="radio" class="btn-check" id="check-morning" autocomplete="off">
+<label class="btn btn-outline-primary p-2" for="check-morning">Morning</label>
+ <input name="timeOptions" type="radio" class="btn-check" id="check-evening" autocomplete="off">
+<label class="btn btn-outline-primary p-2" for="check-evening">Evening</label>
+<input name="timeOptions" type="radio" class="btn-check" id="check-night" autocomplete="off">
+<label class="btn btn-outline-primary p-2" for="check-night">Night</label>
+  </div>
 
-  </select><br />
+   <label class="fs-4 text-default mb-2" for="Count">4. Habit completion streak</label>
+  <select class="form-control" class="" type="text" id="Count" name="Count" value="0" readonly="Starting of your new journey!" /><br /><br />
+  
 
-  <label for="Duration">Duration:</label>
-  <input type="text" id="Duration" name="Duration" /><br /><br />
+  </select>
 
-  <label for="Count">Habit completion streak:</label>
-  <input type="text" id="Count" name="Count" value="0" readonly="0" /><br /><br />
+  <label class="fs-4 text-default mb-2 mt-3" for="Duration">5. Duration</label>
+  <input class="form-control text-default" type="text" id="Duration" name="Duration" placeholder="Duration" /><br /><br />
 
-  <label for="Goal">Goal:</label>
-  <textarea type="text" id="Goal" name="Goal"></textarea><br /><br />
+  <label class="fs-4 text-default mb-2" for="Goal">6. Goal</label>
+  <textarea placeholder="Goals" class="form-control text-default" type="text" id="Goal" name="Goal"></textarea><br /><br />
 
-  <input type="submit" value="Add Habit!" />
+  <div class="d-flex gap-3">
+  <button class="btn btn-primary px-4 py-3 rounded-5" type="submit">Add Habit</button>
+  </div>
 </form>
+     </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+ <footer class="container-fluid bg-gray">
+     <div class="container">
+    <div class="row">
+       <div class="col-12 col-md">
+           <h1 class="text-blue d-flex align-items-center gap-3"><img class="favicon-md bg-blue" src="/images/habitsu.png" alt="">Habitsu</h1>
+           <p class="text-graylight opacity-75">Copyright © 2023</p>
+           <p class="fs-5">Made with <img src="images/logo11.svg" alt=""> by <a class="text-decoration-none" href="">Mauricio</a> & <a class="text-decoration-none" href="">Rampriya</a> & <a class="text-decoration-none" href="">Krisztian</a></p>
+       </div>
+       <div class="col d-flex justify-content-start d-md-block">
+          <div class="row">
+            <div class="col d-flex gap-3 justify-content-end">
+               <ul class="list-style-none d-flex flex-column gap-2">
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/">Home</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/about">About</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/contact">Contact</a></li>
+               </ul>
+               <ul class="list-style-none d-flex flex-column gap-2">
+                   <li><a class="text-decoration-none text-dark text-default fs-4" href="/privacy-policy">Privacy Policy</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/terms-of-use">Terms of Service</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/contact">Email Us</a></li>
+                        <li class="d-flex gap-3 mt-3">
+                  <img src="/images/twitter.svg" alt="">
+                  <img src="/images/linkedin.svg" alt="">
+                </li>
+               </ul>
+            </div>
+          </div>
+       </div>
+    </div>
+     </div>
+   </footer>

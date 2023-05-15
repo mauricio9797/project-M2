@@ -5,10 +5,18 @@ const authRoutes = require("./auth.routes");
 const isLoggedOut = require("../middlewares/isLoggedOut");
 const User = require("../models/User.model");
 const Habit = require("../models/Habit.model");
+// const helpers = require('../utils/helpers.js');
+
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  // const currentTime = getCurrentTime();
+  // console.log(currentTime)
+  if(req.session.user){
+    res.render("index",{user: req.session.user});
+  }else{
+    res.render("index");
+  }
 });
 
 router.use("/auth", authRoutes);
@@ -18,11 +26,24 @@ router.get("/messages", isLoggedIn, (req, res) => {
 });
 
 router.get("/profile", isLoggedIn, async(req, res) => {
-  const user = await User.findOne({username: req.session.user.username })
+  
+  const user = await User.findOne({ username: req.session.user.username }).populate('habit');
+
+
     console.log("hello this is the user data", user)
-  res.render("profile", { userName: req.session.user.username,   userImage: user.userImage });
+    console.log("User Habits ======>", user.habit)
+  res.render("profile", { userName: req.session.user.username,   userImage: user.userImage, habits: user.habit});
   
 });
+
+router.get("/profile/settings", isLoggedIn, async(req,res) => {
+  try{
+  res.render("settings");
+  }catch(err){
+    console.error("There was an error", err);
+  }
+}
+  )
 
 router.get("/habits", (req, res, next) => {
   res.render("habits");

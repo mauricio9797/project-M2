@@ -1,103 +1,187 @@
-<h3>Don't know where to start?<br> Search for our science based reccomendations to improve the quality of your life</h3>
+<div class="container-fluid">
+     <div class="container">
+    <nav class="navbar navbar-expand-md p-3 d-flex justify-content-around gap-5">
+      <a class="navbar-brand fw-bold text-blue fs-3 d-flex align-items-center gap-3" href="/"><img class="favicon-sm bg-blue" src="/images/habitsu.png" alt=""> Habitsu<h6></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<h1><a href="/habits/meditation" ><li>MEDITATION</li></a></h1>
-<p> <em>"How you breath is how you live"</em></p>
-<ol><li>Better manage of stressful situations</li>
-<li>skills to manage your stress</li> 
-<li>self-awareness on the present</li> 
-<li>Helps fight depression</li>
-<li>rewire negative self-talk</li>
-<li>Increasing creativity, alertness and focus</li>
-<li>Increasing patience and tolerance</li>
-<li>Lowering resting heart rate and resting blood pressure</li>
-<li>Helps to fight nervosity and anxiety</li>
-<li>Improving sleep quality</li>
-</ol>
-<h1><a href="/habits/walking" ><li>WALKING</li></a></h1>
-<p> <em>"Take a step towards a healthier life."</em></p>
-<ol>
-    <li>Improves cardiovascular health</li>
-    <li>Reduces the risk of heart disease and stroke</li>
-    <li>Boosts the immune system</li>
-    <li>Helps with weight management</li>
-    <li>Reduces anxiety and depression</li>
-    <li>Increases energy levels and reduces fatigue</li>
-    <li>Strengthens bones and muscles</li>
-    <li>Improves balance and coordination</li>
-    <li>Reduces the risk of chronic diseases such as diabetes, cancer, and osteoporosis</li>
-    <li>Improves overall well-being and quality of life</li>
-</ol>
+           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-flex justify-content-md-end">
+             <ul class="navbar-nav gap-3">
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/">Home</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/habits">Recommendations</a>
+            </li>
+                        <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/about">About</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-primary fs-5 d-none d-lg-block" href="/contact">Contact</a>
+            </li>
+            
+          {{#if user}}
+          
 
-<h1><a href="/habits/coldWater" ><li>COLD WATER EXPOSURE</li></a></h1>
-<p><em>"The ice-cold water can be a merciless teacher. But it’s a teacher that works on you, not against you." - Wim Hof</em></p>
-<ol>
-  <li>Boosts the immune system</li>
-  <li>Increases circulation and metabolism</li>
-  <li>Improves lymphatic function</li>
-  <li>Increases energy levels and alertness</li>
-  <li>Reduces inflammation and soreness</li>
-  <li>Enhances mental clarity and focus</li>
-  <li>Improves recovery time after exercise</li>
-  <li>Reduces stress and anxiety</li>
-  <li>Improves overall mood and well-being</li>
-  <li>Helps build mental and physical resilience</li>
-</ol>
+<div class="position-relative d-none d-md-block">
+ <a class="dropdown-toggle fs-2 d-flex align-items-center" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false">
+    <img class="favicon-sm" src="/images/avatar.svg" alt="">
+  </a>
 
-
+  <ul class="p dropdown-menu rounded-2 py-3 px-2" aria-labelledby="dropdownMenuLink2">
+    <li class="d-flex gap-1"> <a href="/profile"><img class="favicon-sm" src="/images/avatar.svg" alt=""></a> </li>
+    <li class="py-1"><a class="dropdown-item" href="/profile">Profile</a></li>
+    <li class="py-1"><a class="dropdown-item" href="/profile/settings">Account Settings</a></li>
+    <li class="py-1"><form class="px-3" method="POST" action="/auth/logout">
+  <button class="p-0 border-0 bg-transparent" type="submit">Sign Out</button>
+</form></li>
+</ul>
+</div>
 
 
 
 
+          
+            {{else}}
+       <li class="nav-item d-none d-md-flex align-items-center">
+               <a class=" btn btn-primary fs-5 p-2 px-4 rounded-5" href="/login">Sign In</a>
+            </li>
+              <li class="nav-item d-none d-md-block">
+               <a class="btn btn-primary p-2 px-4 rounded-5 fs-5" href="/signup">Try for Free</a>
+            </li>
+            {{/if}}
+             <li class="nav-item d-flex justify-content-center gap-3 pb-4 d-md-none p-2 border-bottom border-muted">
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/login">Login</a>
+                <a class="btn btn-primary fs-4 rounded-5 px-4 py-2" href="/signup">Sign Up</a>
+            </li>
+            <li class="nav-item d-md-none border-bottom border-muted pb-4">
+              <a class="text-decoration-none text-dark fs-5" href="">Pricing</a>
+            </li>
+            <li class="nav-item d-md-none d-flex flex-column">
+              <a class="text-decoration-none text-dark fs-5" href="">Email Us</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Privacy Policy</a>
+              <a class="text-decoration-none text-dark fs-5" href="">Terms of Service</a>
+            </li>
+            <li class="nav-item d-flex gap-3 d-md-none">
+              <a href=""><img src="/images/twitter.svg" alt=""></a>
+              <a href=""><img src="/images/linkedin.svg" alt=""></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+   </div>
+</div>
+<div class="container-fluid py-5">
+ <div class="container d-flex gap-5 flex-wrap justify-content-center pb-4">
 
 
-<h1><a href="/habits/dopamineFasting"><li>DOPAMINE FASTING</li></a></h1>
-<p><em>"Training your mind to focus on the right things is an essential element of success."</em></p>
-<ol>
-  <li>Re-establishes a healthy relationship with technology</li>
-  <li>Helps break addictive patterns and behaviors</li>
-  <li>Improves focus, clarity, and productivity</li>
-  <li>Increases self-discipline and willpower</li>
-  <li>Boosts creativity and problem-solving skills</li>
-  <li>Encourages a more mindful and intentional way of living</li>
-  <li>Reduces stress and anxiety levels</li>
-  <li>Helps improve sleep quality and quantity</li>
-  <li>Promotes a deeper sense of self-awareness and self-reflection</li>
-</ol>
+<a class="p-0 m-0 text-decoration-none" href="/habits/meditation">
+<div class="card col-4 p-3 text-center list-card-habits" style="width: 18rem;">
+  <p class="m-0 habits-icon">🧘</p>
+  <div class="card-body">
+    <h5 class="card-title text-blue">MEDITATION</h5>
+    <p class="card-text text-muted">Meditation is a transformative practice that nurtures a state of deep relaxation, heightened self-awareness, and an overall sense of well-being.</p>
+    <a href="/habits/meditation" class="btn btn-primary my-3">Read More</a>
+  </div>
+</div>
+</a>
 
-<h1><a href="/habits/earthing" ><li>EARTHING</li></a></h1>
-<p> <em>“Feel yourself grounded to the earth, while your mind is focusing on the sky of clarity.” – Nawang Khechog</em></p>
-<ol>
-    <li>Reduces inflammation and promotes healing in the body</li>
-    <li>Improves sleep quality and reduces insomnia</li>
-    <li>Improves blood flow and reduces blood viscosity</li>
-    <li>Reduces stress and improves mood</li>
-    <li>Increases energy levels and reduces fatigue</li>
-    <li>Improves immune function and helps fight illness</li>
-    <li>Helps regulate the body's natural rhythms and balances hormones</li>
-    <li>May improve skin health and reduce signs of aging</li>
-    <li>Can improve athletic performance and reduce recovery time</li>
-    <li>May reduce the risk of chronic diseases such as diabetes, heart disease, and cancer</li>
-</ol>
-<h1><a href="/habits/exercise"><li>EXERCISE</li></a></h1>
-<p><em>"Physical fitness is not only one of the most important keys to a healthy body, it is the basis of dynamic and creative intellectual activity." - John F. Kennedy</em></p>
-<ol>
-    <li>Improves cardiovascular health and reduces risk of heart disease</li>
-    <li>Helps to maintain a healthy weight</li>
-    <li>Increases muscle strength and endurance</li>
-    <li>Helps to build and maintain strong bones</li>
-    <li>Improves balance and coordination</li>
-    <li>Boosts mood and reduces symptoms of depression and anxiety</li>
-    <li>Increases energy levels and reduces fatigue</li>
-    <li>Improves brain function and cognitive abilities</li>
-    <li>Can be a social activity and helps to build community</li>
-    <li>Can be a fun way to try new things and challenge yourself</li>
-</ol>
-</ol>
-<br>
-<h4>Sign up for free to see the list of habits that you can create</h4><ol>
-<a href="/signup">Signup</a>
-<a href="/">BACK</a>
+<a class="p-0 m-0 text-decoration-none" href="/habits/walking">
+<div class="card col-4 p-3 text-center list-card-habits" style="width: 18rem;">
+  <p class="m-0 habits-icon">🏃</p>
+  <div class="card-body">
+    <h5 class="card-title text-blue">Walking</h5>
+    <p class="card-text text-muted">Walking is an invigorating exercise that improves physical health and uplifts the spirit.
+</p>
+    <a href="/habits/walking" class="btn btn-primary my-3">Read More</a>
+  </div>
+</div>
+</a>
 
+<a class="p-0 m-0 text-decoration-none" href="/habits/coldwater">
+<div class="card col-4 p-3 text-center list-card-habits" style="width: 18rem;">
+  <p class="m-0 habits-icon">🥶</p>
+  <div class="card-body">
+    <h5 class="card-title text-blue">Cold Water</h5>
+    <p class="card-text text-muted">Cold water revitalizes the body, sharpens the mind, and promotes overall well-being.
+</p>
+    <a href="/habits/coldwater" class="btn btn-primary my-3">Read More</a>
+  </div>
+</div>
+</a>
+ 
+ <a class="p-0 m-0 text-decoration-none" href="/habits/dopaminefasting">
+<div class="card col-4 p-3 text-center list-card-habits" style="width: 18rem;">
+  <p class="m-0 habits-icon">🍕🚫</p>
+  <div class="card-body">
+    <h5 class="card-title text-blue">Dopamine Fasting</h5>
+    <p class="card-text text-muted">Dopamine fasting resets the mind and restores appreciation for simplicity.
+</p>
+    <a href="/habits/dopaminefasting" class="btn btn-primary my-3">Read More</a>
+  </div>
+</div>
+</a>
 
+<a class="p-0 m-0 text-decoration-none" href="/habits/earthing">
+<div class="card col-4 p-3 text-center list-card-habits" style="width: 18rem;">
+  <p class="m-0 habits-icon">🍃</p>
+  <div class="card-body">
+    <h5 class="card-title text-blue">Earthing</h5>
+    <p class="card-text text-muted">Earthing, or grounding, by walking barefoot on natural surfaces, harnesses the Earth's energy to promote health and well-being.
+</p>
+    <a href="/habits/earthing" class="btn btn-primary my-3">Read More</a>
+  </div>
+</div>
+</a>
 
+<a class="p-0 m-0 text-decoration-none" href="/habits/exercise">
+<div class="card col-4 p-3 text-center list-card-habits" style="width: 18rem;">
+  <p class="m-0 habits-icon">🏋️</p>
+  <div class="card-body">
+    <h5 class="card-title text-blue">Exercise</h5>
+    <p class="card-text text-muted">Exercise enhances fitness, mental clarity, and well-being.
+</p>
+    <a href="/habits/exercise" class="btn btn-primary my-3">Read More</a>
+  </div>
+</div>
+</a>
 
+ </div>
+</div>
+  <footer class="container-fluid bg-gray">
+     <div class="container">
+    <div class="row">
+       <div class="col-12 col-md">
+           <h1 class="text-blue d-flex align-items-center gap-3"><img class="favicon-md bg-blue" src="/images/habitsu.png" alt="">Habitsu</h1>
+           <p class="text-graylight opacity-75">Copyright © 2023</p>
+           <p class="fs-5">Made with <img src="images/logo11.svg" alt=""> by <a class="text-decoration-none" href="">Mauricio</a> & <a class="text-decoration-none" href="">Rampriya</a> & <a class="text-decoration-none" href="">Krisztian</a></p>
+       </div>
+       <div class="col d-flex justify-content-start d-md-block">
+          <div class="row">
+            <div class="col d-flex gap-3 justify-content-end">
+               <ul class="list-style-none d-flex flex-column gap-2">
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/">Home</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/about">About</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/contact">Contact</a></li>
+               </ul>
+               <ul class="list-style-none d-flex flex-column gap-2">
+                   <li><a class="text-decoration-none text-dark text-default fs-4" href="/privacy-policy">Privacy Policy</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/terms-of-use">Terms of Service</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/contact">Email Us</a></li>
+                        <li class="d-flex gap-3 mt-3">
+                  <img src="/images/twitter.svg" alt="">
+                  <img src="/images/linkedin.svg" alt="">
+                </li>
+               </ul>
+            </div>
+          </div>
+       </div>
+    </div>
+     </div>
+   </footer>

@@ -15,6 +15,9 @@
                <a class="nav-link text-white fs-5 d-none d-lg-block" href="/">Home</a>
             </li>
             <li class="nav-item d-none d-md-flex align-items-center">
+               <a class="nav-link text-white fs-5 d-none d-lg-block" href="/habits">Recommendations</a>
+            </li>
+            <li class="nav-item d-none d-md-flex align-items-center">
                <a class="nav-link text-white fs-5 d-none d-lg-block" href="/about">About</a>
             </li>
             <li class="nav-item d-none d-md-flex align-items-center">
@@ -54,7 +57,7 @@
              <div class="w-100 d-flex flex-column gap-3 px-4">
               <input class="form-control p-3 p bg-gray" type="text" name="username" id="" placeholder="Name">
              <input class="form-control p-3 p bg-gray" type="email" name="email" id="" placeholder="Email">
-            <input class="form-control-file" type="file" id="userImage "name="userImage" accept="image/png, image/jpg" >
+            {{!-- <input class="form-control-file" type="file" id="userImage "name="userImage" accept="image/png, image/jpg" > --}}
 
              
              <input class="form-control p-3 p bg-gray" type="password" name="password" id="" placeholder="Password">
@@ -67,17 +70,6 @@
              <div class="text-divider my-3 text-muted opacity-75 mx-4">Or</div>
              <h4 class="fs-5 my-3">Already have an account? <a href="/login" class="text-orange text-decoration-none border-4 border-orange py-1">Sign In</a></h4>
          </div>
-
-
-   
-   
- 
-
-
-
-
-
-
    </div>
   <footer class="container-fluid bg-gray">
      <div class="container">
@@ -90,15 +82,15 @@
        <div class="col d-flex justify-content-start d-md-block">
           <div class="row">
             <div class="col d-flex gap-3 justify-content-end">
-               <ul class="list-style-none d-flex flex-column">
-                <li><a class="text-decoration-none text-muted fs-4" href="/">Home</a></li>
-                <li><a class="text-decoration-none text-muted fs-4" href="/about">About</a></li>
-                <li><a class="text-decoration-none text-muted fs-4" href="/contact">Contact</a></li>
+              <ul class="list-style-none d-flex flex-column gap-2">
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/">Home</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/about">About</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/contact">Contact</a></li>
                </ul>
-               <ul class="list-style-none d-flex flex-column">
-                   <li><a class="text-decoration-none text-muted fs-4" href="/privacy-policy">Privacy Policy</a></li>
-                <li><a class="text-decoration-none text-muted fs-4" href="/terms-of-use">Terms of Service</a></li>
-                <li><a class="text-decoration-none text-muted fs-4" href="/contact">Email Us</a></li>
+               <ul class="list-style-none d-flex flex-column gap-2">
+                   <li><a class="text-decoration-none text-dark text-default fs-4" href="/privacy-policy">Privacy Policy</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/terms-of-use">Terms of Service</a></li>
+                <li><a class="text-decoration-none text-dark text-default fs-4" href="/contact">Email Us</a></li>
                         <li class="d-flex gap-3 mt-3">
                   <img src="/images/twitter.svg" alt="">
                   <img src="/images/linkedin.svg" alt="">
