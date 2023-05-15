@@ -101,10 +101,10 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
     const habit = new Habit({
       Habit: req.body.Habit,
       Tasks: req.body.Tasks,
-      // Tasks1: req.body.Tasks1,
-      // Tasks2: req.body.Tasks2,
+      Tasks1: req.body.Tasks1,
+      Tasks2: req.body.Tasks2,
       Time: req.body.Time,
-      // Count: req.body.Count,
+      Count: req.body.Count,
       Duration: req.body.Duration,
       Goal: req.body.Goal,
     });
