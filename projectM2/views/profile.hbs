@@ -31,10 +31,20 @@
    <div class="container">
 <div class="row pt-5">
   <h1 class="mb-5 text-default">Hey there, {{this.userName}}</h1>
+   <div style="text-align: left; padding-top: 1px; padding-bottom: 55px">
+      <img  style="width: 150px; border-style:solid; border-width: 5px; border-color:#017bff "    src="{{this.userImage}}" alt="image">
+    </div>
+
+
+<div></div>
+   
+ 
+  
    <div class="col-8">
     <div class="d-flex align-items-start">
     <div class="col-8">
 <div></div>
+ 
 <div class="d-flex align-items-center justify-content-center">
 <div class="tabs bg-gray">
 <input type="radio" id="radio-1" name="tabs" checked />
@@ -189,13 +199,10 @@ You won't be able to see your history.</p>
 
   <label class="fs-4 text-default mb-2" for="Tasks">2. Add tasks</label>
   <textarea  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks" name="Tasks"></textarea><br /><br />
-{{!-- 
-  <label for="Tasks1">Tasks:</label>
-  <textarea class="form-control" type="text" id="Tasks1" name="Tasks1"></textarea><br /><br />
-
-    <label for="Tasks2">Tasks:</label>
-  <textarea class="form-control" type="text" id="Tasks2" name="Tasks2"></textarea><br /><br /> --}}
-
+  <label class="fs-4 text-default mb-2" for="Tasks1">Add tasks</label>
+  <input  placeholder="Tasks"  class="form-control text-default habit-tasks1" type="text" id="Tasks1" name="Tasks1" /><br /><br />
+    <label class="fs-4 text-default mb-2" for="Tasks2">Add tasks</label>
+  <textarea  placeholder="Tasks"  class="form-control text-default habit-tasks2" type="text" id="Tasks2" name="Tasks2"></textarea><br /><br />
 
   <label  class="fs-4 text-default mb-2" for="Time">3. Select time</label>
   <div class="d-flex gap-2 mb-3">
