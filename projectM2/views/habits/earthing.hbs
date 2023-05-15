@@ -190,16 +190,28 @@ Earthing, also known as grounding, is the practice of connecting with the Earth'
 <form class="d-flex flex-column" action="/habitCreate" method="post">
 
   <label class="fs-4 text-default mb-2" for="Habit">1. Name this habit</label>
-  <input class="form-control text-default habit-name" type="text" id="Habit" name="Habit" placeholder="Habit name" /><br /><br />
+  <input class="form-control text-default habit-name" type="text" id="Habit" name="Habit" readonly="Earthing" value="Earthing" /><br /><br />
 
   <label class="fs-4 text-default mb-2" for="Tasks">2. Add tasks</label>
-  <textarea  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks" name="Tasks"></textarea><br /><br />
-  <label class="fs-4 text-default mb-2" for="Tasks1">Add tasks</label>
-  <input  placeholder="Tasks"  class="form-control text-default habit-tasks1" type="text" id="Tasks1" name="Tasks1" /><br /><br />
-    <label class="fs-4 text-default mb-2" for="Tasks2">Add tasks</label>
-  <textarea  placeholder="Tasks"  class="form-control text-default habit-tasks2" type="text" id="Tasks2" name="Tasks2"></textarea><br /><br />
+  <select  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks" name="Tasks">
+    <option value="Put a grass mat under your work desk">Put a grass mat under your work desk</option>
+    <option value="Mountain barefoot walking">Mountain barefoot walking</option>
 
-  <label  class="fs-4 text-default mb-2" for="Time">3. Select time</label>
+    </select><br /><br />
+
+   <label class="fs-4 text-default mb-2" for="Tasks1">3. Add tasks</label>
+  <select  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks1" name="Tasks1">
+    <option value="Beach barefoot walking">Beach barefoot walking</option>
+    <option value="Connect conductive sheets to your bed in order to sleep grounded">Connect conductive sheets to your bed in order to sleep grounded</option>
+
+    </select><br /><br />
+
+   <label class="fs-4 text-default mb-2" for="Tasks2">4. Add tasks</label>
+  <select  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks2" name="Tasks2">
+    <option value="Use earthing footwear">Use earthing footwear</option>
+    <option value="Get in the water. Go for a swim">Get in the water. Swim</option>
+ </select><br /><br />
+  <label  class="fs-4 text-default mb-2" for="Time">5. Select time</label>
   <div class="d-flex gap-2 mb-3">
     <input name="Time" type="radio" class="btn-check" value="morning" id="check-morning" autocomplete="off">
 <label class="btn btn-outline-primary p-2" for="check-morning">Morning</label>
@@ -209,16 +221,16 @@ Earthing, also known as grounding, is the practice of connecting with the Earth'
 <label class="btn btn-outline-primary p-2" for="check-night">Night</label>
   </div>
 
-   <label class="fs-4 text-default mb-2" for="Count">4. Habit completion streak</label>
+   <label class="fs-4 text-default mb-2" for="Count">6. Habit completion streak</label>
   <select class="form-control" class="" type="text" id="Count" name="Count" value="0" readonly="Starting of your new journey!" /><br /><br />
   
 
   </select>
 
-  <label class="fs-4 text-default mb-2" for="Duration">5. Duration</label>
+  <label class="fs-4 text-default mb-2" for="Duration">7. Duration</label>
   <input class="form-control text-default habit-duration" type="text" id="Duration" name="Duration" placeholder="Duration" /><br /><br />
 
-  <label class="fs-4 text-default mb-2" for="Goal">6. Goal</label>
+  <label class="fs-4 text-default mb-2" for="Goal">8. Goal</label>
   <textarea placeholder="Goals" class="form-control text-default habit-goal" type="text" id="Goal" name="Goal" value="{{habitEditDetails.Goal}}"></textarea><br /><br />
 
   <div class="d-flex gap-3">

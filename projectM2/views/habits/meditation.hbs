@@ -183,54 +183,70 @@
     <h4 class="text-default text-muted fs-5 opacity-75">Tackle your goals in daily doses</h4>
     </div>
   </div>
-  <div class="offcanvas-body">
+   <div class="offcanvas-body">
     <h2>Add Habit</h2>
 <form class="d-flex flex-column" action="/habitCreate" method="post">
 
   <label class="fs-4 text-default mb-2" for="Habit">1. Name this habit</label>
-  <input class="form-control text-default" type="text" id="Habit" name="Habit" placeholder="Habit name" value="Meditation"/><br /><br />
+  <input class="form-control text-default habit-name" type="text" id="Habit" name="Habit" readonly="Meditation" value="Meditation" /><br /><br />
 
-    <label class="fs-4 text-default mb-2" for="Tasks">2. Select Tasks</label><br />
-  <select class="form-control" type="text" id="Tasks" name="Tasks">
-    <option value="Meditate for 5 minutes straight, not distractions">Meditate
-      for 5 minutes straight, not distractions</option>
-    <option value="Meditate for 10 minutes straight, not distractions">Meditate
-      for 10 minutes straight, not distractions</option>
-    <option value="Meditate for 15 minutes straight, not distractions">Meditate
-      for 15 minutes straight, not distractions</option>
-    <option value="Meditate for 20 minutes straight, not distractions">Meditate
-      for 20 minutes straight, not distractions</option>
-    <option value="Meditate for 25 minutes straight, not distractions">Meditate
-      for 25 minutes straight, not distractions</option>
-    <option value="Meditate for 30 minutes straight, not distractions">Meditate
-      for 30 minutes straight, not distractions</option>
-  </select>
-  <label  class="fs-4 text-default mb-2 mt-3" for="Time">3. Select time</label>
+  <label class="fs-4 text-default mb-2" for="Tasks">2. Add tasks</label>
+  <select  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks" name="Tasks">
+    <option value="Runing  3 to 5 days a week">Runing 3 to 5 days a week</option>
+    <option value="Keeping myself more active throughout the day">Keeping myself
+      more active throughout the day</option>
+    </select><br /><br />
+
+   <label class="fs-4 text-default mb-2" for="Tasks1">3. Add tasks</label>
+  <select  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks1" name="Tasks1">
+    <option value="Going to the gym 3 to 5 times a week">Going to the gym 3 to 5
+      times a week</option>
+
+    <option value="Walking 10K steps a day">Walking 10K steps a day</option>
+
+    </select><br /><br />
+
+   <label class="fs-4 text-default mb-2" for="Tasks2">4. Add tasks</label>
+  <select  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks2" name="Tasks2">
+    <option value="Go for bike rides more often">Go for bike rides more often</option>
+
+    <option
+      value="Choose more active, physical demanding ways of spend your free-time"
+    >Choose more active, physical demanding ways of spend your free-time
+    </option>
+ </select><br /><br />
+  <label  class="fs-4 text-default mb-2" for="Time">5. Select time</label>
   <div class="d-flex gap-2 mb-3">
-    <input name="timeOptions" type="radio" class="btn-check" id="check-morning" autocomplete="off">
+    <input name="Time" type="radio" class="btn-check" value="morning" id="check-morning" autocomplete="off">
 <label class="btn btn-outline-primary p-2" for="check-morning">Morning</label>
- <input name="timeOptions" type="radio" class="btn-check" id="check-evening" autocomplete="off">
+ <input name="Time" type="radio" class="btn-check" id="check-evening" value="evening" autocomplete="off">
 <label class="btn btn-outline-primary p-2" for="check-evening">Evening</label>
-<input name="timeOptions" type="radio" class="btn-check" id="check-night" autocomplete="off">
+<input name="Time" type="radio" class="btn-check" id="check-night" value="night" autocomplete="off">
 <label class="btn btn-outline-primary p-2" for="check-night">Night</label>
   </div>
 
-   <label class="fs-4 text-default mb-2" for="Count">4. Habit completion streak</label>
+   <label class="fs-4 text-default mb-2" for="Count">6. Habit completion streak</label>
   <select class="form-control" class="" type="text" id="Count" name="Count" value="0" readonly="Starting of your new journey!" /><br /><br />
   
 
   </select>
 
-  <label class="fs-4 text-default mb-2 mt-3" for="Duration">5. Duration</label>
-  <input class="form-control text-default" type="text" id="Duration" name="Duration" placeholder="Duration" /><br /><br />
+  <label class="fs-4 text-default mb-2" for="Duration">7. Duration</label>
+  <input class="form-control text-default habit-duration" type="text" id="Duration" name="Duration" placeholder="Duration" /><br /><br />
 
-  <label class="fs-4 text-default mb-2" for="Goal">6. Goal</label>
-  <textarea placeholder="Goals" class="form-control text-default" type="text" id="Goal" name="Goal"></textarea><br /><br />
+  <label class="fs-4 text-default mb-2" for="Goal">8. Goal</label>
+  <textarea placeholder="Goals" class="form-control text-default habit-goal" type="text" id="Goal" name="Goal" value="{{habitEditDetails.Goal}}"></textarea><br /><br />
 
   <div class="d-flex gap-3">
   <button class="btn btn-primary px-4 py-3 rounded-5" type="submit">Add Habit</button>
+  <button class="btn bg-transparent border border-blue text-blue px-4 py-3 rounded-5" type="submit">+Add Another</button>
   </div>
 </form>
+  </div>
+</div>
+   </div>
+</div>
+
      </div>
   </div>
 </div>
