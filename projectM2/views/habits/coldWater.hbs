@@ -185,49 +185,69 @@ Cold water, whether experienced through showers, baths, or immersions, has been 
     <h4 class="text-default text-muted fs-5 opacity-75">Tackle your goals in daily doses</h4>
     </div>
   </div>
-  <div class="offcanvas-body">
+ <div class="offcanvas-body">
     <h2>Add Habit</h2>
 <form class="d-flex flex-column" action="/habitCreate" method="post">
 
   <label class="fs-4 text-default mb-2" for="Habit">1. Name this habit</label>
-  <input class="form-control text-default" type="text" id="Habit" name="Habit" placeholder="Habit name" value="Cold Water"/><br /><br />
+  <input class="form-control text-default habit-name" type="text" id="Habit" name="Habit" readonly="Cold Water Exposure" value="Cold Water Exposure" /><br /><br />
 
-    <label class="fs-4 text-default mb-2" for="Tasks">2. Select Tasks</label><br />
-<select class="form-control" type="text" id="Tasks"   name="Tasks">
-  <option value="1 minute immersion">1 minute immersion</option>
-  <option value="3 minutes immersion">3 minutes immersion</option>
- <option value="5 minutes immersion">5 minutes immersion</option>
- <option value="7 minutes immersion">7 minutes immersion</option>
-  <option value="10 minutes immersion">10 minutes immersion</option>
+  <label class="fs-4 text-default mb-2" for="Tasks">2. Add tasks</label>
+  <select  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks" name="Tasks">
+     <option value="Taking colder showers than usual">Taking colder showers than usual</option>
+    <option value="Feeling comfortable during the shower/inmersion">Feeling comfortable during the shower/inmersion</option>
+    <option value="Connecting with the sense of gratitude that cold water brings to you">Connecting with the sense of gratitude that cold water brings to you</option>
 
+    </select><br /><br />
 
- </select>
-  <label  class="fs-4 text-default mb-2 mt-3" for="Time">3. Select time</label>
+   <label class="fs-4 text-default mb-2" for="Tasks1">3. Add tasks</label>
+  <select  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks1" name="Tasks1">
+       <option value="Control your breathing during the shower/inmersion">Control your breathing during the shower/inmersion</option>
+    <option value="Be able to leave your mind blank during the inmersion">Be able to leave your mind blank during the inmersion</option>
+
+    </select><br /><br />
+
+   <label class="fs-4 text-default mb-2" for="Tasks2">4. Add tasks</label>
+  <select  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks2" name="Tasks2">
+      <option value="1 minute cold water inmersion">1 minute inmersion</option>
+    <option value="3 minutes cold water  inmersion">3 minutes inmersion</option>
+    <option value="5 minutes cold water inmersion">5 minutes inmersion</option>
+    <option value="7 minutes cold water inmersion">7 minutes inmersion</option>
+    <option value="10 minutes cold water inmersion">10 minutes inmersion</option>
+
+ </select><br /><br />
+  <label  class="fs-4 text-default mb-2" for="Time">5. Select time</label>
   <div class="d-flex gap-2 mb-3">
-    <input name="timeOptions" type="radio" class="btn-check" id="check-morning" autocomplete="off">
+    <input name="Time" type="radio" class="btn-check" value="morning" id="check-morning" autocomplete="off">
 <label class="btn btn-outline-primary p-2" for="check-morning">Morning</label>
- <input name="timeOptions" type="radio" class="btn-check" id="check-evening" autocomplete="off">
+ <input name="Time" type="radio" class="btn-check" id="check-evening" value="evening" autocomplete="off">
 <label class="btn btn-outline-primary p-2" for="check-evening">Evening</label>
-<input name="timeOptions" type="radio" class="btn-check" id="check-night" autocomplete="off">
+<input name="Time" type="radio" class="btn-check" id="check-night" value="night" autocomplete="off">
 <label class="btn btn-outline-primary p-2" for="check-night">Night</label>
   </div>
 
-   <label class="fs-4 text-default mb-2" for="Count">4. Habit completion streak</label>
+   <label class="fs-4 text-default mb-2" for="Count">6. Habit completion streak</label>
   <select class="form-control" class="" type="text" id="Count" name="Count" value="0" readonly="Starting of your new journey!" /><br /><br />
   
 
   </select>
 
-  <label class="fs-4 text-default mb-2 mt-3" for="Duration">5. Duration</label>
-  <input class="form-control text-default" type="text" id="Duration" name="Duration" placeholder="Duration" /><br /><br />
+  <label class="fs-4 text-default mb-2" for="Duration">7. Duration</label>
+  <input class="form-control text-default habit-duration" type="text" id="Duration" name="Duration" placeholder="Duration" /><br /><br />
 
-  <label class="fs-4 text-default mb-2" for="Goal">6. Goal</label>
-  <textarea placeholder="Goals" class="form-control text-default" type="text" id="Goal" name="Goal"></textarea><br /><br />
+  <label class="fs-4 text-default mb-2" for="Goal">8. Goal</label>
+  <textarea placeholder="Goals" class="form-control text-default habit-goal" type="text" id="Goal" name="Goal" value="{{habitEditDetails.Goal}}"></textarea><br /><br />
 
   <div class="d-flex gap-3">
   <button class="btn btn-primary px-4 py-3 rounded-5" type="submit">Add Habit</button>
+  <button class="btn bg-transparent border border-blue text-blue px-4 py-3 rounded-5" type="submit">+Add Another</button>
   </div>
 </form>
+  </div>
+</div>
+   </div>
+</div>
+
      </div>
   </div>
 </div>
