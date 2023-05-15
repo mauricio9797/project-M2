@@ -153,7 +153,7 @@ router.get("/habitEdit/:habitId", isLoggedIn, async (req, res, next) => {
   try {
     const { habitId } = req.params;
     const habit = await Habit.findById(habitId);
-    res.send({habitEditDetails: habit });
+    res.render({});
   } catch (err) {
     console.error("There was an error", err);
   }
