@@ -47,7 +47,7 @@ router.post("/signup", uploader.single("userImage"),  async (req, res, next) => 
 
  const salt = await bcryptjs.genSalt(12);
  const hash = await bcryptjs.hash(req.body.password, salt);
- const user = new User({ username: req.body.username, email:req.body.email, password: hash });
+ const user = new User({ username: req.body.username, email:req.body.email, userImage: req.file.path, password: hash });
 
  await user.save();
 req.session.user = {
