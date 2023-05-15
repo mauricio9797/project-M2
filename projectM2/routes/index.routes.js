@@ -26,9 +26,13 @@ router.get("/messages", isLoggedIn, (req, res) => {
 });
 
 router.get("/profile", isLoggedIn, async(req, res) => {
-  const user = await User.findOne({username: req.session.user.username })
+  
+  const user = await User.findOne({ username: req.session.user.username }).populate('habit');
+
+
     console.log("hello this is the user data", user)
-  res.render("profile", { userName: req.session.user.username,   userImage: user.userImage });
+    console.log("User Habits ======>", user.habit)
+  res.render("profile", { userName: req.session.user.username,   userImage: user.userImage, habits: user.habit});
   
 });
 

@@ -12,21 +12,18 @@ const HabitSchema = new Schema(
       type: String,
       lowercase: true,
       trim: true,
-      required: true,
     },
 
     Tasks1: {
       type: String,
       lowercase: true,
       trim: true,
-      required: true,
     },
 
     Tasks2: {
       type: String,
       lowercase: true,
       trim: true,
-      required: true,
     },
 
     Time: {
@@ -35,7 +32,6 @@ const HabitSchema = new Schema(
     },
     Count:{
       type: String,
-      required: true,
 
     },
 

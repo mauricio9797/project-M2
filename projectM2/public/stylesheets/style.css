@@ -11,6 +11,17 @@
   font-family: 'Boston';
 }
 
+.tab-forms{
+}
+
+.color-icon{
+  background-color: blue;
+  width:15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
 @keyframes progressbar-animation{
   0% {
     width:0;
@@ -79,19 +90,97 @@ html{
   --neon: #07DFE0;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+:root {
+  --primary-color: #185ee0;
+  --secondary-color: #e6eef9;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: rgba(230, 238, 249, 0.5);
+}
+
+.tabs {
+  max-width: 600px;
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  padding: 0.75rem;
+  border-radius: 99px;
+}
+.tabs * {
+  z-index: 2;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 400px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+}
+
+input[type=radio]:checked + label {
+  color: black !important;
+}
+input[type=radio]:checked + label > .notification {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+input[id=radio-1]:checked ~ .glider {
+  transform: translateX(0);
+}
+
+input[id=radio-2]:checked ~ .glider {
+  transform: translateX(100%);
+}
+
+input[id=radio-3]:checked ~ .glider {
+  transform: translateX(200%);
+}
+
+input[id=radio-4]:checked ~ .glider {
+  transform: translateX(300%);
+}
+
+.glider {
+  height: 45px;
+  width: 24%;
+  background-color: white;
+  z-index: 1;
+  transition: 250ms ease-out;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 700px) {
+  .tabs {
+    transform: scale(0.6);
+  }
+}
+
 .progress{
   height:0.7rem !important;
   width: 100% !important;
   max-width: 650px;
 }
 
-/* 
-.week-percentage{
-  animation-name: weekpercentage-animation;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-} */
 
 .week-percentage::after{
   content: "";
@@ -303,6 +392,10 @@ footer{
   padding:10rem 0;
 }
 
+.offcanvas{
+  border-radius: 1.5rem 0;
+}
+
 @media (min-width:768px){
   .position-md-absolute{
     position: absolute !important;
@@ -315,6 +408,9 @@ footer{
   }
   .translate-md-middle{
     transform:translate(-50%,-50%)
+  }
+  .offcanvas{
+    width:700px !important;
   }
 }
 
