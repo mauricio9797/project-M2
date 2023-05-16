@@ -219,13 +219,13 @@ router.get("/accountEdit/:userId", isLoggedIn, async (req, res, next) => {
     console.error("There was an error", err);
   }
 });
-/*router.post("/accountEdit/:userId", isLoggedIn, async (req, res) => {
+router.post("/accountEdit/:userId", isLoggedIn, async (req, res) => {
   const userId = req.params.userId;
   const user = await User.findByIdandUpdate(userId, {username: req.session.user.username }, {new: true})
     console.log("hello this is the updatedUser data", user)
   res.render("updateProfile", { userName: req.session.user.username});
   
-});*/
+})
 /*router.post("/accountEdit/:userId", isLoggedIn, async (req, res) => {
   try {
     const userId = req.params.userId;
