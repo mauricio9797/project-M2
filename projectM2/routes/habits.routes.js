@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const isLoggedOut = require("../middlewares/isLoggedOut");
+const User = require("../models/User.model");
+const Habit = require("../models/Habit.model");
+
 
 router.get("/login", isLoggedOut, (req, res) => {
   res.render("auth/login");
@@ -49,6 +52,11 @@ router.get("/habits/meditation", (req, res) => {
 router.get("/habits/walking", (req, res) => {
   res.render("habits/walking");
 });
+router.post("/habits/walking", (req, res) => {
+  res.render("habits/walking");
+});
+
+
 
 router.get("/habits/exercise", (req, res) => {
   res.render("habits/exercise");

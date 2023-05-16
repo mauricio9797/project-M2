@@ -47,7 +47,7 @@ router.post("/signup", uploader.single("userImage"),  async (req, res, next) => 
 
  const salt = await bcryptjs.genSalt(12);
  const hash = await bcryptjs.hash(req.body.password, salt);
- const user = new User({ username: req.body.username, email:req.body.email, password: hash });
+ const user = new User({ username: req.body.username, email:req.body.email, userImage: req.file.path, password: hash });
 
  await user.save();
 req.session.user = {
@@ -95,16 +95,43 @@ router.post('/login',async(req,res,next) =>{
 router.get("/habitCreate", isLoggedIn, (req, res, next) => {
   res.render("habitCreate");
 });
+
+
 router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
-  console.log("Req Body ======>",req.body)
+  console.log("hola ======>",req.body)
   try {
     const habit = new Habit({
       Habit: req.body.Habit,
       Tasks: req.body.Tasks,
-      // Tasks1: req.body.Tasks1,
-      // Tasks2: req.body.Tasks2,
+      Tasks1: req.body.Tasks1,
+      Tasks2: req.body.Tasks2,
       Time: req.body.Time,
-      // Count: req.body.Count,
+      Count: req.body.Count,
+      Duration: req.body.Duration,
+      Goal: req.body.Goal,
+    });
+    await habit.save();
+    const user = await User.updateOne(
+      { _id: req.session.user.userId },
+      { $push: { habit: habit._id } }
+    );
+
+
+    res.redirect("/myHabits");
+  } catch (err) {
+    res.status(404).render("emptyfield");
+  }
+});
+router.post("/habits/earthing", isLoggedIn, async (req, res, next) => {
+  console.log("hola desde auth.routes======>",req.body)
+  try {
+    const habit = new Habit({
+      Habit: req.body.Habit,
+      Tasks: req.body.Tasks,
+      Tasks1: req.body.Tasks1,
+      Tasks2: req.body.Tasks2,
+      Time: req.body.Time,
+      Count: req.body.Count,
       Duration: req.body.Duration,
       Goal: req.body.Goal,
     });
@@ -121,11 +148,12 @@ router.post("/habitCreate", isLoggedIn, async (req, res, next) => {
   }
 });
 
+
 router.get("/habitEdit/:habitId", isLoggedIn, async (req, res, next) => {
   try {
     const { habitId } = req.params;
     const habit = await Habit.findById(habitId);
-    res.send({habitEditDetails: habit });
+    res.render("habitEdit", { habit });
   } catch (err) {
     console.error("There was an error", err);
   }

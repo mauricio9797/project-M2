@@ -190,59 +190,65 @@ Dopamine fasting, a practice involving intentional reduction or abstention from 
 <form class="d-flex flex-column" action="/habitCreate" method="post">
 
   <label class="fs-4 text-default mb-2" for="Habit">1. Name this habit</label>
-  <input class="form-control text-default" type="text" id="Habit" name="Habit" placeholder="Habit name" value="Dopamine Fasting"/><br /><br />
+  <input class="form-control text-default habit-name" type="text" id="Habit" name="Habit" readonly="Dopamine Fasting" value="Dopamine Fasting" /><br /><br />
 
-    <label class="fs-4 text-default mb-2" for="Tasks">2. Select Tasks</label><br />
- <select class="form-control" type="text" id="Tasks" name="Tasks">
-    <option value="Reduce social media activity">Reduce social media activity</option>
+  <label class="fs-4 text-default mb-2" for="Tasks">2. Add tasks</label>
+  <select  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks" name="Tasks">
+<option value="Reduce social media activity">Reduce social media activity</option>
     <option value="Eliminate social media accounts">Eliminate social media
       accounts</option>
-  </select>
 
-  <select class="form-control mt-2" type="text" id="Tasks1" name="Tasks1">
-    <option value="spend less time using devices">spend less time using devices</option>
+    </select><br /><br />
+
+   <label class="fs-4 text-default mb-2" for="Tasks1">3. Add tasks</label>
+  <select  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks1" name="Tasks1">
+   <option value="spend less time using devices">spend less time using devices</option>
     <option
       value="Just use your phone when strictly necessary, make/receive calls"
     >Just use your phone when strictly necessary, make/receive calls...</option>
     <option value="Do not use headphones">Do not use headphones</option>
+    </select><br /><br />
 
-  </select>
-
-   <select class="form-control mt-2" type="text" id="Tasks2" name="Tasks2">
-    <option value="Plan daily time without any sort of distractions">Plan daily
+   <label class="fs-4 text-default mb-2" for="Tasks2">4. Add tasks</label>
+  <select  placeholder="Tasks"  class="form-control text-default habit-tasks" type="text" id="Tasks2" name="Tasks2">
+      <option value="Plan daily time without any sort of distractions">Plan daily
       time without any sort of distractions</option>
     <option value="Remove unnecessary pleasures, like listening to music">Remove
       unnecessary pleasures, like listening to music</option>
     <option value="Eat plain, simple food">Eat plain, simple food</option>
-
-  </select>
-
-  <label  class="fs-4 text-default mb-2 mt-3" for="Time">3. Select time</label>
+ </select><br /><br />
+  <label  class="fs-4 text-default mb-2" for="Time">5. Select time</label>
   <div class="d-flex gap-2 mb-3">
-    <input name="timeOptions" type="radio" class="btn-check" id="check-morning" autocomplete="off">
+    <input name="Time" type="radio" class="btn-check" value="morning" id="check-morning" autocomplete="off">
 <label class="btn btn-outline-primary p-2" for="check-morning">Morning</label>
- <input name="timeOptions" type="radio" class="btn-check" id="check-evening" autocomplete="off">
+ <input name="Time" type="radio" class="btn-check" id="check-evening" value="evening" autocomplete="off">
 <label class="btn btn-outline-primary p-2" for="check-evening">Evening</label>
-<input name="timeOptions" type="radio" class="btn-check" id="check-night" autocomplete="off">
+<input name="Time" type="radio" class="btn-check" id="check-night" value="night" autocomplete="off">
 <label class="btn btn-outline-primary p-2" for="check-night">Night</label>
   </div>
 
-   <label class="fs-4 text-default mb-2" for="Count">4. Habit completion streak</label>
+   <label class="fs-4 text-default mb-2" for="Count">6. Habit completion streak</label>
   <select class="form-control" class="" type="text" id="Count" name="Count" value="0" readonly="Starting of your new journey!" /><br /><br />
   
 
   </select>
 
-  <label class="fs-4 text-default mb-2 mt-3" for="Duration">5. Duration</label>
-  <input class="form-control text-default" type="text" id="Duration" name="Duration" placeholder="Duration" /><br /><br />
+  <label class="fs-4 text-default mb-2" for="Duration">7. Duration</label>
+  <input class="form-control text-default habit-duration" type="text" id="Duration" name="Duration" placeholder="Duration" /><br /><br />
 
-  <label class="fs-4 text-default mb-2" for="Goal">6. Goal</label>
-  <textarea placeholder="Goals" class="form-control text-default" type="text" id="Goal" name="Goal"></textarea><br /><br />
+  <label class="fs-4 text-default mb-2" for="Goal">8. Goal</label>
+  <textarea placeholder="Goals" class="form-control text-default habit-goal" type="text" id="Goal" name="Goal" value="{{habitEditDetails.Goal}}"></textarea><br /><br />
 
   <div class="d-flex gap-3">
   <button class="btn btn-primary px-4 py-3 rounded-5" type="submit">Add Habit</button>
+  <button class="btn bg-transparent border border-blue text-blue px-4 py-3 rounded-5" type="submit">+Add Another</button>
   </div>
 </form>
+  </div>
+</div>
+   </div>
+</div>
+
      </div>
   </div>
 </div>
