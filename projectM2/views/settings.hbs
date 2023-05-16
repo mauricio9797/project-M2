@@ -48,6 +48,8 @@
   <h1>hi {{username}}</h1>
     <h2>Edit User</h2>
 <form class="d-flex flex-column" action="/accountEdit/{{user._userId}}" method="post">
+<!-- <form class="d-flex flex-column" action="/profile/settings" method="post"> -->
+
 
   <label for="username">Username</label>
   <input  type="text" id="username" name="username" value="{{user.username}}" required /><br /><br />
