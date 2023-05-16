@@ -212,39 +212,26 @@ router.post("/accountDelete/:userId", isLoggedIn,  async (req, res) => {
 });
 router.get("/accountEdit/:userId", isLoggedIn, async (req, res, next) => {
   try {
-    const { userId } = req.params;
+    const { userId } = req.params.userId;
     const user = await User.findById(userId);
-    res.render("accountEdit", { user });
+    res.render("settings", { user});
+    console.log("holaaaaa")
   } catch (err) {
     console.error("There was an error", err);
   }
 });
-/*router.post("/accountEdit/:userId", isLoggedIn, async (req, res) => {
+router.post("/accountEdit/:userId", isLoggedIn, async (req, res) => {
   const userId = req.params.userId;
-  const user = await User.findByIdandUpdate(userId, {username: req.session.user.username }, {new: true})
-    console.log("hello this is the updatedUser data", user)
-  res.render("updateProfile", { userName: req.session.user.username});
-  
-});*/
-/*router.post("/accountEdit/:userId", isLoggedIn, async (req, res) => {
-  try {
-    const userId = req.params.userId;
-   
-    const updateData = {
-      username: req.session.username,
-      email: req.session.email,
-      
-    };
+  const updateData = {
+    username: req.body.username,
+};
 
-    const userUpdated = await User.findByIdAndUpdate(userId, updateData, {
-      new: true,
-    });
-console.log("updated data ------>", req.user)
-    res.redirect("/updateProfile");
-  } catch (err) {
-    console.error("There was an error", err);
-  }
-});*/
+  const user = await User.findByIdAndUpdate(userId, updateData, {new: true})
+    console.log("hello this is the updatedUser data", user)
+  res.redirect("/profile/");
+  
+})
+
 router.get("/updateProfile", isLoggedIn, async(req, res) => {
 res.render("updateProfile")
 });
