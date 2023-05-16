@@ -215,6 +215,12 @@ input[id=radio-4]:checked ~ .glider {
   border-radius: 50%;
 }
 
+.favicon-xs{
+  width:35px;
+  height:35px;
+  border-radius: 50%;
+}
+
 .favicon-sm{
   width:45px;
   height: 45px;
