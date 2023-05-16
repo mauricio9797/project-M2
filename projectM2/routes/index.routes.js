@@ -38,6 +38,7 @@ router.get("/profile", isLoggedIn, async(req, res) => {
 
 router.get("/profile/settings", isLoggedIn, async(req,res) => {
   try{
+    console.log("this is the route that renders profile/settings. Edit it in order to update user!")
   res.render("settings");
   }catch(err){
     console.error("There was an error", err);
