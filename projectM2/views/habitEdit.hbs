@@ -1,11 +1,26 @@
-<form action="/habitEdit/{{habit._id}}" method="post">
-  <label for="habit">Habit:</label>
-  <input type="text" name="habit" id="habit" value="{{habit.Habit}}" required />
-  <label for="tasks">Tasks:</label>
-  <input type="text" name="tasks" id="tasks" value="{{habit.Tasks}}" required />
-  <label for="time">Time:</label>
+
+
+<div>
+    <h2>Add Habit</h2>
+<form class="d-flex flex-column" action="/habitEdit/{{habit._id}}" method="post">
+
+  <label for="habit">1. Name this habit</label>
+  <input  type="text" id="habit" name="habit" value="{{habit.Habit}}" required /><br /><br />
+
+  <label class="fs-4 text-default mb-2" for="Tasks">2. Add tasks</label>
+<input type="text" name="tasks" id="tasks" value="{{habit.Tasks}}" required />
+   <br /><br />
+
+   <label class="fs-4 text-default mb-2" for="Tasks1">3. Add tasks</label>
+  <input type="text" name="tasks1" id="tasks1" value="{{habit.Tasks1}}" required />
+ <br /><br />
+
+   <label class="fs-4 text-default mb-2" for="Tasks2">4. Add tasks</label>
+  <input type="text" name="tasks2" id="tasks2" value="{{habit.Tasks2}}" required />
+ <br /><br />
+ <label for="time">5. Time:</label>
   <input type="text" name="time" id="time" value="{{habit.Time}}" required />
-  <label for="duration">Duration:</label>
+  <label for="duration">6. Duration:</label>
   <input
     type="text"
     name="duration"
@@ -13,7 +28,8 @@
     value="{{habit.Duration}}"
     required
   />
-  <label for="goal">Goal:</label>
+  <label for="goal">7. Goal:</label>
   <input type="text" name="goal" id="goal" value="{{habit.Goal}}" required />
   <button type="submit">Update</button>
 </form>
+   </div>
